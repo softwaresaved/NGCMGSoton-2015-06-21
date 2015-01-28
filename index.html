@@ -1,5 +1,5 @@
 ---
-layout: bootcamp
+layout: workshop
 root: .
 venue: NGCMG/ University of Southampton
 address: Boldrewood Campus, University of Southampton, Southampton, SO16 7QF
@@ -8,12 +8,79 @@ humandate: Jun 21, 2014
 humantime: 9:00 am - 5:00 pm
 startdate: 2015-06-21
 enddate: 2015-06-21
-latlng: 50.856008333333, -1.3291027777778
-registration: open
+latlng: 50.8560,-1.3291
 instructor: ["Steve Crouch", "John Robinson", "Devasena Inupakutika"]
-helper: [" "]
+helper: ["Iain Emsley"]
 contact: s.crouch@software.ac.uk
 ---
+
+<!-- This block displays the instructors' names if they are available. -->
+{% if page.instructor %}
+<p>
+  <strong>Instructors:</strong>
+  {{page.instructor | join: ', ' %}}
+</p>
+{% endif %}
+
+<!-- This block displays the helpers' names if they are available. -->
+{% if page.helper %}
+<p>
+  <strong>Helpers:</strong>
+  {{page.helper | join: ', ' %}}
+</p>
+{% endif %}
+
+<!--
+    Modify this block to reflect the target audience for your workshop.
+    In particular, if it is only open to people from a particular institution,
+    or if specialized prerequisite knowledge is required, please mention that.
+-->
+<p>
+  <strong>Who:</strong>
+  The course is aimed at postgraduate students and postdoctoral scientists who are familiar 
+  with basic programming concepts (like loops, conditionals, arrays, and functions) but 
+  need help to translate this knowledge into practical tools to help them work more productively.
+</p>
+
+<!--
+    This block displays the address and links to a map showing directions.
+-->
+{% if page.latlng %}
+<p>
+  <strong>Where:</strong>
+  {{ page.address }}.
+  Get directions with
+  <a href="//www.openstreetmap.org/?mlat={{ page.latlng | replace:',','&mlon=' }}&zoom=16">OpenStreetMap</a>
+  or
+  <a href="//maps.google.com/maps?q={{ page.latlng }}">Google Maps</a>.
+</p>
+{% endif %}
+
+<!--
+    Modify the block below if there are any special requirements.
+-->
+<p>
+  <strong>Requirements:</strong>
+  Participants must bring a laptop with a few specific software packages installed
+  (listed below).
+</p>
+
+<!--
+    This block automatically inserts a contact email address if one has been specified for the page.
+    If one hasn't, this block inserts the generic contact address for Software Carpentry.
+-->
+<p>
+  <strong>Contact</strong>:
+  Please mail
+  {% if page.contact %}
+    <a href='mailto:{{page.contact}}'>{{page.contact}}</a>
+  {% else %}
+    <a href='mailto:{{site.contact}}'>{{site.contact}}</a>
+  {% endif %}
+  for more information.
+</p>
+
+<hr/>
 
 <h2>Setup</h2>
 
@@ -73,12 +140,12 @@ below.
 </p>
 <ul>
   <li>
-    Download <a href="./setup/swc-installation-test-1.py">swc-installation-test-1.py</a>
+    Download <a href="./setup/installation_test_1.py">installation_test_1.py</a>
   </li>
   <li>Open up a bash shell</li>
   <li>Change into the directory where you put the script</li>
   <li>Run the script:
-    <pre>python swc-installation-test-1.py</pre>
+    <pre>python installation_test_1.py</pre>
   </li>
 </ul>
 <p>
@@ -86,12 +153,12 @@ below.
 </p>
 <ul>
   <li>
-    Download <a href="./setup/swc-installation-test-2.py">swc-installation-test-2.py</a>
+    Download <a href="./setup/installation_test_2.py">installation_test_2.py</a>
   </li>
   <li>Open up a bash shell</li>
   <li>Change into the directory where you put the script</li>
   <li>Run the script:
-    <pre>python swc-installation-test-2.py</pre>
+    <pre>python installation_test_2.py</pre>
   </li>
 </ul>
 
