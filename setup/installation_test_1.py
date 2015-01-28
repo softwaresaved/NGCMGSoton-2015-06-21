@@ -4,7 +4,7 @@
 
 Execute this code at the command line by typing:
 
-  python swc-installation-test-1.py
+  python installation_test_1.py
 
 How to get a command line:
 
@@ -29,7 +29,7 @@ you may not have any version of Python installed.  See:
 for installation instructions.
 
 This test is separate to avoid Python syntax errors parsing the more
-elaborate `swc-installation-test-2.py`.
+elaborate `installation_test_2.py`.
 """
 
 import sys as _sys
