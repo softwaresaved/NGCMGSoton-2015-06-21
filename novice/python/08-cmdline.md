@@ -20,7 +20,7 @@ we may want a program that reads a data set
 and prints the average inflammation per patient:
 
 ~~~
-$ python readings.py --mean inflammation-01.csv
+$ python readings.py --mean data/inflammation-01.csv
 5.45
 5.425
 6.1
@@ -33,18 +33,18 @@ $ python readings.py --mean inflammation-01.csv
 but we might also want to look at the minimum of the first four lines
 
 ~~~
-$ head -4 inflammation-01.csv | python readings.py --min
+$ head -4 data/inflammation-01.csv | python readings.py --min
 ~~~
 
 or the maximum inflammations in several files one after another:
 
 ~~~
-$ python readings.py --max inflammation-*.csv
+$ python readings.py --max data/inflammation-*.csv
 ~~~
 
 Our overall requirements are:
 
-1. If no filename is given on the command line, read data from [standard input](reference.html#standard-input).
+1. If no filename is given on the command line, read data from [standard input](../../reference.html#standard-input).
 2. If one or more filenames are given, read data from them and report statistics for each file separately.
 3. Use the `--min`, `--mean`, or `--max` flag to determine what statistic to print.
 
@@ -150,7 +150,7 @@ because that's where it's always put,
 and the name of the file to process from `sys.argv[1]`.
 Here's a simple test:
 
-<pre class="in"><code>%run readings-01.py inflammation-01.csv</code></pre>
+<pre class="in"><code>%run readings-01.py data/inflammation-01.csv</code></pre>
 
 There is no output because we have defined a function,
 but haven't actually called it.
@@ -174,7 +174,7 @@ main()
 
 and run that:
 
-<pre class="in"><code>%run readings-02.py inflammation-01.csv</code></pre>
+<pre class="in"><code>%run readings-02.py data/inflammation-01.csv</code></pre>
 
 ~~~ {.output}
 5.45
@@ -256,14 +256,14 @@ we'll start by creating three smaller files,
 each of which has three days of data for two patients:
 
 ~~~ {.input}
-$ ls small-*.csv
+$ ls data/small-*.csv
 ~~~
 ~~~ {.output}
 small-01.csv small-02.csv small-03.csv
 ~~~
 
 ~~~ {.input}
-$ cat small-01.csv
+$ cat data/small-01.csv
 ~~~
 ~~~ {.output}
 0,0,1
@@ -271,7 +271,7 @@ $ cat small-01.csv
 ~~~
 
 ~~~ {.input}
-$ python readings-02.py small-01.csv
+$ python readings-02.py data/small-01.csv
 ~~~
 ~~~ {.output}
 0.333333333333
@@ -322,7 +322,7 @@ main()
 and here it is in action:
 
 ~~~ {.input}
-$ python readings-03.py small-01.csv small-02.csv
+$ python readings-03.py data/small-01.csv data/small-02.csv
 ~~~
 ~~~ {.output}
 0.333333333333
@@ -378,7 +378,7 @@ main()
 This works:
 
 ~~~ {.input}
-$ python readings-04.py --max small-01.csv
+$ python readings-04.py --max data/small-01.csv
 ~~~
 ~~~ {.output}
 1.0
@@ -463,7 +463,7 @@ but we can do almost anything with it that we could do to a regular file.
 Let's try running it as if it were a regular command-line program:
 
 ~~~ {.input}
-$ python count-stdin.py < small-01.csv
+$ python count-stdin.py < data/small-01.csv
 ~~~
 ~~~ {.output}
 2 lines in standard input
@@ -472,7 +472,7 @@ $ python count-stdin.py < small-01.csv
 A common mistake is to try to run something that reads from standard input like this:
 
 ~~~ {.input}
-$ count_stdin.py small-01.csv
+$ count_stdin.py data/small-01.csv
 ~~~
 
 i.e., to forget the `<` character that redirect the file to standard input.
@@ -536,7 +536,7 @@ the program now does everything we set out to do.
 
 > ## Finding particular files {.challenge}
 >
-> Using the `glob` module introduced [03-loop.ipynb](earlier),
+> Using the `glob` module introduced [02-loop.html](earlier),
 > write a simple version of `ls` that shows files in the current directory with a particular suffix:
 >
 > ~~~ {.python}
