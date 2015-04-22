@@ -42,7 +42,7 @@ If the test is false,
 the body of the `else` is executed instead.
 Only one or the other is ever executed:
 
-![Executing a Conditional](img/python-flowchart-conditional.svg)\
+[Executing a Conditional](img/python-flowchart-conditional.svg)
 
 Conditional statements don't have to include an `else`.
 If there isn't one,
