@@ -202,6 +202,7 @@
   </div>
 </div>
 
+
 <div class="row-fluid">
     <h4>Virtual Machine</h4>
     <p>
@@ -225,4 +226,39 @@
 	<!--and loading the <code>.ova</code> file.-->
       <!--/li-->
     <!--/ol-->
+</div>
+
+<h3>Installing <code> matplotlib </code></h3>
+
+<div class="row-fluid">
+
+  <p>
+    <code>matplotlib</code> doesn't come with the standard Python installation. In addition, 
+    it depends on another library called <a href="http://www.numpy.org/">numpy</a>; which 
+    is also not included. The <a href="http://matplotlib.org/users/installing.html">
+    installing matplotlib page </a> provides detailed instructions for installing <code>
+    matplotlib</code> on Windows, Mac OS X, and Linux. Don't forget to 
+    <a href="http://www.scipy.org/install.html">download and install</a> numpy as well.
+  </p>
+  
+  <p>In order to choose the correct downloads, you need to know which version of Python 
+  you're running. At the command-line, run <tt>python --version</tt> (mine says Python 2.7.2+). 
+  The first two numbers (2.7 for me) will give you an idea of which <tt>matplotlib</tt> file 
+  to choose. On Windows, I 
+  <a href="http://sourceforge.net/projects/matplotlib/files/matplotlib/matplotlib-1.1.0/">
+  downloaded the file</a> named "matplotlib-1.1.0.win32-py2.7.exe" because I have Python 2.7 
+  and a 32-bit installation of Python. The 
+  <a href="http://sourceforge.net/projects/numpy/files/NumPy/1.6.1/">numpy downloads</a> 
+  are named similarly; I downloaded "numpy-1.6.1-win32-superpack-python2.7.exe".
+  </p>
+
+  <p>Once everything is installed, you can check that it's working by running 
+  <tt>python</tt> and typing in the following code:
+  </p>
+
+  <pre>from matplotlib import pyplot</pre>
+  
+  <p>If no errors are printed, then you should be set.</p>
+
+
 </div>
