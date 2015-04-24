@@ -12,12 +12,12 @@
   </head>
   <body class="workshop">
     <div class="container card">
-      {% include banner.html %}
       <div class="row">
         <div class="span10 offset1">
+           {% include banner.html %}
            <h1 class="title">{{title}}</h1>
            {{if(subtitle)}}<h2 class="subtitle">{{subtitle}}</h2>{{endif}}
-          {{content}}
+           {{content}}
         </div>
       </div>
       {% include footer.html %}

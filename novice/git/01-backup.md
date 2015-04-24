@@ -1,5 +1,6 @@
 ---
 layout: page
+root: ../..
 title: Version Control with Git
 subtitle: A Better Kind of Backup
 ---

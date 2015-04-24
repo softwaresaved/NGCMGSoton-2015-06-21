@@ -1,5 +1,6 @@
 ---
 layout: page
+root: ../..
 title: Version Control with Git
 subtitle: Collaborating
 ---
