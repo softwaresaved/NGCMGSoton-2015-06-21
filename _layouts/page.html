@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="generator" content="pandoc">
-    <title>Software Basics Workshop: $pagetitle$</title>
+    <title>Software Basics Workshop: {{pagetitle}}</title>
     {% include header.html %}
   </head>
   <body class="workshop">
@@ -15,10 +15,8 @@
       {% include banner.html %}
       <div class="row">
         <div class="span10 offset1">
-           <!--h1 class="title"-->
-           <!--$title$-->
-           <!--/h1-->
-           <!--$if(subtitle)$<h2 class="subtitle">$subtitle$</h2>$endif$-->
+           <h1 class="title">{{title}}</h1>
+           {{if(subtitle)}}<h2 class="subtitle">{{subtitle}}</h2>{{endif}}
           {{content}}
         </div>
       </div>
