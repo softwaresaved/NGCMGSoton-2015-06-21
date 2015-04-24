@@ -1,7 +1,7 @@
 ---
 layout: page
-root: ../..
-title: Collaborating
+title: Version Control with Git
+subtitle: Collaborating
 ---
 <div class="objectives" markdown="1">
 

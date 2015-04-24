@@ -1,7 +1,7 @@
 ---
 layout: page
-root: ../..
-title: Open Science
+title: Version Control with Git
+subtitle: Open Science
 ---
 <div class="objectives" markdown="1">
 

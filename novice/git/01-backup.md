@@ -1,7 +1,7 @@
 ---
 layout: page
-root: ../..
-title: A Better Kind of Backup
+title: Version Control with Git
+subtitle: A Better Kind of Backup
 ---
 <div class="objectives" markdown="1">
 

@@ -1,7 +1,7 @@
 ---
 layout: page
-root: ../..
-title: Conflicts
+title: Version Control with Git
+subtitle: Conflicts
 ---
 <div class="objectives" markdown="1">
 
