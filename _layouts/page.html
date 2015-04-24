@@ -12,14 +12,12 @@
   </head>
   <body class="workshop">
     <div class="container card">
-      $banner$
+      {% include banner.html %}
       <div class="row">
-        <div class="col-md-10 col-md-offset1">
-           <!--{% include banner.html %}-->
+        <div class="span10 offset1">
            <h1 class="title">$title$</h1>
            $if(subtitle)$<h2 class="subtitle">$subtitle$</h2>$endif$
           {{content}}
-          {% include footer.html %}
         </div>
       </div>
       {% include footer.html %}
