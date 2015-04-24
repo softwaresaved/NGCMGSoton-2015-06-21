@@ -1,8 +1,7 @@
 ---
 layout: page
-title: Programming with Python
-subtitle: Analyzing Patient Data
-minutes: 30
+root: ../..
+title: Analyzing Patient Data
 ---
 > ## Learning Objectives {.objectives}
 >
