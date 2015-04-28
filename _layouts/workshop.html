@@ -3,28 +3,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Software Basics Workshop: {{ page.venue }}</title>
+    <title>Software Basics Workshop</title>
     {% include header.html %}
-    <!--meta name="venue" content="{{page.venue}}" /-->
-    <!--meta name="date" content="{{page.humandate}}" /-->
-    <!--meta name="startdate" content="{{page.startdate}}" /-->
-    <!--meta name="enddate" content="{{page.enddate}}" /-->
+  
   </head>
   <body>
     <div class="container">
       <div class="span10 offset1">
         {% include banner.html %}
 
-        <!--div class="hero-unit"-->
-          <!--div class="row-fluid"-->
-          <!--/div-->
-        <!--/div-->
-
         {{content}}
 
         {% include footer.html %}
       </div>
     </div>
-    {% include javascript.html %}
+    {% include javascript-main.html %}
   </body>
 </html>
