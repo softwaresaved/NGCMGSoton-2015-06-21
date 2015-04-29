@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="generator" content="pandoc">
-    <title>Software Carpentry: Version Control with Git</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <title>Version Control with Git</title>
+  
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-theme.css" />
-    <link rel="stylesheet" type="text/css" href="css/swc.css" />
-    <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/swc.css" />
+    <link rel="alternate" type="application/rss+xml" title="The Software Sustainability Institute Blog" href="http://software.ac.uk/blog"/>
     <meta charset="UTF-8" />
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -18,11 +18,8 @@
   </head>
   <body class="lesson">
     <div class="container card">
-      <div class="banner">
-        <a href="http://software-carpentry.org" title="Software Carpentry">
-          <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
-        </a>
-      </div>
+     
+     <article>
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
           <h1 class="title">Version Control with Git</h1>
@@ -148,7 +145,7 @@ $ <span class="kw">git</span> commit -m <span class="st">&quot;Add concerns abou
 <p>Git insists that we add files to the set we want to commit before actually committing anything because we may not want to commit everything at once. For example, suppose we're adding a few citations to our supervisor's work to our thesis. We might want to commit those additions, and the corresponding addition to the bibliography, but <em>not</em> commit the work we're doing on the conclusion (which we haven't finished yet).</p>
 <p>To allow for this, Git has a special staging area where it keeps track of things that have been added to the current <a href="reference.html#change-set">change set</a> but not yet committed. <code>git add</code> puts things in this area, and <code>git commit</code> then copies them to long-term storage (as a commit):</p>
 <div class="figure">
-<img src="fig/git-staging-area.svg" alt="The Git Staging Area" />
+<img src="img/git-staging-area.svg" alt="The Git Staging Area" />
 <p class="caption">The Git Staging Area</p>
 </div>
 <p>Let's watch as our changes to a file move from our editor to the staging area and into long-term storage. First, we'll add another line to the file:</p>
@@ -208,7 +205,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
     Start notes on Mars as a base</code></pre>
 <p>To recap, when we want to add changes to our repository, we first need to add the changed files to the staging area (<code>git add</code>) and then commit the staged changes to the repository (<code>git commit</code>):</p>
 <div class="figure">
-<img src="fig/git-committing.svg" alt="The Git Commit Workflow" />
+<img src="img/git-committing.svg" alt="The Git Commit Workflow" />
 <p class="caption">The Git Commit Workflow</p>
 </div>
 <div id="committing-changes-to-git" class="challenge panel panel-success">
@@ -237,15 +234,15 @@ $ git commit -m &quot;my recent changes&quot;</code></pre></li>
 </div>
         </div>
       </div>
+      </article>
       <div class="footer">
-        <a class="label swc-blue-bg" href="http://software-carpentry.org">Software Carpentry</a>
-        <a class="label swc-blue-bg" href="https://github.com/swcarpentry/git-novice">Source</a>
-        <a class="label swc-blue-bg" href="mailto:admin@software-carpentry.org">Contact</a>
+        This work is derived from prior works that are Copyright © <a href="http://software-carpentry.org">Software Carpentry</a>
         <a class="label swc-blue-bg" href="LICENSE.html">License</a>
+        <a class="label swc-blue-bg" href="https://github.com/softwaresaved/NGCMGSoton-2015-06-21">Source</a>
       </div>
     </div>
     <!-- Javascript placed at the end of the document so the pages load faster -->
     <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
-    <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
+    <script src="../../css/bootstrap/bootstrap-js/bootstrap.js"></script>
   </body>
 </html>

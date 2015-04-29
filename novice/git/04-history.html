@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="generator" content="pandoc">
-    <title>Software Carpentry: Version Control with Git</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <title>Version Control with Git</title>
+ 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-theme.css" />
-    <link rel="stylesheet" type="text/css" href="css/swc.css" />
-    <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/swc.css" />
+    <link rel="alternate" type="application/rss+xml" title="The Software Sustainability Institute Blog" href="http://software.ac.uk/blog"/>
     <meta charset="UTF-8" />
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -18,11 +18,8 @@
   </head>
   <body class="lesson">
     <div class="container card">
-      <div class="banner">
-        <a href="http://software-carpentry.org" title="Software Carpentry">
-          <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
-        </a>
-      </div>
+      
+      <article>
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
           <h1 class="title">Version Control with Git</h1>
@@ -103,12 +100,12 @@ But the Mummy will appreciate the lack of humidity</code></pre>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout f22b25e mars.txt</code></pre>
 <p>It's important to remember that we must use the revision number that identifies the state of the repository <em>before</em> the change we're trying to undo. A common mistake is to use the revision number of the commit in which we made the change we're trying to get rid of. In the example below, we want retrieve the state from before the most recent commit (<code>HEAD~1</code>), which is revision <code>f22b25e</code>:</p>
 <div class="figure">
-<img src="fig/git-checkout.svg" alt="Git Checkout" />
+<img src="img/git-checkout.svg" alt="Git Checkout" />
 <p class="caption">Git Checkout</p>
 </div>
 <p>The following diagram illustrates what the history of a file might look like (moving back from <code>HEAD</code>, the most recently committed version):</p>
 <div class="figure">
-<img src="fig/git-when-revisions-updated.svg" alt="When Git Updates Revision Numbers" />
+<img src="img/git-when-revisions-updated.svg" alt="When Git Updates Revision Numbers" />
 <p class="caption">When Git Updates Revision Numbers</p>
 </div>
 <div id="how-git-works-in-cartoon-form" class="callout panel panel-info">
@@ -117,7 +114,7 @@ But the Mummy will appreciate the lack of humidity</code></pre>
 </div>
 <div class="panel-body">
 <div class="figure">
-<img src="fig/git_staging.svg" alt="http://figshare.com/articles/How_Git_works_a_cartoon/1328266" />
+<img src="img/git_staging.svg" alt="http://figshare.com/articles/How_Git_works_a_cartoon/1328266" height="500" width="600" />
 <p class="caption">http://figshare.com/articles/How_Git_works_a_cartoon/1328266</p>
 </div>
 </div>
@@ -151,15 +148,16 @@ But the Mummy will appreciate the lack of humidity</code></pre>
 </div>
         </div>
       </div>
+      </article>
       <div class="footer">
-        <a class="label swc-blue-bg" href="http://software-carpentry.org">Software Carpentry</a>
-        <a class="label swc-blue-bg" href="https://github.com/swcarpentry/git-novice">Source</a>
-        <a class="label swc-blue-bg" href="mailto:admin@software-carpentry.org">Contact</a>
+         This work is derived from prior works that are Copyright © <a href="http://software-carpentry.org">Software Carpentry</a>
         <a class="label swc-blue-bg" href="LICENSE.html">License</a>
+        <a class="label swc-blue-bg" href="https://github.com/softwaresaved/NGCMGSoton-2015-06-21">Source</a>
+      
       </div>
     </div>
     <!-- Javascript placed at the end of the document so the pages load faster -->
     <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
-    <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
+    <script src="../../css/bootstrap/bootstrap-js/bootstrap.js"></script>
   </body>
 </html>

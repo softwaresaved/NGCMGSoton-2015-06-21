@@ -275,7 +275,7 @@ but not yet committed.
 `git add` puts things in this area,
 and `git commit` then copies them to long-term storage (as a commit):
 
-![The Git Staging Area](fig/git-staging-area.svg)
+![The Git Staging Area](img/git-staging-area.svg)
 
 Let's watch as our changes to a file move from our editor
 to the staging area
@@ -391,7 +391,7 @@ we first need to add the changed files to the staging area
 (`git add`) and then commit the staged changes to the
 repository (`git commit`):
 
-![The Git Commit Workflow](fig/git-committing.svg)
+![The Git Commit Workflow](img/git-committing.svg)
 
 
 > ## Committing Changes to Git {.challenge}

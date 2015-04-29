@@ -158,15 +158,15 @@ the commit in which we made the change we're trying to get rid of.
 In the example below, we want retrieve the state from before the most
 recent commit (`HEAD~1`), which is revision `f22b25e`:
 
-![Git Checkout](fig/git-checkout.svg)
+![Git Checkout](img/git-checkout.svg)
 
 The following diagram illustrates what the history of a file might look
 like (moving back from `HEAD`, the most recently committed version):
 
-![When Git Updates Revision Numbers](fig/git-when-revisions-updated.svg)
+![When Git Updates Revision Numbers](img/git-when-revisions-updated.svg)
 
 > ## How Git works, in cartoon form {.callout}
-> ![http://figshare.com/articles/How_Git_works_a_cartoon/1328266](fig/git_staging.svg)
+> ![http://figshare.com/articles/How_Git_works_a_cartoon/1328266](img/git_staging.svg)
 
 > ## Simplifying the Common Case {.callout}
 >
