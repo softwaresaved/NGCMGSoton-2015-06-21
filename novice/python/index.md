@@ -1,6 +1,5 @@
 ---
-layout: lesson
-root: ../..
+layout: page
 title: Programming with Python
 ---
 The best way to learn how to program is to do something useful,
@@ -21,13 +20,19 @@ to use whatever language your colleagues are using,
 so that you can share you work with them easily,
 and to use that language *well*.
 
-<div class="toc" markdown="1">
+## Topics
 
 1.  [Analyzing Patient Data](01-numpy.html)
-2.  [Creating Functions](02-func.html)
-3.  [Analyzing Multiple Data Sets](03-loop.html)
-4.  [Making Choices](04-cond.html)
-5.  [Defensive Programming](05-defensive.html)
-6.  [Command-Line Programs](06-cmdline.html)
+2.  [Repeating Actions with Loops](02-loop.html)
+3.  [Storing Mulitple Values in Lists](03-lists.html)
+4.  [Analyzing Data From Multiple Files] (04-files.html)
+5.  [Making Choices](05-cond.html)
+6.  [Creating Functions] (06-func.html)
+7.  [Command-Line Programs] (08-cmdline.html)
 
-</div>
+## Other Resources
+
+*   [Motivation](motivation.html)
+*   [Reference](reference.html)
+*   [Discussion](discussion.html)
+*   [Instructor's Guide](instructors.html)

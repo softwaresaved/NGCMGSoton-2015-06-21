@@ -1,8 +1,21 @@
----
-layout: page
-root: ../..
-title: Analyzing Patient Data
----
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <title>Version Control with Git</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/swc.css" />
+    <link rel="alternate" type="application/rss+xml" title="The Software Sustainability Institute Blog" href="http://software.ac.uk/blog"/>
+    <meta charset="UTF-8" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
 
   <body class="lesson">
     <div class="container card">
@@ -27,7 +40,7 @@ title: Analyzing Patient Data
 </div>
 </div>
 <p>Words are useful, but what's more useful are the sentences and stories we build with them. Similarly, while a lot of powerful tools are built into languages like Python, even more live in the <a href="../../reference.html#software-library">libraries</a> they are used to build.</p>
-<p>In order to load our inflammation data, we need to <a href="../../../../reference.html#import">import</a> a library called NumPy. In general you should use this library if you want to do fancy things with numbers, especially if you have matrices. We can load NumPy using:</p>
+<p>In order to load our inflammation data, we need to <a href="../../reference.html#import">import</a> a library called NumPy. In general you should use this library if you want to do fancy things with numbers, especially if you have matrices. We can load NumPy using:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> numpy</code></pre>
 <p>Importing a library is like getting a piece of lab equipment out of a storage locker and setting it up on the bench. Once it's done, we can ask the library to read our data file for us:</p>
 <pre class="sourceCode python"><code class="sourceCode python">numpy.loadtxt(fname=<span class="st">&#39;data/inflammation-01.csv&#39;</span>, delimiter=<span class="st">&#39;,&#39;</span>)</code></pre>
@@ -378,9 +391,16 @@ last three characters: gen</code></pre>
         </div>
       </div>
       
+      <div class="footer">
+        This work is derived from prior works that are Copyright © <a href="http://software-carpentry.org">Software Carpentry</a>
+        <a class="label swc-blue-bg" href="LICENSE.html">License</a>
+        <a class="label swc-blue-bg" href="https://github.com/softwaresaved/NGCMGSoton-2015-06-21">Source</a>
+      </div>
+      
     </div>
     <!-- Javascript placed at the end of the document so the pages load faster -->
     <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
-    <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
+    <script src="../../css/bootstrap/bootstrap-js/bootstrap.js"></script>
   </body>
 <!--/html-->
+</html>
