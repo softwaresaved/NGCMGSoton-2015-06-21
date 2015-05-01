@@ -1,16 +1,11 @@
 ---
 layout: page
-title: Intermediate Python
+title: Python Unit Testing
 ---
 This lesson assumes that you already understand basic programming concepts
-and are either familiar with,
-or can quickly master,
-the basic elements of Python.
+and are familiar with the basic elements of Python.
 
 
 ### Topics
 
-1.  [Introduction](01-intro-python.html)
-2.  [Modularization and Documentation](02-modularization-documentation.html)
-3.  [Getting the Right Answer](03-qa.html)
-4.  [Parallel programming with the multiprocessing library](04-multiprocessing.html)
+*  [Writing robust code and unit testing](robust.html)
