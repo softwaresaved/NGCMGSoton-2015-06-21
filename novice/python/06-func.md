@@ -22,7 +22,7 @@ and didn't want to generate a figure for every single one?
 Commenting out the figure-drawing code is a nuisance.
 Also, what if we want to use that code again,
 on a different dataset or at a different point in our program?
-Cutting and pasting it is going to make our code get very long and very repetative,
+Cutting and pasting it is going to make our code get very long and very repetetive,
 very quickly.
 We'd like a way to package our code so that it is easier to reuse,
 and Python provides for this by letting us define things called 'functions' -
@@ -540,7 +540,7 @@ a: 55 b: 66 c: 3
 As this example shows,
 parameters are matched up from left to right,
 and any that haven't been given a value explicitly get their default value.
-We can override this behavior by naming the value as we pass it in:
+We can override this behaviour by naming the value as we pass it in:
 
 ~~~ {.python}
 print 'only setting the value of c'

@@ -77,10 +77,6 @@ which are covered in the lesson on the shell.
 
 ## [Creating Functions](06-func.html)
 
-## [Defensive Programming](07-defensive.html)
-
 ## [Command-Line Programs](08-cmdline.html)
 
-## [Errors and Exceptions](09-errors.html)
 
-## [Supplementary Material](10-supplementary.html)

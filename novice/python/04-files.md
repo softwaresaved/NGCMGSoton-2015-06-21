@@ -21,17 +21,17 @@ that finds files whose names match a pattern.
 We provide those patterns as strings:
 the character `*` matches zero or more characters,
 while `?` matches any one character.
-We can use this to get the names of all the IPython Notebooks we have created so far:
+We can use this to get the names of all the Markdown files we have created so far:
 
 ~~~ {.python}
-print glob.glob('*.ipynb')
+print glob.glob('*.md')
 ~~~
 
 ~~~ {.output}
-['01-numpy.ipynb', '02-func.ipynb', '03-loop.ipynb', '04-cond.ipynb', '05-defensive.ipynb', '06-cmdline.ipynb', 'spatial-intro.ipynb']
+['01-numpy.md', '02-loop.md', '03-lists.md', '04-files.md', '05-cond.md', '06-func.md', '08-cmdline.md']
 ~~~
 
-or to get the names of all our CSV data files:
+or to get the names of all our CSV data files under 'data' directory:
 
 ~~~ {.python}
 print glob.glob('*.csv')
@@ -80,21 +80,21 @@ for f in filenames:
 inflammation-01.csv
 ~~~
 
-![Analysis of inflammation-01.csv](img/03-loop_files/novice/python/03-loop_49_1.png)\
+![Analysis of inflammation-01.csv](03-loop_files/novice/python/03-loop_49_1.png)\
 
 
 ~~~ {.output}
 inflammation-02.csv
 ~~~
 
-![Analysis of inflammation-02.csv](img/03-loop_files/novice/python/03-loop_49_3.png)\
+![Analysis of inflammation-02.csv](03-loop_files/novice/python/03-loop_49_3.png)\
 
 
 ~~~ {.output}
 inflammation-03.csv
 ~~~
 
-![Analysis of inflammation-03.csv](img/03-loop_files/novice/python/03-loop_49_5.png)\
+![Analysis of inflammation-03.csv](03-loop_files/novice/python/03-loop_49_5.png)\
 
 Sure enough,
 the maxima of the first two data sets show exactly the same ramp as the first,
