@@ -96,7 +96,7 @@
     <p>After installing Python and Git Bash:</p>
     <ul>
       <li>
-        Download the <a href="{{site.windows_installer_path}}">installer</a>.
+        Download the <a href="http://files.software-carpentry.org/SWCarpentryInstaller.exe">installer</a>.
       </li>
       <li>
         If the file opens directly in the browser select <strong>File&rarr;Save Page As</strong>
@@ -157,14 +157,29 @@
   <div class="span6">
     <h4>Python</h4>
     <ul>
-      <li>
+      <!--li>
         Download and install  <a href="http://continuum.io/anacondace.html">Anaconda CE</a>.
       </li>
       <li>
         Use all of the defaults for installation
         <em>except</em>
         make sure to check <strong>Make Anaconda the default Python</strong>.
-      </li>
+      </li-->
+<li>You need to first install xcode,
+
+<ul>
+<li>xcode can be installed by going to the App Store. You need to install xcode, then goto the top left of your screen and click XCode -&gt; Preferences -&gt; Downloads, find &quot;command line tools&quot; and click install.</li>
+<li>xcode is a 1GB+ download so you will not have time to download it in class on Wednesday</li>
+<li>Note that the current version of xcode is only supported by OSX 10.7.4+ so we highly recommend you upgrade your operating system. If for whatever reason you absolutely cannot upgrade your os, you need to register for a free Apple developer account and download the appropriate version of xcode</li>
+</ul></li>
+<li>For 64 bit OSX, install <a href="https://store.continuum.io/cshop/anaconda">Anaconda CE</a>
+
+<ul>
+<li>By default this is installed in your home directory. Unless you know what you&#39;re doing, don&#39;t change it.</li>
+</ul></li>
+<li>For 32 bit OSX, install <a href="https://www2.enthought.com/accounts/register/?next=/licenses/academic">EPD academic</a></li>
+<li>Remember to read the <a href="http://docs.continuum.io/anaconda/install.html">documentation</a></li>
+<li>Remember to configure your <a href="#env">environment</a></li>
     </ul>
   </div>
 </div>
@@ -226,6 +241,17 @@
         your <code>PATH</code> (this makes the Anaconda
         distribution the default Python).
       </li>
+      
+      <li> <strong>Hints</strong>
+
+		<ul>
+			<li>Try to install in your HOME directory (default) so you don&#39;t need sudo</li>
+			<li>Don&#39;t invoke the installer shell using sudo if installing into HOME directory</li>
+			<li>Remember to configure your <a href="#env">environment</a></li>
+			<li>Remember to read the <a href="http://docs.continuum.io/anaconda/install.html">documentation</a></li>
+		</ul>
+	  </li>
+
     </ol>
   </div>
 </div>
@@ -236,8 +262,27 @@
     <p>
       Sometimes the instructions above don't work. One way around this is
       to use a virtual machine (VM)
-      rather than install software on their own computers. We will provide VM 
-      image in advance to the workshop.
+      rather than install software on your own computers. If all else fails, we will set you 
+      up with a Linux virtual machine. You can try this using the following instructions
+      and then follow the Linux instructions:
+      
+      <ul>
+<li>Download and unzip the <a href="http://www2.epcc.ed.ac.uk/%7Emichaelj/SoftwareCarpentry/">VM image</a>. </li>
+<li>Download <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a></li>
+<li>Run the installer</li>
+<li>Open VirtualBox Manager</li>
+<li>Click &quot;New&quot; to create new virtual machine</li>
+<li>Select &quot;Linux&quot; for Type and &quot;Ubuntu&quot; or &quot;Ubuntu (64-bit)&quot; for Version</li>
+<li>Next, allocate half of your memory for your VM.<br></li>
+<li>Next, select &quot;Use an existing virtual hard drive file&quot; and select the VDI file you downloaded</li>
+<li>Once the VM has been created, select it and click &quot;Start&quot;</li>
+<li>If the VM image you downloaded already has <em>guest-additions</em> installed then you can skip this step. Otherwise once the setup is complete you need to install <a href="http://virtualboxes.org/doc/installing-guest-additions-on-ubuntu/">guest additions</a>.</li>
+</ul>
+
+      
+      
+      
+       <!--We will provide VM image in advance to the workshop.-->
     </p>
     <!--ol-->
       <!--li-->
@@ -291,7 +336,23 @@
 
 </div>
 
+<p><a id="env"></a></p>
 
+<h3>Extra Help:  Configuring environment variables</h3>
+
+<ul>
+<li>Modify your shell configuration file, henceforth referred to as your <em>bashrc file</em>.
+
+<ul>
+<li>Mac OSX:  From your home directory (i.e., ~/) open either .bash<em>profile or .bash</em>aliases (create one if neither exists), add &quot;export PATH=/path/to/python:$PATH&quot;</li>
+<li>Linux:  From your home directory (i.e., ~/) open .bashrc (create one if neither exists), add &quot;export PATH=/path/to/python:$PATH&quot;</li>
+</ul></li>
+<li>Refresh your terminal by typing
+<code>
+source ~/.bashrc
+</code>
+or just opening a new terminal.</li>
+</ul>
 
 
 <h2>Before the workshop</h2>
