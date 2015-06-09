@@ -1,464 +1,134 @@
 <!DOCTYPE html>
+<!--
+  Use this layout for generic pages in the workshop website.
+  Use 'workshop.html' for the workshop home page.
+-->
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="generator" content="pandoc">
-  <title> Software Basics Workshop </title>
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
-  <link href="css/bootstrap/bootstrap-responsive.css" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="css/swc.css" />
-  <!--link rel="stylesheet" type="text/css" href="{{page.root}}/css/swc-bootstrap.css" /-->
-  <link rel="alternate" type="application/rss+xml" title="The Software Sustainability Institute Blog" href="http://software.ac.uk/blog"/>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <title>Software Basics Workshop: </title>
+    <link href="/css/bootstrap/bootstrap-main.css" rel="stylesheet" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="/css/bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="/css/swc-main.css" />
+<link rel="stylesheet" type="text/css" href="/css/swc-bootstrap.css" />
+<link rel="alternate" type="application/rss+xml" title="The Software Sustainability Institute Blog" href="http://software.ac.uk/blog"/>
+<meta charset="UTF-8" />
+<!--meta http-equiv="last-modified" content="" /-->
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
 
-
-</head>
-<body class="workshop">
-  <div class="container card">
-     <article>
-     <div class="row">
+  </head>
+  <body class="workshop">
+    <div class="container card">
+      <div class="row">
         <div class="span10 offset1">
-           <h2>Software Prerequisites</h2>
-
-<p><b><em>Important: prior to the workshop, you must ensure you have the following software installed on your laptop.</em></b></p>
-
-<p>You will need working copies of the software described below.
-</p>
-
-<h3>Overview</h3>
-
-<div class="row-fluid">
-  <div class="span6">
-    <h4>Editor</h4>
-    <p>
-      When you're writing code, it's nice to have a text
-      editor that is optimized for writing code, with features
-      like automatic color-coding of key words.
-      The default text editor on Mac OS X and Linux is usually set to Vim,
-      which is not famous for being intuitive.
-      if you accidentally find yourself stuck in it,
-      try typing the escape key,
-      followed by ':q!' (colon, lower-case 'q', exclamation mark),
-      then hitting Return
-      to return to the shell.
-    </p>
-    <h4>The Bash Shell</h4>
-    <p>
-      Bash is a commonly-used shell. Using a shell gives you
-      more power to do more tasks more quickly with your
-      computer.
-    </p>
-    <h4>Git</h4>
-    <p>
-      Git is a state-of-the-art version control system. It
-      lets you track who made changes to what when and has
-      options for easily updating a shared or public version of
-      your code on <a href="https://github.com/">github.com</a>.
-    </p>
-  </div>
-  <div class="span6">
-    <h4>Python</h4>
-    <p>
-      Python is becoming very popular in scientific computing,
-      and it's a great language for teaching general programming concepts due to its easy-to-read syntax.
-      We teach with Python version 2.7,
-      since it is still the most widely used.
-      Installing all the scientific packages for Python individually can be a bit difficult,
-      so we recommend an all-in-one installer.
-    </p>
-  </div>
-</div>
-
-<h3>Windows</h3>
-
-<div class="row-fluid">
-  <div class="span6">
-    <h4>Python</h4>
-    <ul>
-      <li>
-        Download and install  <a href="http://continuum.io/anacondace.html">Anaconda CE</a>.
-      </li>
-      <li>
-        Use all of the defaults for installation
-        <em>except</em>
-        make sure to check <strong>Make Anaconda the default Python</strong>.
-      </li>
-    </ul>
-    <h4>Git Bash</h4>
-    <p>
-      Install Git for Windows by download and running
-      <a href="http://msysgit.github.io/">the installer</a>.
-      This will provide you with both Git and Bash in the Git Bash program.
-    </p>
-    <h4>Software Carpentry Installer</h4>
-    <p>This installer requires an active internet connection</p>
-    <p>After installing Python and Git Bash:</p>
-    <ul>
-      <li>
-        Download the <a href="http://files.software-carpentry.org/SWCarpentryInstaller.exe">installer</a>.
-      </li>
-      <li>
-        If the file opens directly in the browser select <strong>File&rarr;Save Page As</strong>
-        to download it to your computer.
-      </li>
-      <li>
-        Double click on the file to run it.
-      </li>
-    </ul>
-  </div>
-  <div class="span6">
-    <h4>Editor</h4>
-    <p>
-      <code>nano</code> is the editor installed by the Software Carpentry Installer,
-      it is a basic editor integrated into the lesson material.
-    </p>
-    <p>
-      <a href="http://notepad-plus-plus.org/">Notepad++</a> is a
-      popular free code editor for Windows.
-      Be aware that you must add its installation directory to your system path
-      in order to launch it from the command line
-      (or have other tools like Git launch it for you).
-      Please ask your instructor to help you do this.
-    </p>
-  </div>
-</div>
-
-<h3>Mac OS X</h3>
-
-<div class="row-fluid">
-  <div class="span6">
-    <h4>Bash</h4>
-    <p>
-      The default shell in all versions of Mac OS X is bash,
-      so no need to install anything.  You access bash from
-      the Terminal (found
-      in <code>/Applications/Utilities</code>).  You may want
-      to keep Terminal in your dock for this workshop.
-    </p>
-    <h4>Editor</h4>
-    <p>
-      We recommend
-      <a href="http://www.barebones.com/products/textwrangler/">Text Wrangler</a> or
-      <a href="http://www.sublimetext.com/">Sublime Text</a>.
-      In a pinch, you can use <code>nano</code>,
-      which should be pre-installed.
-    </p>
-    <h4>Git</h4>
-    <p>
-      Install Git for Mac by downloading and running
-      <a href="http://git-scm.com/downloads">the installer</a>.  For older
-      versions of OS X (10.5-10.7) use the most recent available
-      installer <a href="https://code.google.com/p/git-osx-installer/downloads/list">available
-      here</a>. Use the Leopard installer for 10.5 and the Snow Leopard
-      installer for 10.6-10.7.
-    </p>
-  </div>
-  <div class="span6">
-    <h4>Python</h4>
-    <ul>
-      <!--li>
-        Download and install  <a href="http://continuum.io/anacondace.html">Anaconda CE</a>.
-      </li>
-      <li>
-        Use all of the defaults for installation
-        <em>except</em>
-        make sure to check <strong>Make Anaconda the default Python</strong>.
-      </li-->
-<li>You need to first install xcode,
-
-<ul>
-<li>xcode can be installed by going to the App Store. You need to install xcode, then goto the top left of your screen and click XCode -&gt; Preferences -&gt; Downloads, find &quot;command line tools&quot; and click install.</li>
-<li>xcode is a 1GB+ download so you will not have time to download it in class on Wednesday</li>
-<li>Note that the current version of xcode is only supported by OSX 10.7.4+ so we highly recommend you upgrade your operating system. If for whatever reason you absolutely cannot upgrade your os, you need to register for a free Apple developer account and download the appropriate version of xcode</li>
-</ul></li>
-<li>For 64 bit OSX, install <a href="https://store.continuum.io/cshop/anaconda">Anaconda CE</a>
-
-<ul>
-<li>By default this is installed in your home directory. Unless you know what you&#39;re doing, don&#39;t change it.</li>
-</ul></li>
-<li>For 32 bit OSX, install <a href="https://www2.enthought.com/accounts/register/?next=/licenses/academic">EPD academic</a></li>
-<li>Remember to read the <a href="http://docs.continuum.io/anaconda/install.html">documentation</a></li>
-<li>Remember to configure your <a href="#env">environment</a></li>
-    </ul>
-  </div>
-</div>
-
-<h3>Linux</h3>
-
-<div class="row-fluid">
-  <div class="span6">
-    <h4>Bash</h4>
-    <p>
-      The default shell is usually <code>bash</code>,
-      but if your machine is set up differently
-      you can run it by opening a terminal and typing <code>bash</code>.
-      There is no need to install anything.
-    </p>
-    <h4>Git</h4>
-    <p>
-      If Git is not already available on your machine you can try
-      to install it via your distro's package manager
-      (e.g. <code>apt-get</code> or <code>yum</code>).
-    </p>
-    <h4>Editor</h4>
-    <p>
-      <a href="http://kate-editor.org/">Kate</a> is one option for Linux users.
-      In a pinch, you can use <code>nano</code>,
-      which should be pre-installed.
-    </p>
-  </div>
-  <div class="span6">
-    <h4>Python</h4>
-    <p>
-      We recommend the all-in-one scientific Python installer
-      <a href="http://continuum.io/downloads.html">Anaconda</a>.
-      (Installation requires using the shell and if you aren't
-      comfortable doing the installation yourself just
-      download the installer and we'll help you at the workshop.)
-    </p>
-    <ol>
-      <li>
-        Download the installer that matches your operating
-        system and save it in your home folder.
-      </li>
-      <li>
-        Open a terminal window.
-      </li>
-      <li>
-        Type <pre>bash Anaconda-</pre> and then press
-        tab. The name of the file you just downloaded should
-        appear.
-      </li>
-      <li>
-        Press enter. You will follow the text-only
-        prompts. When there is a colon at the bottom of the
-        screen press the down arrow to move down through the
-        text. Type <code>yes</code> and press enter to approve
-        the license. Press enter to approve the default
-        location for the files. Type <code>yes</code> and
-        press enter to prepend Anaconda to
-        your <code>PATH</code> (this makes the Anaconda
-        distribution the default Python).
-      </li>
-      
-      <li> <strong>Hints</strong>
-
-		<ul>
-			<li>Try to install in your HOME directory (default) so you don&#39;t need sudo</li>
-			<li>Don&#39;t invoke the installer shell using sudo if installing into HOME directory</li>
-			<li>Remember to configure your <a href="#env">environment</a></li>
-			<li>Remember to read the <a href="http://docs.continuum.io/anaconda/install.html">documentation</a></li>
-		</ul>
-	  </li>
-
-    </ol>
-  </div>
-</div>
-
-
-<div class="row-fluid">
-    <h4>Virtual Machine</h4>
-    <p>
-      Sometimes the instructions above don't work. One way around this is
-      to use a virtual machine (VM)
-      rather than install software on your own computers. If all else fails, we will set you 
-      up with a Linux virtual machine. You can try this using the following instructions
-      and then follow the Linux instructions:
-      
-      <ul>
-<li>Download and unzip the <a href="http://www2.epcc.ed.ac.uk/%7Emichaelj/SoftwareCarpentry/">VM image</a>. </li>
-<li>Download <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a></li>
-<li>Run the installer</li>
-<li>Open VirtualBox Manager</li>
-<li>Click &quot;New&quot; to create new virtual machine</li>
-<li>Select &quot;Linux&quot; for Type and &quot;Ubuntu&quot; or &quot;Ubuntu (64-bit)&quot; for Version</li>
-<li>Next, allocate half of your memory for your VM.<br></li>
-<li>Next, select &quot;Use an existing virtual hard drive file&quot; and select the VDI file you downloaded</li>
-<li>Once the VM has been created, select it and click &quot;Start&quot;</li>
-<li>If the VM image you downloaded already has <em>guest-additions</em> installed then you can skip this step. Otherwise once the setup is complete you need to install <a href="http://virtualboxes.org/doc/installing-guest-additions-on-ubuntu/">guest additions</a>.</li>
-</ul>
-
-      
-      
-      
-       <!--We will provide VM image in advance to the workshop.-->
-    </p>
-    <!--ol-->
-      <!--li-->
-	<!--Install <a href="https://www.virtualbox.org/">VirtualBox</a-->
-      <!--/li-->
-      <!--li-->
-	<!--Download our <a href="{{site.vm_url}}">VM image</a-->
-	<!--strong>Warning:</strong-->
-	<!--this file is 1.7 GByte,-->
-	<!--so please download it <em>before</em> coming to your workshop.-->
-      <!--/li-->
-      <!--li-->
-	<!--Load the VM into VirtualBox by selecting "Import Appliance"-->
-	<!--and loading the <code>.ova</code> file.-->
-      <!--/li-->
-    <!--/ol-->
-</div>
-
-<h3>Installing matplotlib</h3>
-
-<div class="row-fluid">
-
-  <p align="justify">
-    <code>matplotlib</code> doesn't come with the standard Python installation. In addition, 
-    it depends on another library called <a href="http://www.numpy.org/">numpy</a>; which 
-    is also not included. The <a href="http://matplotlib.org/users/installing.html">
-    installing matplotlib page </a> provides detailed instructions for installing <code>
-    matplotlib</code> on Windows, Mac OS X, and Linux. Don't forget to 
-    <a href="http://www.scipy.org/install.html">download and install</a> numpy as well.
-  </p>
+           <div class="banner">
   
-  <p align="justify">In order to choose the correct downloads, you need to know which version of Python 
-  you're running. At the command-line, run <tt>python --version</tt> (ours says Python 2.7.2+). 
-  The first two numbers (2.7 for me) will give you an idea of which <tt>matplotlib</tt> file 
-  to choose. On Windows, we 
-  <a href="http://sourceforge.net/projects/matplotlib/files/matplotlib/matplotlib-1.1.0/">
-  downloaded the file</a> named "matplotlib-1.1.0.win32-py2.7.exe" because we have Python 2.7 
-  and a 32-bit installation of Python. The 
-  <a href="http://sourceforge.net/projects/numpy/files/NumPy/1.6.1/">numpy downloads</a> 
-  are named similarly; we downloaded "numpy-1.6.1-win32-superpack-python2.7.exe".
-  </p>
-
-  <p>Once everything is installed, you can check that it's working by running 
-  <tt>python</tt> and typing in the following code:
-  </p>
-
-  <pre>from matplotlib import pyplot</pre>
   
-  <p>If no errors are printed, then you should be set.</p>
-
-
 </div>
 
-<!--h3>Installing IPython</h3>
+           <h1 class="title"></h1>
+           <h2 class="subtitle"></h2>
+           <h1 id="prerequisites">Prerequisites</h1>
 
-<div class="row-fluid">
+<p>Prior to the workshop, you should ensure you have the following software installed on your laptop.</p>
 
-   <p align="justify">
-    <code>IPython</code> provides a rich toolkit to help you make the most out of using Python 
-    interactively. The <a href="http://ipython.org/ipython-doc/2/install/install.html">
-    installing IPython page </a> provides detailed instructions for installing <code>
-    IPython</code> on Windows, Mac OS X, and Linux. 
-  </p>
+<h2 id="text-editor">Text Editor</h2>
+<p>You are free to use your preferred text editor. If you don&#39;t have one, we recommend:</p>
 
+<h3 id="windows">Windows</h3>
+<p>Notepad++ [https://notepad-plus-plus.org/download/]</p>
 
-</div-->
+<h3 id="mac-os-x--linux">Mac OS X &amp; Linux</h3>
+<p>Nano, which Terminal based, installed by default). You can verify you have this installed by typing the following at a terminal:</p>
 
-<p><a id="env"></a></p>
+<p>~~~ {.python}
+nano
+~~~</p>
 
-<h3>Extra Help:  Configuring environment variables</h3>
+<h2 id="python">Python</h2>
+<p>We teach with Python 2.7, since it is still the most widely used version. We will also employ the numpy and matplotlib libraries and the nose unit testing framework.</p>
+
+<h3 id="mac-os-x">Mac OS X</h3>
+<p>Mac OS 10.9 Mavericks and 10.10 Yosemite ship with Python 2.7, numpy and matplotlib installed by default. You will need to install nose. Open a terminal and enter the following command:</p>
+
+<p>~~~ {.python}
+sudo easy_install nose
+~~~</p>
+
+<p>If you intend to use an earlier version of Mac OS X, please contact us before the event.</p>
+
+<h3 id="windows-1">Windows</h3>
+<p>We recommend the Anaconda Python distribution: [http://continuum.io/downloads]. This provides Python plus the required libraries and frameworks</p>
+
+<h3 id="linux">Linux</h3>
+<p>Most distros include Python 2.7 by default. Install the libraries in a terminal like this:</p>
 
 <ul>
-<li>Modify your shell configuration file, henceforth referred to as your <em>bashrc file</em>.
-
-<ul>
-<li>Mac OSX:  From your home directory (i.e., ~/) open either .bash<em>profile or .bash</em>aliases (create one if neither exists), add &quot;export PATH=/path/to/python:$PATH&quot;</li>
-<li>Linux:  From your home directory (i.e., ~/) open .bashrc (create one if neither exists), add &quot;export PATH=/path/to/python:$PATH&quot;</li>
-</ul></li>
-<li>Refresh your terminal by typing
-<code>
-source ~/.bashrc
-</code>
-or just opening a new terminal.</li>
-</ul>
-
-
-<h2>Before the workshop</h2>
-
-<p>
-There are a three extra tasks to undertake before the workshop in 
-order to help make sure things run smoothly. Please try to do the
-following.
-</p>
-
-<div class="row-fluid">
-  <div class="span6">
-
-<h3>1. Grab free accounts</h3>
-
-<p>
-If you haven't already, please register for free accounts to 
-<ul>
-<li>Make use of Github. Register <a href='https://github.com/'>here</a> and don't forget your password. We will use this service as part of the lesson on version control.</li>
-<li>Use the Met Office datapoint API. Register for an account 
-<a href='http://register.metoffice.gov.uk/register/datapoint'>here</a>. We will use this as a data source for some of the exercises.</li>
-</ul>
-</p>
-
-<h3>2. Take a look at Python</h3>
-
-<p>
-If you are new to Python, or you fear that your Python is rusty, it 
-may be worth taking a look at an online introduction. Christopher 
-Woods has a nice short introduction 
-<a href='http://chryswoods.com/beginning_python'>here</a>. 
-If you can follow this as 
-far as "conditions", you are good to go. We will be reviewing this 
-material anyway, so don't worry if you get stuck.
-</h>
-
-</div>
-<div class="span6">
-
-<h3>3. Check your setup</h3>
-<p>
-Finally, it is worth checking your setup, following the steps outlined 
-below.
-</p>
-<ul>
-  <li>
-    Download <a href="./setup/installation_test_1.py">installation_test_1.py</a>
+  <li>Ubuntu 14.04LTS and derivatives
+    <ul>
+      <li>sudo apt-get install python-numpy</li>
+      <li>python-matplotlib python-nose</li>
+    </ul>
   </li>
-  <li>Open up a bash shell</li>
-  <li>Change into the directory where you put the script</li>
-  <li>Run the script:
-    <pre>python installation_test_1.py</pre>
-  </li>
-</ul>
-<p>
-  To check you have the necessary software and tools:
-</p>
-<ul>
-  <li>
-    Download <a href="./setup/installation_test_2.py">installation_test_2.py</a>
-  </li>
-  <li>Open up a bash shell</li>
-  <li>Change into the directory where you put the script</li>
-  <li>Run the script:
-    <pre>python installation_test_2.py</pre>
+  <li>Fedora 22
+    <ul>
+      <li>su -</li>
+      <li>dnf install numpy python-matplotlib python-nose</li>
+    </ul>
   </li>
 </ul>
 
-</div>
+<h2 id="git">Git</h2>
+<p>In this workshop we will work with remote Git repositories hosted at Github. You should create an account there before the event. [https://github.com/join]</p>
 
-<h2>During the workshop</h2>
+<h3 id="windows-2">Windows</h3>
+<p>Download and install Git for Windows [http://git-scm.com/download/win]. You can accept the default installation options. In this workshop we will use Git via the Git Bash command line, installed as part of this package.</p>
 
-<p> We will make use of <a href="https://etherpad.mozilla.org/NGCMG-SSI-Workshop-June2015">this etherpad</a> during the workshop. Please use this to
- keep collaborative notes and ask (and answer) each others questions. </p>
- 
-</div>
+<h3 id="mac-os-x-1">Mac OS X</h3>
+<p>Git will be installed automatically the first time you try to run it.  Open  terminal and type:</p>
 
-</div>
-</div>
-</article>
+<p>~~~ {.python}
+git
+~~~</p>
 
-<div class="footer">
+<p>Follow the prompts to install the Apple command line development tools.</p>
 
+<h3 id="linux-1">Linux</h3>
+<p>Install via a terminal like this:</p>
+
+<ul>
+  <li>Ubuntu 14.04LTS and derivatives
+    <ul>
+      <li>sudo apt-get install git</li>
+    </ul>
+  </li>
+  <li>Fedora 22
+    <ul>
+      <li>su -</li>
+      <li>dnf install git</li>
+    </ul>
+  </li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="footer">
+  
   This work is derived from prior works that are Copyright © <a href="http://software-carpentry.org">Software Carpentry</a>
   <a class="label swc-blue-bg" href="LICENSE.html">License</a>
   <a class="label swc-blue-bg" href="https://github.com/softwaresaved/NGCMGSoton-2015-06-21">Source</a>
 </div>
 
+    </div>
+    <!-- Javascript placed at the end of the document so the pages load faster. -->
+<script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
+<script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
 
-<!-- Javascript placed at the end of the document so the pages load faster. -->
-<script src="{{site.swc_site}}/js/jquery-1.9.1.min.js"></script>
-<script src="{{site.swc_site}}/js/bootstrap/bootstrap.min.js"></script>
-
-</body>
+  </body>
 </html>
