@@ -65,9 +65,9 @@ CHECKS = [
 # Shell
     'virtual-shell',
 # Editors
-    'virtual-editor',
+    #'virtual-editor',
 # Browsers
-    'virtual-browser',
+    #'virtual-browser',
 # Version control
     'git',
     #'hg',              # Command line tool
@@ -75,8 +75,8 @@ CHECKS = [
     #'EasyMercurial',
 # Build tools and packaging
     #'make',
-    'virtual-pypi-installer',
-    'setuptools',
+    #'virtual-pypi-installer',
+    #'setuptools',
     #'xcode',
 # Testing
     'nosetests',       # Command line tool
