@@ -1,7 +1,7 @@
 ---
 layout: page
 root: ../..
-title: Test - Writing robust code and unit testing
+title: Writing robust code and unit testing
 ---
 
 # Getting the Right Answer
