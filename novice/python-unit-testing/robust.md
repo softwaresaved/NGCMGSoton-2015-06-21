@@ -1,7 +1,6 @@
 ---
 layout: page
-title: Intermediate Python
-subtitle: Quality Assurance
+title: Writing robust code and Unit Testing
 ---
 
 # Getting the Right Answer
