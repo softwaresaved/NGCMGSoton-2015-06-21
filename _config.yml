@@ -19,7 +19,21 @@ swc_vm          : "https://docs.google.com/uc?id=0B4Kr6DYkzkQtd05FekRId05DLXM&am
 # Settings for Jekyll - should not need to be modified.
 #--------------------------------------------------------------------------------
 markdown        : kramdown
+#markdown        : pandoc
 kramdown        :
   entity_output : as_input # &mdash; is output as &mdash;
   smart_quotes  : [39, 39, 34, 34] # decimal for left/right single/double quotes
 exclude         : [tools]
+
+pandoc:
+  skip: false
+  impose: false
+  output: ./tmp
+  flags: # '--smart --bibliography=ref.bib'
+  site_flags: #'--toc'
+  outputs:
+    pdf: #'--latex-engine=latex'
+    epub:
+    markdown:
+
+gems: [ 'jekyll-pandoc-multiple-formats' ]
