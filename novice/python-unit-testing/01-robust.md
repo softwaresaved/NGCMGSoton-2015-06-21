@@ -1,5 +1,6 @@
 ---
 layout: page
+root: ../..
 title: Writing robust code and Unit Testing
 ---
 
@@ -22,12 +23,11 @@ which means we need to:
 * write programs that check their own operation; and
 * write tests to catch the mistakes those self-checks miss.
 
-Along the way,
-we will learn:
-
-* how Python reports and handles errors;
-* how to use a unit testing framework;
-* when it's useful to write tests *before* writing code.
+> ## Learning Objectives {.objectives}
+>
+> * how Python reports and handles errors;
+> * how to use a unit testing framework;
+> * when it's useful to write tests *before* writing code.
 
 ## Defensive Programming
 
