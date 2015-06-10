@@ -4,7 +4,7 @@ h1, h2, h3, h4, h5, h6  {
 }
 
 h1, h2 {
-    margin-top: 40px;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
@@ -76,7 +76,7 @@ div.banner {
     height: 90px;
     margin: 0px;
     padding: 0;
-    border-bottom: 1px solid #A6A6A6;
+    /* border-bottom: 1px solid #A6A6A6; */
 }
 
 /* Padding around image in top banner. */
@@ -185,7 +185,8 @@ div.toc {
 
 /* Title styling */
 h1.title {
-    margin:40px 0px;
+    /* margin:40px; */
+    padding-bottom: 10px;
     border-bottom:1px solid #515151;
 }
 
@@ -303,3 +304,16 @@ table.bootcamps td.date {
 ul.checklist {
   list-style-image: url('/img/checkbox.png');
 }
+
+/* Code sample */
+pre.sourceCode,
+pre.input {
+    color: ForestGreen;
+}
+pre.output {
+    color: MediumBlue;
+}
+pre.error {
+    color: Red;
+}
+
