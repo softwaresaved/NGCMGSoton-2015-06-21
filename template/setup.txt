@@ -16,7 +16,8 @@ Set up infrastructure for using lesson template
    guidelines (these are only recommendations)
 
 6. Type 'make preview' to generate HTML files from all the markdown .md files
-   in the directory
+   in the directory. You can view the generated HTML files directly (i.e. as
+   files) in your browser without having to upload them to GitHub first.
 
 7. Add/commit all changed files into your local repository e.g.
    $ add .
