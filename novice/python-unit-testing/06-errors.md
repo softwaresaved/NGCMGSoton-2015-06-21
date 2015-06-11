@@ -29,14 +29,10 @@ open('nonexistent-file.txt', 'r')
 ~~~
 
 ~~~ {.output}
----------------------------------------------------------------------------
-IOError                                   Traceback (most recent call last)
-<ipython-input-13-58cbde3dd63c> in <module>()
-----> 1 open('nonexistent-file.txt', 'r')
-
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
 IOError: [Errno 2] No such file or directory: 'nonexistent-file.txt'
 ~~~
-
 
 ~~~ {.python}
 values = [0, 1, 2]
@@ -45,11 +41,8 @@ print values[999]
 
 ~~~ {.output}
 ---------------------------------------------------------------------------
-IndexError                                Traceback (most recent call last)
-<ipython-input-14-7fed13afc650> in <module>()
-      1 values = [0, 1, 2]
-----> 2 print values[999]
-
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
 IndexError: list index out of range
 ~~~
 
@@ -68,7 +61,7 @@ Whoops!
 
 When Python executes this code, it runs the statement inside the `try`. If that works, it skips over the `except` block without running it. If an exception occurs inside the `try` block, though, Python compares the type of the exception to the type specified by the `except`. If they match, it executes the code in the `except` block.
 
-`IOError` is the particular kind of exception Python raises when there is a problem related to input and output, such as files not existing or the program not having the permissions it needs to read them. We can put as many lines of code in a `try` block as we want, just as we can put many statements under an `if`. We can also handle several different kinds of errors afterward. For example, here's some code to calculate the entropy at each point in a grid:
+`IOError` is the particular kind of exception Python raises when there is a problem related to input and output, such as files not existing or the program not having the permissions it needs to read them. We can put as many lines of code in a `try` block as we want, just as we can put many statements under an `if`. We can also handle several different kinds of errors afterward. For example, here's some code to calculate the entropy at each point in a grid (no need to type this in):
 
 ```python
 try:

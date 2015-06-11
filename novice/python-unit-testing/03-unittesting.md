@@ -26,16 +26,12 @@ assert rectangle_area([0, 1, 4, 7]) == 24.0
 
 ~~~ {.output}
 ---------------------------------------------------------------------------
-AssertionError                            Traceback (most recent call last)
-<ipython-input-16-ebf7f5f1c120> in <module>()
-      3 assert rectangle_area([0, 0, 1, 1]) == 1.0
-      4 assert rectangle_area([1, 1, 4, 4]) == 9.0
-----> 5 assert rectangle_area([0, 1, 4, 7]) == 24.0
-
-AssertionError: 
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AssertionError
 ~~~
 
-This result is used,  in the sense that we know something's wrong, but look closely at what happens if we run the tests in a different order:
+This result is used, in the sense that we know something's wrong, but look closely at what happens if we run the tests in a different order:
 
 ~~~ {.python}
 assert rectangle_area([0, 1, 4, 7]) == 24.0
@@ -45,20 +41,28 @@ assert rectangle_area([0, 0, 1, 1]) == 1.0
 
 ~~~ {.output}
 ---------------------------------------------------------------------------
-AssertionError                            Traceback (most recent call last)
-<ipython-input-17-548f3f32c981> in <module>()
-----> 1 assert rectangle_area([0, 1, 4, 7]) == 24.0
-      2 assert rectangle_area([1, 1, 4, 4]) == 9.0
-      3 assert rectangle_area([0, 0, 1, 1]) == 1.0
-
-AssertionError: 
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AssertionError
 ~~~
 
 Python halts at the first failed assertion, so the second and third tests aren't run at all. It would be more helpful if we could get data from all of our tests every time they're run, since the more information we have, the faster we're likely to be able to track down bugs. It would also be helpful to have some kind of summary report: if our test suite includes thirty or forty tests (as it well might for a complex function or library that's widely used), we'd like to know how many passed or failed.
 
-Here's a different approach. First, let's put each test in a function with a meaningful name:
+So - let's look at the code to see what's wrong.
 
 ~~~ {.python}
+def rectangle_area(coords):
+    x0, y0, x1, y1 = coords
+    return (x1 - x0) * (x1 - y0)
+~~~
+
+Clearly `x1 - y0` should be `y1-y0`! But let's not fix it yet...
+
+Here's a different approach. First, let's create a new file called `test_rectangle2.py` (note the `test_` prefix - this is important!), and put each test in a function with a meaningful name.
+
+~~~ {.python}
+from rectangle2 import rectangle_area
+
 def test_unit_square():
     assert rectangle_area([0, 0, 1, 1]) == 1.0
 
@@ -69,42 +73,55 @@ def test_actual_rectangle():
     assert rectangle_area([0, 1, 4, 7]) == 24.0
 ~~~
 
-Next, import a library called `ears` and ask it to run our tests for us:
+Next, we can use the `nose` package to run our tests for us:
 
-~~~ {.python}
-from code import ears
-ears.run()
+~~~ {.in}
+$ nosetests
 ~~~
 
 ~~~ {.output}
-..f
-2 pass, 1 fail, 0 error
-----------------------------------------
-fail: test_actual_rectangle
+..F
+======================================================================
+FAIL: test_rectangle2.test_actual_rectangle
+----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "ears.py", line 45, in run
-    test()
-  File "<ipython-input-18-643689ad0a0f>", line 8, in test_actual_rectangle
+  File "/Library/Python/2.7/site-packages/nose-1.3.7-py2.7.egg/nose/case.py", line 197, in runTest
+    self.test(*self.arg)
+  File "/Users/user/Projects/SSI/NGCM/novice/python-unit-testing/code/test_rectangle2.py", line 10, in test_actual_rectangle
     assert rectangle_area([0, 1, 4, 7]) == 24.0
 AssertionError
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.003s
+
+FAILED (failures=1)
 ~~~
 
-`ears.run` looks in the calling program for functions whose names start with the letters `'test_'` and runs each one. If the function complete without an assertion being triggered, we count the test as a *success*. If an assertion fails, we count the test as a *failure*. but if any other exception occurs, we count it as an *error*. because the odds are that the test itself is broken.
+`nosetests` looks for files with a ``test_`` prefix and runs them, looking for functions whose names also start with the letters `'test_'` and runs each one:
 
-`ears` is an xUnit testing library. The name "xUnit" comes from the fact that
-many of them are imitations of a Java testing library called JUnit. The [Wikipedia page](http://en.wikipedia.org/wiki/List_of_unit_testing_frameworks) on the subject lists dozens of similar frameworks in almost as many languages,
+-  If the function completes without an assertion being triggered, we count the test as a *success*
+-  If an assertion fails, we count the test as a *failure*.
+-  If any other exception occurs, we count it as an *error*, because the odds are that the test itself is broken.
+
+So now we can fix our code in rectangle2.py, so it should read:
+
+~~~ {.python}
+def rectangle_area(coords):
+    x0, y0, x1, y1 = coords
+    return (x1 - x0) * (y1 - y0)
+~~~
+
+`nose` is an xUnit testing library. The name "xUnit" comes from the fact that many of them are imitations of a Java testing library called JUnit. The [Wikipedia page](http://en.wikipedia.org/wiki/List_of_unit_testing_frameworks) on the subject lists dozens of similar frameworks in almost as many languages,
 all of which have a similar structure: each test is a single function that follows some naming convention (e.g., starts with `'test_'`), and the framework runs them in some order and reports how many passed, failed, or were broken.
 
 > ## Challenges {.challenge}
 > 
-> 1.  A colleague of yours has written a function that calculates the running total of the values in a list,
->     e.g.,
+> 1.  A colleague of yours has written a function that calculates the running total of the values in a list, e.g.,
 >     `running([0, 1, 2])` produces the list `[0, 1, 3]`.
 >     Load this function into your notebook using `from running import running`,
->     and then write some unit tests for it using the `ears` library
->     to see what bugs you can find.
+>     and then write some unit tests for it using `nose` in a test_running.py
+>     file to see what bugs you can find.
 > 
-> 2.  Some programmers put assertions in their programs to catch errors when they occur;
->     others prefer to write unit tests to check that the program is behaving properly.
+> 2.  Some programmers put assertions in their programs to catch errors when they occur; others prefer to write unit tests to check that the program is behaving properly.
 >     Which do you think makes programs easier to read?
 >     Which do you think makes them easier to maintain as they change over time?

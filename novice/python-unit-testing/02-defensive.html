@@ -47,17 +47,9 @@
 total = <span class="fl">0.0</span>
 <span class="kw">for</span> n in numbers:
     <span class="kw">assert</span> n &gt;= <span class="fl">0.0</span>, <span class="st">&#39;Data should only contain positive values&#39;</span>
-    total += n
-<span class="dt">print</span> <span class="st">&#39;total is:&#39;</span>, total</code></pre>
-<pre class="output"><code>---------------------------------------------------------------------------
-AssertionError                            Traceback (most recent call last)
-&lt;ipython-input-1-33d87ea29ae4&gt; in &lt;module&gt;()
-      2 total = 0.0
-      3 for n in numbers:
-----&gt; 4     assert n &gt;= 0.0, &#39;Data should only contain positive values&#39;
-      5     total += n
-      6 print &#39;total is:&#39;, total
-
+    total += n</code></pre>
+<pre class="output"><code>Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 2, in &lt;module&gt;
 AssertionError: Data should only contain positive values</code></pre>
 <p>Programs like the Firefox browser are littered with assertions: 10-20% of the code they contain are there to check that the other 80-90% are working correctly.</p>
 <p>Broadly speaking, assertions fall into three categories:</p>
@@ -66,7 +58,7 @@ AssertionError: Data should only contain positive values</code></pre>
 <li>A <strong>postcondition</strong> is something that the function guarantees is true when it finishes.</li>
 <li>An <strong>invariant</strong> something that is always true at a particular point inside a piece of code.</li>
 </ul>
-<p>For example, suppose we are representing rectangles using a tuple of four coordinates <code>(x0, y0, x1, y1)</code>. In order to do some calculations, we need to normalize the rectangle so that it is at the origin and 1.0 units long on its longest axis. This function does that, but checks that its input is correctly formatted and that its result makes sense:</p>
+<p>For example, let’s look at rectangle1.py (in the code subdirectory). Suppose we are representing rectangles using a tuple of four coordinates <code>(x0, y0, x1, y1)</code>. In order to do some calculations, we need to normalize the rectangle so that it is at the origin and 1.0 units long on its longest axis. The function does that, but checks that its input is correctly formatted and that its result makes sense:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> normalize_rectangle(rect):
     <span class="kw">assert</span> <span class="dt">len</span>(rect) == <span class="dv">4</span>, <span class="st">&#39;Rectangles must contain 4 coordinates&#39;</span>
     x0, y0, x1, y1 = rect
@@ -86,55 +78,31 @@ AssertionError: Data should only contain positive values</code></pre>
     <span class="kw">assert</span> <span class="dv">0</span> &lt; upper_y &lt;= <span class="fl">1.0</span>, <span class="st">&#39;Calculated upper Y coordinate invalid&#39;</span>
 
     <span class="kw">return</span> (<span class="dv">0</span>, <span class="dv">0</span>, upper_x, upper_y)</code></pre>
-<p>The preconditions on lines 2, 4, and 5 catch invalid inputs:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> normalize_rectangle( (<span class="fl">0.0</span>, <span class="fl">1.0</span>, <span class="fl">2.0</span>) ) <span class="co"># missing the fourth coordinate</span></code></pre>
-<pre class="output"><code>--------------------------------------------------------------------------
-AssertionError                            Traceback (most recent call last)
-&lt;ipython-input-22-3a97b1dcab70&gt; in &lt;module&gt;()
-----&gt; 1 print normalize_rectangle( (0.0, 1.0, 2.0) ) # missing the fourth coordinate
-
-&lt;ipython-input-21-fdb49ef456c2&gt; in normalize_rectangle(rect)
-      1 def normalize_rectangle(rect):
-----&gt; 2     assert len(rect) == 4, &#39;Rectangles must contain 4 coordinates&#39;
-      3     x0, y0, x1, y1 = rect
-      4     assert x0 &lt; x1, &#39;Invalid X coordinates&#39;
-      5     assert y0 &lt; y1, &#39;Invalid Y coordinates&#39;
-
+<p>The preconditions on lines 2, 4, and 5 catch invalid inputs. Before you try the next bit, make sure you <code>cd</code> to the code subdirectory first!</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> rectangle1 <span class="ch">import</span> normalize_rectangle
+<span class="dt">print</span> normalize_rectangle( (<span class="fl">0.0</span>, <span class="fl">1.0</span>, <span class="fl">2.0</span>) ) <span class="co"># missing the fourth coordinate</span></code></pre>
+<pre class="output"><code>Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+  File &quot;rectangle1.py&quot;, line 2, in normalize_rectangle
+    assert len(rect) == 4, &#39;Rectangles must contain 4 coordinates&#39;
 AssertionError: Rectangles must contain 4 coordinates</code></pre>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> normalize_rectangle( (<span class="fl">4.0</span>, <span class="fl">2.0</span>, <span class="fl">1.0</span>, <span class="fl">5.0</span>) ) <span class="co"># X axis inverted</span></code></pre>
-<pre class="output"><code>---------------------------------------------------------------------------
-AssertionError                            Traceback (most recent call last)
-&lt;ipython-input-23-f05ae7878a45&gt; in &lt;module&gt;()
-----&gt; 1 print normalize_rectangle( (4.0, 2.0, 1.0, 5.0) ) # X axis inverted
-
-&lt;ipython-input-21-fdb49ef456c2&gt; in normalize_rectangle(rect)
-      2     assert len(rect) == 4, &#39;Rectangles must contain 4 coordinates&#39;
-      3     x0, y0, x1, y1 = rect
-----&gt; 4     assert x0 &lt; x1, &#39;Invalid X coordinates&#39;
-      5     assert y0 &lt; y1, &#39;Invalid Y coordinates&#39;
-      6 
-
+<pre class="output"><code>Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+  File &quot;rectangle1.py&quot;, line 4, in normalize_rectangle
+    assert x0 &lt; x1, &#39;Invalid X coordinates&#39;
 AssertionError: Invalid X coordinates</code></pre>
 <p>The post-conditions help us catch bugs by telling us when our calculations cannot have been correct. For example, if we normalize a rectangle that is taller than it is wide everything seems OK:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> normalize_rectangle( (<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">1.0</span>, <span class="fl">5.0</span>) )</code></pre>
-<pre class="output"><code>(0, 0, 0.2, 1.0)
-</code></pre>
+<pre class="output"><code>(0, 0, 0.2, 1.0)</code></pre>
 <p>but if we normalize one that’s wider than it is tall, the assertion is triggered:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> normalize_rectangle( (<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">5.0</span>, <span class="fl">1.0</span>) )</code></pre>
-<pre class="output"><code>---------------------------------------------------------------------------
-AssertionError                            Traceback (most recent call last)
-&lt;ipython-input-27-5f0ef7954aeb&gt; in &lt;module&gt;()
-----&gt; 1 print normalize_rectangle( (0.0, 0.0, 5.0, 1.0) )
-
-&lt;ipython-input-21-fdb49ef456c2&gt; in normalize_rectangle(rect)
-     15 
-     16     assert 0 &lt; upper_x &lt;= 1.0, &#39;Calculated upper X coordinate invalid&#39;
----&gt; 17     assert 0 &lt; upper_y &lt;= 1.0, &#39;Calculated upper Y coordinate invalid&#39;
-     18 
-     19     return (0, 0, upper_x, upper_y)
-
+<pre class="output"><code>Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+  File &quot;rectangle1.py&quot;, line 17, in normalize_rectangle
+    assert 0 &lt; upper_y &lt;= 1.0, &#39;Calculated upper Y coordinate invalid&#39;
 AssertionError: Calculated upper Y coordinate invalid</code></pre>
-<p>Re-reading our function, we realize that line 10 should divide <code>dy</code> by <code>dx</code> rather than <code>dx</code> by <code>dy</code>. (You can display line numbers by typing Ctrl-M, then L.) If we had left out the assertion at the end of the function, we would have created and returned something that looked like a valid answer, but wasn’t; detecting and debugging that would almost certainly have taken more time in the long run than writing the assertion.</p>
+<p>Re-reading our function, we realize that line 10 should divide <code>dy</code> by <code>dx</code> rather than <code>dx</code> by <code>dy</code>. If we had left out the assertion at the end of the function, we would have created and returned something that looked like a valid answer, but wasn’t; detecting and debugging that would almost certainly have taken more time in the long run than writing the assertion.</p>
 <p>But assertions aren’t just about catching errors: they also help people understand programs. Each assertion gives the person reading the program a chance to check (consciously or otherwise) that their understanding matches what the code is doing.</p>
 <p>Most good programmers follow two rules when adding assertions to their code.</p>
 <ul>

@@ -41,6 +41,7 @@ check: $(ALL_MD)
 clean :
 	@rm -rf $$(find . -name '*~' -print)
 	@rm -rf $(DST_HTML)
+	@rm -rf $$(find . -name '*.pyc' -print)
 
 ## preview  : Build website locally for checking.
 preview : $(DST_ALL)

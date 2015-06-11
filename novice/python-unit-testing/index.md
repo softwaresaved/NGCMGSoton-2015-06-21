@@ -14,7 +14,7 @@ Does the code developed by you work the way it should do? Can you (or others) ve
 
 *  [Introduction](01-intro.html)
 *  [Defensive Programming](02-defensive.html)
-*  [Handling Errors](03-errors.html)
-*  [Limits to Testing](04-testinglimits.html)
-*  [Unit Testing](05-unittesting.html)
-*  [Test-Driven Development](06-tdd.html)
+*  [Unit Testing](03-unittesting.html)
+*  [Test-Driven Development](04-tdd.html)
+*  [Limits to Testing](05-testinglimits.html)
+*  [Handling Errors](06-errors.html)

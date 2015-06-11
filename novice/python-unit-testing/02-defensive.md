@@ -27,19 +27,11 @@ total = 0.0
 for n in numbers:
     assert n >= 0.0, 'Data should only contain positive values'
     total += n
-print 'total is:', total
 ~~~
 
 ~~~ {.output}
----------------------------------------------------------------------------
-AssertionError                            Traceback (most recent call last)
-<ipython-input-1-33d87ea29ae4> in <module>()
-      2 total = 0.0
-      3 for n in numbers:
-----> 4     assert n >= 0.0, 'Data should only contain positive values'
-      5     total += n
-      6 print 'total is:', total
-
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
 AssertionError: Data should only contain positive values
 ~~~
 
@@ -51,7 +43,7 @@ Broadly speaking, assertions fall into three categories:
 -   A **postcondition** is something that the function guarantees is true when it finishes.
 -   An **invariant** something that is always true at a particular point inside a piece of code.
 
-For example, suppose we are representing rectangles using a tuple of four coordinates `(x0, y0, x1, y1)`. In order to do some calculations, we need to normalize the rectangle so that it is at the origin and 1.0 units long on its longest axis. This function does that, but checks that its input is correctly formatted and that its result makes sense:
+For example, let's look at rectangle1.py (in the code subdirectory). Suppose we are representing rectangles using a tuple of four coordinates `(x0, y0, x1, y1)`. In order to do some calculations, we need to normalize the rectangle so that it is at the origin and 1.0 units long on its longest axis. The function does that, but checks that its input is correctly formatted and that its result makes sense:
 
 ~~~ {.python}
 def normalize_rectangle(rect):
@@ -75,25 +67,18 @@ def normalize_rectangle(rect):
     return (0, 0, upper_x, upper_y)
 ~~~
 
-The preconditions on lines 2, 4, and 5 catch invalid inputs:
+The preconditions on lines 2, 4, and 5 catch invalid inputs. Before you try the next bit, make sure you `cd` to the code subdirectory first!
 
 ~~~ {.python}
+from rectangle1 import normalize_rectangle
 print normalize_rectangle( (0.0, 1.0, 2.0) ) # missing the fourth coordinate
 ~~~
 
 ~~~ {.output}
---------------------------------------------------------------------------
-AssertionError                            Traceback (most recent call last)
-<ipython-input-22-3a97b1dcab70> in <module>()
-----> 1 print normalize_rectangle( (0.0, 1.0, 2.0) ) # missing the fourth coordinate
-
-<ipython-input-21-fdb49ef456c2> in normalize_rectangle(rect)
-      1 def normalize_rectangle(rect):
-----> 2     assert len(rect) == 4, 'Rectangles must contain 4 coordinates'
-      3     x0, y0, x1, y1 = rect
-      4     assert x0 < x1, 'Invalid X coordinates'
-      5     assert y0 < y1, 'Invalid Y coordinates'
-
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "rectangle1.py", line 2, in normalize_rectangle
+    assert len(rect) == 4, 'Rectangles must contain 4 coordinates'
 AssertionError: Rectangles must contain 4 coordinates
 ~~~
 
@@ -102,18 +87,10 @@ print normalize_rectangle( (4.0, 2.0, 1.0, 5.0) ) # X axis inverted
 ~~~
 
 ~~~ {.output}
----------------------------------------------------------------------------
-AssertionError                            Traceback (most recent call last)
-<ipython-input-23-f05ae7878a45> in <module>()
-----> 1 print normalize_rectangle( (4.0, 2.0, 1.0, 5.0) ) # X axis inverted
-
-<ipython-input-21-fdb49ef456c2> in normalize_rectangle(rect)
-      2     assert len(rect) == 4, 'Rectangles must contain 4 coordinates'
-      3     x0, y0, x1, y1 = rect
-----> 4     assert x0 < x1, 'Invalid X coordinates'
-      5     assert y0 < y1, 'Invalid Y coordinates'
-      6 
-
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "rectangle1.py", line 4, in normalize_rectangle
+    assert x0 < x1, 'Invalid X coordinates'
 AssertionError: Invalid X coordinates
 ~~~
 
@@ -125,33 +102,23 @@ print normalize_rectangle( (0.0, 0.0, 1.0, 5.0) )
 
 ~~~ {.output}
 (0, 0, 0.2, 1.0)
-
 ~~~
 
-but if we normalize one that's wider than it is tall,
-the assertion is triggered:
+but if we normalize one that's wider than it is tall, the assertion is triggered:
 
 ~~~ {.python}
 print normalize_rectangle( (0.0, 0.0, 5.0, 1.0) )
 ~~~
 
 ~~~ {.output}
----------------------------------------------------------------------------
-AssertionError                            Traceback (most recent call last)
-<ipython-input-27-5f0ef7954aeb> in <module>()
-----> 1 print normalize_rectangle( (0.0, 0.0, 5.0, 1.0) )
-
-<ipython-input-21-fdb49ef456c2> in normalize_rectangle(rect)
-     15 
-     16     assert 0 < upper_x <= 1.0, 'Calculated upper X coordinate invalid'
----> 17     assert 0 < upper_y <= 1.0, 'Calculated upper Y coordinate invalid'
-     18 
-     19     return (0, 0, upper_x, upper_y)
-
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "rectangle1.py", line 17, in normalize_rectangle
+    assert 0 < upper_y <= 1.0, 'Calculated upper Y coordinate invalid'
 AssertionError: Calculated upper Y coordinate invalid
 ~~~
 
-Re-reading our function, we realize that line 10 should divide `dy` by `dx` rather than `dx` by `dy`. (You can display line numbers by typing Ctrl-M, then L.) If we had left out the assertion at the end of the function, we would have created and returned something that looked like a valid answer, but wasn't; detecting and debugging that would almost certainly have taken more time in the long run than writing the assertion.
+Re-reading our function, we realize that line 10 should divide `dy` by `dx` rather than `dx` by `dy`. If we had left out the assertion at the end of the function, we would have created and returned something that looked like a valid answer, but wasn't; detecting and debugging that would almost certainly have taken more time in the long run than writing the assertion.
 
 But assertions aren't just about catching errors: they also help people understand programs. Each assertion gives the person reading the program a chance to check (consciously or otherwise) that their understanding matches what the code is doing.
 
