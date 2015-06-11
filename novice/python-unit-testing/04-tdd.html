@@ -61,8 +61,18 @@ OK</code></pre>
 <li>modify it until it passes all of the tests, then</li>
 <li>clean up the function, i.e., make it more readable or more efficient without breaking any of the tests.</li>
 </ol>
-<p>The mantra often used during TDD is “<em>red, green, refactor</em>”: get a red light (i.e., some failing tests), make it turn green (i.e., get something working), and then clean it up by refactoring. This cycle should take anywhere from a couple of minutes to an hour or so. If it takes longer than that, the change being made is probably too large, and should be broken down into smaller (and more comprehensible) steps.</p>
-<p>TDD’s proponents argue that it helps people produce better code for two reasons. First, it encourages them to write code in small, self-contained chunks, and to actually write tests for those chunks. Second, it frees them from <em>confirmation bias</em>: since they haven’t written their function yet, their subconscious cannot steer their testing toward proving it correct rather than finding errors.</p>
+<p>The mantra often used during TDD is “<em>red, green, refactor</em>”:</p>
+<ul>
+<li>Get a red light (i.e., some failing tests)</li>
+<li>Make it turn green (i.e., get something working)</li>
+<li>Then clean it up by refactoring</li>
+</ul>
+<p>This cycle should take anywhere from a couple of minutes to an hour or so. If it takes longer than that, the change being made is probably too large, and should be broken down into smaller (and more comprehensible) steps.</p>
+<p>TDD’s proponents argue that it helps people produce better code for two reasons:</p>
+<ul>
+<li>It encourages them to write code in small, self-contained chunks, and to actually write tests for those chunks</li>
+<li>It frees them from <em>confirmation bias</em>: since they haven’t written their function yet, their subconscious cannot steer their testing toward proving it correct rather than finding errors.</li>
+</ul>
 <p>Empirical studies of TDD have had mixed results: some have found it beneficial, while others have found no effect. But even if you don’t use it day to day, trying it a few times helps you learn how to design functions and programs that are easier to test.</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">

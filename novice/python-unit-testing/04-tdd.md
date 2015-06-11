@@ -55,11 +55,18 @@ Unit tests are actually such a good way to define how functions ought to behave 
 3. modify it until it passes all of the tests, then
 4. clean up the function, i.e., make it more readable or more efficient without breaking any of the tests.
 
-The mantra often used during TDD is "*red, green, refactor*": get a red light (i.e., some failing tests), make it turn green (i.e., get something working),
-and then clean it up by refactoring. This cycle should take anywhere from a couple of minutes to an hour or so. If it takes longer than that, the change being made is probably too large, and should be broken down into smaller (and more comprehensible) steps.
+The mantra often used during TDD is "*red, green, refactor*":
 
-TDD's proponents argue that it helps people produce better code for two reasons.
-First, it encourages them to write code in small, self-contained chunks, and to actually write tests for those chunks. Second, it frees them from *confirmation bias*: since they haven't written their function yet, their subconscious cannot steer their testing toward proving it correct rather than finding errors.
+-   Get a red light (i.e., some failing tests)
+-   Make it turn green (i.e., get something working)
+-   Then clean it up by refactoring
+
+This cycle should take anywhere from a couple of minutes to an hour or so. If it takes longer than that, the change being made is probably too large, and should be broken down into smaller (and more comprehensible) steps.
+
+TDD's proponents argue that it helps people produce better code for two reasons:
+
+-   It encourages them to write code in small, self-contained chunks, and to actually write tests for those chunks
+-   It frees them from *confirmation bias*: since they haven't written their function yet, their subconscious cannot steer their testing toward proving it correct rather than finding errors.
 
 Empirical studies of TDD have had mixed results: some have found it beneficial,
 while others have found no effect. But even if you don't use it day to day,
