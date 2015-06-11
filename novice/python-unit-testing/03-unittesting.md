@@ -2,7 +2,7 @@
 layout: page
 title: Writing Robust Code and Unit Testing
 subtitle: Unit Testing
-minutes: 15
+minutes: 20
 ---
 
 Most people don't enjoy writing tests, so if we want them to actually do it, it must be easy to:

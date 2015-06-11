@@ -2,7 +2,7 @@
 layout: page
 title: Writing Robust Code and Unit Testing
 subtitle: Defensive Programming
-minutes: 15
+minutes: 20
 ---
 
 We made several mistakes while writing the programs in our first few lessons:
