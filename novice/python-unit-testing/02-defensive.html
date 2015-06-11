@@ -30,8 +30,19 @@
         <div class="col-md-10 col-md-offset-1">
                     <a href="index.html"><h1 class="title">Writing Robust Code and Unit Testing</h1></a>
           <h2 class="subtitle">Defensive Programming</h2>
-          <p>We made several mistakes while writing the programs in our first few lessons. How can we be sure that there aren’t still errors lurking in the code we have? And how can we guard against introducing new errors in code as we modify it?</p>
-<p>The first step is to use <em>defensive programming</em>, i.e., to assume that mistakes <em>will</em> happen and to guard against them. One way to do this is to add <em>assertions</em> to our code so that it checks itself as it runs. An assertion is simply a statement that something must be true at a certain point in a program. When Python sees one, it checks that the assertion’s condition. If it’s true, Python does nothing, but if it’s false, Python halts the program immediately and prints the error message provided. For example, this piece of code halts as soon as the loop encounters a value that isn’t positive:</p>
+          <p>We made several mistakes while writing the programs in our first few lessons:</p>
+<ul>
+<li>Are there still errors lurking in the code we have?</li>
+<li>How can we guard against introducing new errors in code as we modify it?</li>
+</ul>
+<!-- include mention of research into searching for bugs in same place -->
+<p>The first step is to use <em>defensive programming</em>, i.e., to assume that mistakes <em>will</em> happen and to guard against them.</p>
+<p>One way to do this is to add <em>assertions</em> to our code so that it checks itself as it runs. An assertion is simply a statement that something must be true at a certain point in a program. When Python sees one, it checks that the assertion’s condition:</p>
+<ul>
+<li>If it’s true, Python does nothing</li>
+<li>If it’s false, Python halts the program immediately and prints the error message provided</li>
+</ul>
+<p>For example, this piece of code halts as soon as the loop encounters a value that isn’t positive:</p>
 <pre class="sourceCode python"><code class="sourceCode python">numbers = [<span class="fl">1.5</span>, <span class="fl">2.3</span>, <span class="fl">0.7</span>, -<span class="fl">0.001</span>, <span class="fl">4.4</span>]
 total = <span class="fl">0.0</span>
 <span class="kw">for</span> n in numbers:
@@ -48,7 +59,8 @@ AssertionError                            Traceback (most recent call last)
       6 print &#39;total is:&#39;, total
 
 AssertionError: Data should only contain positive values</code></pre>
-<p>Programs like the Firefox browser are littered with assertions: 10-20% of the code they contain are there to check that the other 80-90% are working correctly. Broadly speaking, assertions fall into three categories:</p>
+<p>Programs like the Firefox browser are littered with assertions: 10-20% of the code they contain are there to check that the other 80-90% are working correctly.</p>
+<p>Broadly speaking, assertions fall into three categories:</p>
 <ul>
 <li>A <strong>precondition</strong> is something that must be true at the start of a function in order for it to work correctly.</li>
 <li>A <strong>postcondition</strong> is something that the function guarantees is true when it finishes.</li>
@@ -124,16 +136,18 @@ AssertionError                            Traceback (most recent call last)
 AssertionError: Calculated upper Y coordinate invalid</code></pre>
 <p>Re-reading our function, we realize that line 10 should divide <code>dy</code> by <code>dx</code> rather than <code>dx</code> by <code>dy</code>. (You can display line numbers by typing Ctrl-M, then L.) If we had left out the assertion at the end of the function, we would have created and returned something that looked like a valid answer, but wasn’t; detecting and debugging that would almost certainly have taken more time in the long run than writing the assertion.</p>
 <p>But assertions aren’t just about catching errors: they also help people understand programs. Each assertion gives the person reading the program a chance to check (consciously or otherwise) that their understanding matches what the code is doing.</p>
-<p>Most good programmers follow two rules when adding assertions to their code. The first is, “<strong>fail early, fail often</strong>”. The greater the distance between when and where an error occurs and when it’s noticed, the harder the error will be to debug, so good code catches mistakes as early as possible.</p>
-<!-- include mention of research into searching for bugs in same place -->
-<p>The second rule is, “<strong>turns bugs into assertions or tests</strong>”. If you made a mistake in a piece of code, the odds are good that you have made other mistakes nearby, or will make the same mistake (or a related one) the next time you change it. Writing assertions to check that you haven’t <em>regressed</em> (i.e., haven’t re-introduced an old problem) can save a lot of time in the long run, and helps to warn people who are reading the code (including your future self) that this bit is tricky.</p>
+<p>Most good programmers follow two rules when adding assertions to their code.</p>
+<ul>
+<li><p>The first is, “<strong>fail early, fail often</strong>”. The greater the distance between when and where an error occurs and when it’s noticed, the harder the error will be to debug, so good code catches mistakes as early as possible.</p></li>
+<li><p>The second rule is, “<strong>turns bugs into assertions or tests</strong>”. If you made a mistake in a piece of code, the odds are good that you have made other mistakes nearby, or will make the same mistake (or a related one) the next time you change it. Writing assertions to check that you haven’t <em>regressed</em> (i.e., haven’t re-introduced an old problem) can save a lot of time in the long run, and helps to warn people who are reading the code (including your future self) that this bit is tricky.</p></li>
+</ul>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
 <h2 id="challenges"><span class="glyphicon glyphicon-pencil"></span>Challenges</h2>
 </div>
 <div class="panel-body">
 <ol style="list-style-type: decimal">
-<li><p>Suppose you are writing a function called <code>average</code> that calculates the average of the numbers in a list. What pre-conditions and post-conditions would you write for it? Compare your answer to your neighbor’s: can you think of a function that will past your tests but not hers or vice versa?</p></li>
+<li><p>Suppose you are writing a function called <code>average</code> that calculates the average of the numbers in a list. What pre-conditions and post-conditions would you write for it? Compare your answer to your neighbor’s: can you think of a function that will pass your tests but not hers or vice versa?</p></li>
 <li><p>Explain in words what the assertions in this code check, and for each one, give an example of input that will make that assertion fail.</p>
 <pre><code>def running(values):
     assert len(values) &gt; 0

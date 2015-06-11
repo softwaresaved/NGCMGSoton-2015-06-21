@@ -73,7 +73,12 @@ IndexError: list index out of range</code></pre>
     report_error_and_exit(<span class="st">&#39;IO error&#39;</span>)
 <span class="kw">except</span> <span class="ot">ArithmeticError</span>:
     report_error_and_exit(<span class="st">&#39;Arithmetic error&#39;</span>)</code></pre>
-<p>Python tries to run the four functions inside the <code>try</code> as normal. If an error occurs in any of them, Python immediately jumps down and tries to find an <code>except</code> of the corresponding type: if the exception is an <code>IOError</code>, Python jumps into the first error handler, while if it’s an <code>ArithmeticError</code>, Python jumps into the second handler instead. It will only execute one of these, just as it will only execute one branch of a series of <code>if</code>/<code>elif</code>/<code>else</code> statements.</p>
+<p>Python tries to run the four functions inside the <code>try</code> as normal. If an error occurs in any of them, Python immediately jumps down and tries to find an <code>except</code> of the corresponding type:</p>
+<ul>
+<li><code>IOError</code> - Python jumps into the first error handler</li>
+<li><code>ArithmeticError</code> - Python jumps into the second handler instead.</li>
+</ul>
+<p>It will only execute one of these, just as it will only execute one branch of a series of <code>if</code>/<code>elif</code>/<code>else</code> statements.</p>
 <p>This layout has made the code easier to read, but we’ve lost something important: the message printed out by the <code>IOError</code> branch doesn’t tell us which file caused the problem. We can do better if we capture and hang on to the object that Python creates to record information about the error:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">try</span>:
     params = read_params(param_file)

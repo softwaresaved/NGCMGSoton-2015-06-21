@@ -5,11 +5,21 @@ subtitle: Defensive Programming
 minutes: 15
 ---
 
-We made several mistakes while writing the programs in our first few lessons.
-How can we be sure that there aren't still errors lurking in the code we have?
-And how can we guard against introducing new errors in code as we modify it?
+We made several mistakes while writing the programs in our first few lessons:
 
-The first step is to use *defensive programming*, i.e., to assume that mistakes *will* happen and to guard against them. One way to do this is to add *assertions* to our code so that it checks itself as it runs. An assertion is simply a statement that something must be true at a certain point in a program. When Python sees one, it checks that the assertion's condition. If it's true, Python does nothing, but if it's false, Python halts the program immediately and prints the error message provided. For example, this piece of code halts as soon as the loop encounters a value that isn't positive:
+-   Are there still errors lurking in the code we have?
+-   How can we guard against introducing new errors in code as we modify it?
+
+<!-- include mention of research into searching for bugs in same place -->
+
+The first step is to use *defensive programming*, i.e., to assume that mistakes *will* happen and to guard against them.
+
+One way to do this is to add *assertions* to our code so that it checks itself as it runs. An assertion is simply a statement that something must be true at a certain point in a program. When Python sees one, it checks that the assertion's condition:
+
+-   If it's true, Python does nothing
+-   If it's false, Python halts the program immediately and prints the error message provided
+
+For example, this piece of code halts as soon as the loop encounters a value that isn't positive:
 
 ~~~ {.python}
 numbers = [1.5, 2.3, 0.7, -0.001, 4.4]
@@ -33,14 +43,13 @@ AssertionError                            Traceback (most recent call last)
 AssertionError: Data should only contain positive values
 ~~~
 
-Programs like the Firefox browser are littered with assertions: 10-20% of the code they contain are there to check that the other 80-90% are working correctly. Broadly speaking, assertions fall into three categories:
+Programs like the Firefox browser are littered with assertions: 10-20% of the code they contain are there to check that the other 80-90% are working correctly.
 
--   A **precondition** is something that must be true
-    at the start of a function in order for it to work correctly.
--   A **postcondition** is something that
-    the function guarantees is true when it finishes.
--   An **invariant** something that is always true
-    at a particular point inside a piece of code.
+Broadly speaking, assertions fall into three categories:
+
+-   A **precondition** is something that must be true at the start of a function in order for it to work correctly.
+-   A **postcondition** is something that the function guarantees is true when it finishes.
+-   An **invariant** something that is always true at a particular point inside a piece of code.
 
 For example, suppose we are representing rectangles using a tuple of four coordinates `(x0, y0, x1, y1)`. In order to do some calculations, we need to normalize the rectangle so that it is at the origin and 1.0 units long on its longest axis. This function does that, but checks that its input is correctly formatted and that its result makes sense:
 
@@ -146,11 +155,11 @@ Re-reading our function, we realize that line 10 should divide `dy` by `dx` rath
 
 But assertions aren't just about catching errors: they also help people understand programs. Each assertion gives the person reading the program a chance to check (consciously or otherwise) that their understanding matches what the code is doing.
 
-Most good programmers follow two rules when adding assertions to their code. The first is, "**fail early, fail often**". The greater the distance between when and where an error occurs and when it's noticed, the harder the error will be to debug, so good code catches mistakes as early as possible.
+Most good programmers follow two rules when adding assertions to their code.
 
-<!-- include mention of research into searching for bugs in same place -->
+- The first is, "**fail early, fail often**". The greater the distance between when and where an error occurs and when it's noticed, the harder the error will be to debug, so good code catches mistakes as early as possible.
 
-The second rule is, "**turns bugs into assertions or tests**". If you made a mistake in a piece of code, the odds are good that you have made other mistakes nearby, or will make the same mistake (or a related one) the next time you change it. Writing assertions to check that you haven't *regressed* (i.e., haven't re-introduced an old problem) can save a lot of time in the long run,
+- The second rule is, "**turns bugs into assertions or tests**". If you made a mistake in a piece of code, the odds are good that you have made other mistakes nearby, or will make the same mistake (or a related one) the next time you change it. Writing assertions to check that you haven't *regressed* (i.e., haven't re-introduced an old problem) can save a lot of time in the long run,
 and helps to warn people who are reading the code (including your future self)
 that this bit is tricky.
 
@@ -159,7 +168,7 @@ that this bit is tricky.
 > 1.  Suppose you are writing a function called `average` that calculates the average of the numbers in a list.
 >     What pre-conditions and post-conditions would you write for it?
 >     Compare your answer to your neighbor's:
->     can you think of a function that will past your tests but not hers or vice versa?
+>     can you think of a function that will pass your tests but not hers or vice versa?
 > 
 > 2.  Explain in words what the assertions in this code check,
 >     and for each one,

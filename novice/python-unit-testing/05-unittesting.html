@@ -39,7 +39,7 @@
 </ul>
 <p>Test results must also be reliable. If a testing tool says that code is working when it’s not, or reports problems when there actually aren’t any, people will lose faith in it and stop using it.</p>
 <p>The simplest kind of test is a <strong>unit test</strong> that checks the behavior of one component of a program. As an example, suppose we’re testing a function called <code>rectangle_area</code> that returns the area of an <code>(x0, y0, x1, y1)</code> rectangle. We’ll start by testing our code directly using <code>assert</code>. Here, we call the function three times with different arguments, checking that the right value is returned each time.</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> rectangle <span class="ch">import</span> rectangle_area
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> rectangle2 <span class="ch">import</span> rectangle_area
 
 <span class="kw">assert</span> rectangle_area([<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>]) == <span class="fl">1.0</span>
 <span class="kw">assert</span> rectangle_area([<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">4</span>]) == <span class="fl">9.0</span>

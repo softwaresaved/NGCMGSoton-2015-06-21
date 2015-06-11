@@ -82,7 +82,12 @@ except ArithmeticError:
     report_error_and_exit('Arithmetic error')
 ```
 
-Python tries to run the four functions inside the `try` as normal. If an error occurs in any of them, Python immediately jumps down and tries to find an `except` of the corresponding type: if the exception is an `IOError`, Python jumps into the first error handler, while if it's an `ArithmeticError`, Python jumps into the second handler instead. It will only execute one of these, just as it will only execute one branch of a series of `if`/`elif`/`else` statements.
+Python tries to run the four functions inside the `try` as normal. If an error occurs in any of them, Python immediately jumps down and tries to find an `except` of the corresponding type:
+
+-  `IOError` -  Python jumps into the first error handler
+-  `ArithmeticError` - Python jumps into the second handler instead. 
+
+It will only execute one of these, just as it will only execute one branch of a series of `if`/`elif`/`else` statements.
 
 This layout has made the code easier to read, but we've lost something important: the message printed out by the `IOError` branch doesn't tell us which file caused the problem. We can do better if we capture and hang on to the object that Python creates to record information about the error:
 

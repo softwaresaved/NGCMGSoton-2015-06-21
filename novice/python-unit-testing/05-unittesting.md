@@ -2,7 +2,7 @@
 layout: page
 title: Writing Robust Code and Unit Testing
 subtitle: Unit Testing
-minutes: 90
+minutes: 15
 ---
 
 Most people don't enjoy writing tests, so if we want them to actually do it, it must be easy to:
@@ -17,7 +17,7 @@ Test results must also be reliable. If a testing tool says that code is working 
 The simplest kind of test is a **unit test** that checks the behavior of one component of a program. As an example, suppose we're testing a function called `rectangle_area` that returns the area of an `(x0, y0, x1, y1)` rectangle. We'll start by testing our code directly using `assert`. Here, we call the function three times with different arguments, checking that the right value is returned each time.
 
 ~~~ {.python}
-from rectangle import rectangle_area
+from rectangle2 import rectangle_area
 
 assert rectangle_area([0, 0, 1, 1]) == 1.0
 assert rectangle_area([1, 1, 4, 4]) == 9.0
