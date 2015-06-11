@@ -73,3 +73,4 @@ trying it a few times helps you learn how to design functions and programs that 
 >     def test_three_values():
 >         assert something(['a', 'b', 'c']) == [('a', 'b'), ('a', 'c'), ('b', 'c')]
 >     ```
+>     (You can find this set of tests in `test_something.py`.
