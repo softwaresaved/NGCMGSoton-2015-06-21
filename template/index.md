@@ -20,6 +20,10 @@ Introductory paragraph
 *  [A topic title](01-intro.html)
 *  ...
 
+NB: try to split up big lessons into separate topics. This 
+makes it much easier to follow for both instructor and 
+participant.
+
 ## Other Resources
 
 (Not mandatory, perhaps we finish these off for future reference)
