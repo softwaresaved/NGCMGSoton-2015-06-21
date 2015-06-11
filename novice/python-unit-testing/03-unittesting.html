@@ -60,7 +60,8 @@ AssertionError</code></pre>
 <p>So - let’s look at the code to see what’s wrong.</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> rectangle_area(coords):
     x0, y0, x1, y1 = coords
-    <span class="kw">return</span> (x1 - x0) * (*x1* - y0)</code></pre>
+    <span class="kw">return</span> (x1 - x0) * (x1 - y0)</code></pre>
+<p>Clearly <code>x1 - y0</code> should be <code>y1-y0</code>! But let’s not fix it yet…</p>
 <p>Here’s a different approach. First, let’s create a new file called <code>test_rectangle2.py</code> (note the <code>test_</code> prefix - this is important!), and put each test in a function with a meaningful name.</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> rectangle2 <span class="ch">import</span> rectangle_area
 
@@ -95,6 +96,10 @@ FAILED (failures=1)</code></pre>
 <li>If an assertion fails, we count the test as a <em>failure</em>.</li>
 <li>If any other exception occurs, we count it as an <em>error</em>, because the odds are that the test itself is broken.</li>
 </ul>
+<p>So now we can fix our code in rectangle2.py, so it should read:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> rectangle_area(coords):
+    x0, y0, x1, y1 = coords
+    <span class="kw">return</span> (x1 - x0) * (y1 - y0)</code></pre>
 <p><code>nose</code> is an xUnit testing library. The name “xUnit” comes from the fact that many of them are imitations of a Java testing library called JUnit. The <a href="http://en.wikipedia.org/wiki/List_of_unit_testing_frameworks">Wikipedia page</a> on the subject lists dozens of similar frameworks in almost as many languages, all of which have a similar structure: each test is a single function that follows some naming convention (e.g., starts with <code>'test_'</code>), and the framework runs them in some order and reports how many passed, failed, or were broken.</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
