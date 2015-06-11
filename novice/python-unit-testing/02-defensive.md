@@ -16,8 +16,8 @@ The first step is to use *defensive programming*, i.e., to assume that mistakes 
 
 One way to do this is to add *assertions* to our code so that it checks itself as it runs. An assertion is simply a statement that something must be true at a certain point in a program. When Python sees one, it checks that the assertion's condition:
 
--   If it's true, Python does nothing
--   If it's false, Python halts the program immediately and prints the error message provided
+-   If *true*, Python does nothing
+-   If *false*, Python halts the program immediately and prints the error message provided
 
 For example, this piece of code halts as soon as the loop encounters a value that isn't positive:
 

@@ -39,8 +39,8 @@
 <p>The first step is to use <em>defensive programming</em>, i.e., to assume that mistakes <em>will</em> happen and to guard against them.</p>
 <p>One way to do this is to add <em>assertions</em> to our code so that it checks itself as it runs. An assertion is simply a statement that something must be true at a certain point in a program. When Python sees one, it checks that the assertion’s condition:</p>
 <ul>
-<li>If it’s true, Python does nothing</li>
-<li>If it’s false, Python halts the program immediately and prints the error message provided</li>
+<li>If <em>true</em>, Python does nothing</li>
+<li>If <em>false</em>, Python halts the program immediately and prints the error message provided</li>
 </ul>
 <p>For example, this piece of code halts as soon as the loop encounters a value that isn’t positive:</p>
 <pre class="sourceCode python"><code class="sourceCode python">numbers = [<span class="fl">1.5</span>, <span class="fl">2.3</span>, <span class="fl">0.7</span>, -<span class="fl">0.001</span>, <span class="fl">4.4</span>]
