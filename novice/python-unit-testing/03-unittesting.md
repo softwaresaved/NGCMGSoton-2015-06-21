@@ -119,7 +119,8 @@ all of which have a similar structure: each test is a single function that follo
 > 1.  A colleague of yours has written a function that calculates the running total of all the values in a list, e.g.,
 >     `running([0, 1, 2])` produces the list `[0, 1, 3]`.
 >     Write some unit test functions for it in a `test_running.py` file
->     (including `from running import running` at the top), and then use `nose` >     to see what bugs you can find.
+>     (including `from running import running` at the top), and then use `nose` 
+>     to see what bugs you can find.
 > 
 > 2.  Some programmers put assertions in their programs to catch errors when they occur; others prefer to write unit tests to check that the program is behaving properly.
 >     Which do you think makes programs easier to read?
