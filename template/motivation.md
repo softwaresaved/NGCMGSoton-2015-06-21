@@ -14,7 +14,7 @@ subtitle: Motivation
 
 Something else that is interesting. Plus an image:
 
-![IPython notebook screenshot](img/IPython-notebook.png)
+![](img/IPython-notebook.png)
 
 ## Learn More
 
