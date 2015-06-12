@@ -20,8 +20,8 @@ Introductory paragraph
 *  [A topic title](01-intro.html)
 *  ...
 
-NB: try to split up big lessons into separate topics. This 
-makes it much easier to follow for both instructor and 
+NB: try to split up big lessons into separate topics, around 10-20 mins
+each. This makes it much easier to follow for both instructor and 
 participant.
 
 ## Other Resources
