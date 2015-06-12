@@ -20,6 +20,8 @@ Writing your material
    For writing presentations, it's basic, but these slides should be short
    and simple anyway.
 
+NB: See http://pandoc.org/README.html#pandocs-markdown for Pandoc's markdown
+format.
 
 Generating the HTML files from markdown
 ---------------------------------------
