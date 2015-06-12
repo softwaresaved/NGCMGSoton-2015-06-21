@@ -26,7 +26,9 @@ participant.
 
 ## Other Resources
 
-(Not mandatory, perhaps we finish these off for future reference)
+(Not mandatory, perhaps we finish these off for future reference. The first
+is a set of slides written in markdown and converted into HTML, just like
+this page. See motivation.md)
 
 *   [Motivation](motivation.html)
 *   [Reference](reference.html)
