@@ -20,6 +20,7 @@ Writing your material
    For writing presentations, it's basic, but these slides should be short
    and simple anyway.
 
+
 Generating the HTML files from markdown
 ---------------------------------------
 
