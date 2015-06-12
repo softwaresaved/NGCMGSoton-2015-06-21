@@ -7,24 +7,33 @@ Set up infrastructure for using lesson template
 2. Install each of the prerequisites in requirements.txt using easy_install, e.g.
    $ sudo easy_install pandocfilters
 
-3. Modify the index.md and 01-intro.md markdown files, adding your own
-   topic files in the form of nn-topic.md
 
-4. Type 'make clean' to remove the existing HTML files. This will also 
+Typical process for developing materials
+----------------------------------------
+
+1. Modify the index.md and 01-intro.md markdown files, adding your own
+   topic files in the form of nn-topic.md, and linking to the *HTML* versions
+   of those files (i.e. nn-topic.html) from index.md in the 'topics' section
+
+2. Type 'make clean' to remove the existing HTML files. This will also 
    remove all .pyc files and those that end with ~ in their filename.
 
-5. Type 'make check' to check your markdown against Software Carpentry style
+3. Type 'make check' to check your markdown against Software Carpentry style
    guidelines (these are only recommendations)
 
-6. Type 'make preview' to generate HTML files from all the markdown .md files
+4. Type 'make preview' to generate HTML files from all the markdown .md files
    in the directory. You can view the generated HTML files directly (i.e. as
    files) in your browser without having to upload them to GitHub first.
    Note that this will not work on any markdown files in any subdirectories,
    only those in the directory with the Makefile.
 
-7. Add/commit all changed files into your local repository e.g.
+5. When you are happy with the local versions of the generated HTML files,
+   add/commit all changed files into your local repository e.g.
    $ add .
    $ commit -m "A helpful message about what was changed/added" .
 
-8. Push those changes back to the public repository
+6. Push those changes back to the public repository
    $ git push
+
+7. Check the uploaded HTML files in a browser, e.g. point browser to
+   http://softwaresaved.github.io/<repo>/novice/<lesson-name>/index.html
