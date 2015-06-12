@@ -8,10 +8,10 @@
   <title>Why Python?</title>
 
 
-  <script src="../../js/deckjs-custom.js"></script>
+  <script src="js/deckjs-custom.js"></script>
   <script>
       // TODO: finer filter on what is needed (vs profile-5)
-      includedeck("../../css/swc-slides.css", {
+      includedeck("css/swc-slides.css", {
          BEFOREINIT: function() {
             $(".slide.auto li:not(li li):not(.notslide)").addClass("slide");
          }
@@ -21,6 +21,10 @@
 <body>
   <div class="deck-container">
 
+    <div class="slide title-slide" data-container-class="no-status">
+        <h1 class="var-title"></h1>
+        <img class="logo" src="img/ssi-banner.png" alt="Software Sustainabilty Institute"/>
+    </div>
 
     <!-- Begin slides. Just make elements with a class of slide. -->
 <section id="python-is" class="slide level2">
