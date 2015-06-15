@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="generator" content="pandoc">
-    <title>Software Carpentry: Programming with Python</title>
+    <title>Software Carpentry: Building programs with Python</title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
@@ -28,7 +28,7 @@
       <article>
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
-                    <a href="index.html"><h1 class="title">Programming with Python</h1></a>
+                    <a href="index.html"><h1 class="title">Building programs with Python</h1></a>
           <h2 class="subtitle">Making Choices</h2>
           <section class="objectives panel panel-warning">
 <div class="panel-heading">
@@ -64,17 +64,15 @@ done
 <span class="dt">print</span> <span class="st">&#39;...after conditional&#39;</span></code></pre>
 <pre class="output"><code>before conditional...
 ...after conditional</code></pre>
-<p>We can also chain several tests together using <code>elif</code>, which is short for “else if”. This makes it simple to write a function that returns the sign of a number:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> sign(num):
+<p>We can also chain several tests together using <code>elif</code>, which is short for “else if” as shown in the example code chunk below:</p>
+<pre class="sourceCode python"><code class="sourceCode python">num = -<span class="dv">3</span>
     <span class="kw">if</span> num &gt; <span class="dv">0</span>:
-        <span class="kw">return</span> <span class="dv">1</span>
+        <span class="dt">print</span> <span class="st">&#39;Sign of a number&#39;</span>,num,<span class="st">&#39;is:&#39;</span>,<span class="dv">1</span>
     <span class="kw">elif</span> num == <span class="dv">0</span>:
-        <span class="kw">return</span> <span class="dv">0</span>
+        <span class="dt">print</span> <span class="st">&#39;Sign of a number&#39;</span>,num,<span class="st">&#39;is:&#39;</span>,<span class="dv">0</span>
     <span class="kw">else</span>:
-        <span class="kw">return</span> -<span class="dv">1</span>
-
-<span class="dt">print</span> <span class="st">&#39;sign of -3:&#39;</span>, sign(-<span class="dv">3</span>)</code></pre>
-<pre class="output"><code>sign of -3: -1</code></pre>
+        <span class="dt">print</span> <span class="st">&#39;Sign of a number&#39;</span>,num, <span class="st">&#39;is:&#39;</span>,-<span class="dv">1</span></code></pre>
+<pre class="output"><code>sign of a number -3 is: -1</code></pre>
 <p>One important thing to notice in the code above is that we use a double equals sign <code>==</code> to test for equality rather than a single equals sign because the latter is used to mean assignment. This convention was inherited from C, and while many other programming languages work the same way, it does take a bit of getting used to…</p>
 <p>We can also combine tests using <code>and</code> and <code>or</code>. <code>and</code> is only true if both parts are true:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">if</span> (<span class="dv">1</span> &gt; <span class="dv">0</span>) and (-<span class="dv">1</span> &gt; <span class="dv">0</span>):

@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Programming with Python
+title: Building programs with Python
 subtitle: Making Choices
-minutes: 30
+minutes: 10
 ---
 > ## Learning Objectives {.objectives}
 >
@@ -61,22 +61,20 @@ before conditional...
 ~~~
 
 We can also chain several tests together using `elif`,
-which is short for "else if".
-This makes it simple to write a function that returns the sign of a number:
+which is short for "else if" as shown in the example code chunk below:
 
 ~~~ {.python}
-def sign(num):
+num = -3
     if num > 0:
-        return 1
+        print 'Sign of a number',num,'is:',1
     elif num == 0:
-        return 0
+        print 'Sign of a number',num,'is:',0
     else:
-        return -1
+        print 'Sign of a number',num, 'is:',-1
 
-print 'sign of -3:', sign(-3)
 ~~~
 ~~~ {.output}
-sign of -3: -1
+sign of a number -3 is: -1
 ~~~
 
 One important thing to notice in the code above is that we use a double equals sign `==` to test for equality
