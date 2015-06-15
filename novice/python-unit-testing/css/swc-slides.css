@@ -311,7 +311,7 @@ li > ol, li > ul {
 
 /* sizes */
 .deck-container {
-  font-size: 30px;
+  font-size: 28px;
 }
 
 h1 {
@@ -369,7 +369,7 @@ h1 {
 .deck-container > .slide > ul li, .deck-container > .slide > ol li {
   margin: 0;
   padding: 0;
-  margin-top: 0.5em;
+  margin-top: 0.4em;
   padding-left: 0em;
 }
 .deck-container > .slide > ul {
@@ -446,7 +446,7 @@ a:hover, a:focus {
 
 .deck-container > .slide {
   margin: 0;
-  padding: 160px 50px;
+  padding: 130px 50px;
   /*        text-align: justify;*/
 }
 
@@ -675,7 +675,7 @@ h1, h2 {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 480px;
+  bottom: 465px;
   top: auto;
 }
 
