@@ -61,7 +61,3 @@ Letters – Retraction, Science 22 December 2006
 
 - [The Software Sustainability Institute](http://www.software.ac.uk/)
 - ...
-
-
-
-![](img/IPython-notebook.png)
