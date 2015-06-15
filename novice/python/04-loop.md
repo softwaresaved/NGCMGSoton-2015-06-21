@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Programming with Python
+title: Building programs with Python
 subtitle: Repeating Actions with Loops
-minutes: 30
+minutes: 10
 ---
 > ## Learning Objectives {.objectives}
 >
@@ -15,7 +15,7 @@ In the last lesson,
 we wrote some code that plots some values of interest from our first inflammation dataset,
 and reveals some suspicious features in it, such as from `inflammation-01.csv`
 
-![Analysis of inflammation-01.csv](03-loop_files/novice/python/03-loop_2_0.png)\
+![Analysis of inflammation-01.csv](04-loop_files/novice/python/04-loop_2_0.png)\
 
 but we have a dozen data sets right now and more on the way.
 We want to create plots for all our data sets with a single statement.

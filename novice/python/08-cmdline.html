@@ -32,7 +32,7 @@
           <h2 class="subtitle">Command-Line Programs</h2>
           <section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+<h2><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
@@ -68,10 +68,12 @@
 <span class="dt">print</span> <span class="st">&#39;version is&#39;</span>, sys.version</code></pre>
 <p>The first line imports a library called <code>sys</code>, which is short for “system”. It defines values such as <code>sys.version</code>, which describes which version of Python we are running. We can run this script from within the IPython Notebook like this:</p>
 <pre class="in"><code>%run sys-version.py</code></pre>
+
 <pre class="output"><code>version is 2.7.5 |Anaconda 1.8.0 (x86_64)| (default, Oct 24 2013, 07:02:20)
 [GCC 4.0.1 (Apple Inc. build 5493)]</code></pre>
 <p>or like this:</p>
 <pre class="in"><code>!ipython sys-version.py</code></pre>
+
 <pre class="output"><code>version is 2.7.5 |Anaconda 1.8.0 (x86_64)| (default, Oct 24 2013, 07:02:20)
 [GCC 4.0.1 (Apple Inc. build 5493)]</code></pre>
 <p>The first method, <code>%run</code>, uses a special command in the IPython Notebook to run a program in a <code>.py</code> file. The second method is more general: the exclamation mark <code>!</code> tells the Notebook to run a shell command, and it just so happens that the command we run is <code>ipython</code> with the name of the script.</p>
@@ -80,6 +82,7 @@
 <span class="dt">print</span> <span class="st">&#39;sys.argv is&#39;</span>, sys.argv</code></pre>
 <p>The strange name <code>argv</code> stands for “argument values”. Whenever Python runs a program, it takes all of the values given on the command line and puts them in the list <code>sys.argv</code> so that the program can determine what they were. If we run this program with no arguments:</p>
 <pre class="in"><code>!ipython argv-list.py</code></pre>
+
 <pre class="output"><code>sys.argv is [&#39;/Users/gwilson/s/bc/python/novice/argv-list.py&#39;]</code></pre>
 <p>the only thing in the list is the full path to our script, which is always <code>sys.argv[0]</code>. If we run it with a few arguments, however:</p>
 <pre class="input"><code>$ python argv-list.py first second third</code></pre>
@@ -87,6 +90,7 @@
 <p>then Python adds each of those arguments to that magic list.</p>
 <p>With this in hand, let’s build a version of <code>readings.py</code> that always prints the per-patient mean of a single data file. The first step is to write a function that outlines our implementation, and a placeholder for the function that does the actual work. By convention this function is usually called <code>main</code>, though we can call it whatever we want:</p>
 <pre class="in"><code>!cat readings-01.py</code></pre>
+
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
 <span class="ch">import</span> numpy <span class="ch">as</span> np
 
@@ -98,8 +102,10 @@
         <span class="dt">print</span> m</code></pre>
 <p>This function gets the name of the script from <code>sys.argv[0]</code>, because that’s where it’s always put, and the name of the file to process from <code>sys.argv[1]</code>. Here’s a simple test:</p>
 <pre class="in"><code>%run readings-01.py data/inflammation-01.csv</code></pre>
+
 <p>There is no output because we have defined a function, but haven’t actually called it. Let’s add a call to <code>main</code>:</p>
 <pre class="in"><code>!cat readings-02.py</code></pre>
+
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
 <span class="ch">import</span> numpy <span class="ch">as</span> np
 
@@ -113,6 +119,7 @@
 main()</code></pre>
 <p>and run that:</p>
 <pre class="in"><code>%run readings-02.py data/inflammation-01.csv</code></pre>
+
 <pre class="output"><code>5.45
 5.425
 6.1
@@ -175,7 +182,7 @@ main()</code></pre>
 5.9</code></pre>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2 id="the-right-way-to-do-it"><span class="glyphicon glyphicon-pushpin"></span>The Right Way to Do It</h2>
+<h2><span class="glyphicon glyphicon-pushpin"></span>The Right Way to Do It</h2>
 </div>
 <div class="panel-body">
 <p>If our programs can take complex parameters or multiple filenames, we shouldn’t handle <code>sys.argv</code> directly. Instead, we should use Python’s <code>argparse</code> library, which handles common cases in a systematic way, and also makes it easy for us to provide sensible error messages for our users.</p>
@@ -213,7 +220,7 @@ main()</code></pre>
 11.0</code></pre>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2 id="the-right-way-to-do-it-1"><span class="glyphicon glyphicon-pushpin"></span>The Right Way to Do It</h2>
+<h2><span class="glyphicon glyphicon-pushpin"></span>The Right Way to Do It</h2>
 </div>
 <div class="panel-body">
 <p>At this point, we have created three versions of our script called <code>readings-01.py</code>, <code>readings-02.py</code>, and <code>readings-03.py</code>. We wouldn’t do this in real life: instead, we would have one file called <code>readings.py</code> that we committed to version control every time we got an enhancement working. For teaching, though, we need all the successive versions side by side.</p>
@@ -314,7 +321,7 @@ count = <span class="dv">0</span>
 <p>That’s better. In fact, that’s done: the program now does everything we set out to do.</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="arithmetic-on-the-command-line"><span class="glyphicon glyphicon-pencil"></span>Arithmetic on the command line</h2>
+<h2><span class="glyphicon glyphicon-pencil"></span>Arithmetic on the command line</h2>
 </div>
 <div class="panel-body">
 <p>Write a command-line program that does addition and subtraction:</p>
@@ -327,7 +334,7 @@ count = <span class="dv">0</span>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="finding-particular-files"><span class="glyphicon glyphicon-pencil"></span>Finding particular files</h2>
+<h2><span class="glyphicon glyphicon-pencil"></span>Finding particular files</h2>
 </div>
 <div class="panel-body">
 <p>Using the <code>glob</code> module introduced <a href="earlier">02-loop.html</a>, write a simple version of <code>ls</code> that shows files in the current directory with a particular suffix:</p>
@@ -339,7 +346,7 @@ zero.py</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="changing-flags"><span class="glyphicon glyphicon-pencil"></span>Changing flags</h2>
+<h2><span class="glyphicon glyphicon-pencil"></span>Changing flags</h2>
 </div>
 <div class="panel-body">
 <p>Rewrite <code>count-stdin.py</code> so that it uses <code>-n</code>, <code>-m</code>, and <code>-x</code> instead of <code>--min</code>, <code>--mean</code>, and <code>--max</code> respectively. Is the code easier to read? Is the program easier to understand?</p>
@@ -347,7 +354,7 @@ zero.py</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="adding-a-help-message"><span class="glyphicon glyphicon-pencil"></span>Adding a help message</h2>
+<h2><span class="glyphicon glyphicon-pencil"></span>Adding a help message</h2>
 </div>
 <div class="panel-body">
 <p>Separately, modify the program so that if no parameters are given (i.e., no action is specified and no filenames are given), it prints a message explaining how it should be used.</p>
@@ -355,7 +362,7 @@ zero.py</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="adding-a-default-action"><span class="glyphicon glyphicon-pencil"></span>Adding a default action</h2>
+<h2><span class="glyphicon glyphicon-pencil"></span>Adding a default action</h2>
 </div>
 <div class="panel-body">
 <p>Separately, modify the program so that if no action is given it displays the means of the data.</p>
@@ -363,7 +370,7 @@ zero.py</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="a-file-checker"><span class="glyphicon glyphicon-pencil"></span>A file-checker</h2>
+<h2><span class="glyphicon glyphicon-pencil"></span>A file-checker</h2>
 </div>
 <div class="panel-body">
 <p>Write a program called <code>check.py</code> that takes the names of one or more inflammation data files as arguments and checks that all the files have the same number of rows and columns. What is the best way to test your program?</p>
@@ -371,7 +378,7 @@ zero.py</code></pre>
 </section>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2 id="counting-lines"><span class="glyphicon glyphicon-pencil"></span>Counting lines</h2>
+<h2><span class="glyphicon glyphicon-pencil"></span>Counting lines</h2>
 </div>
 <div class="panel-body">
 <p>Write a program called <code>line-count.py</code> that works like the Unix <code>wc</code> command:</p>
