@@ -1,14 +1,14 @@
 ---
 layout: page
-root: ../..
-title: Analyzing Patient Data
+title: Building programs with Python
+subtitle: Reading and analysing Patient data using libraries
+minutes: 20 
 ---
 > ## Learning Objectives {.objectives}
 >
 > *   Explain what a library is, and what libraries are used for.
 > *   Load a Python library and use the things it contains.
 > *   Read tabular data from a file into a program.
-> *   Assign values to variables.
 > *   Select individual values and subsections from data.
 > *   Perform operations on arrays of data.
 > *   Display simple graphs.
@@ -75,107 +75,6 @@ Our call to `numpy.loadtxt` read our file,
 but didn't save the data in memory.
 To do that,
 we need to [assign](../../reference.html#assignment) the array to a [variable](../../reference.html#variable).
-A variable is just a name for a value,
-such as `x`, `current_temperature`, or `subject_id`.
-Python's variables must begin with a letter.
-We can create a new variable simply by assigning a value to it using `=`.
-As an illustration,
-let's step back and instead of considering a table of data,
-consider the simplest "collection" of data,
-a single value.
-The line below assigns a value to a variable:
-
-~~~ {.python}
-weight_kg = 55
-~~~
-
-Once a variable has a value, we can print it:
-
-~~~ {.python}
-print weight_kg
-~~~
-~~~ {.output}
-55
-~~~
-
-and do arithmetic with it:
-
-~~~ {.python}
-print 'weight in pounds:', 2.2 * weight_kg
-~~~
-~~~ {.output}
-weight in pounds: 121.0
-~~~
-
-We can also change a variable's value by assigning it a new one:
-
-~~~ {.python}
-weight_kg = 57.5
-print 'weight in kilograms is now:', weight_kg
-~~~
-~~~ {.output}
-weight in kilograms is now: 57.5
-~~~
-
-As the example above shows,
-we can print several things at once by separating them with commas.
-
-If we imagine the variable as a sticky note with a name written on it,
-assignment is like putting the sticky note on a particular value:
-
-![Variables as Sticky Notes](img/python-sticky-note-variables-01.svg)
-
-This means that assigning a value to one variable does *not* change the values of other variables.
-For example,
-let's store the subject's weight in pounds in a variable:
-
-~~~ {.python}
-weight_lb = 2.2 * weight_kg
-print 'weight in kilograms:', weight_kg, 'and in pounds:', weight_lb
-~~~
-~~~ {.output}
-weight in kilograms: 57.5 and in pounds: 126.5
-~~~
-
-![Creating Another Variable](img/python-sticky-note-variables-02.svg)
-
-and then change `weight_kg`:
-
-~~~ {.python}
-weight_kg = 100.0
-print 'weight in kilograms is now:', weight_kg, 'and weight in pounds is still:', weight_lb
-~~~
-~~~ {.output}
-weight in kilograms is now: 100.0 and weight in pounds is still: 126.5
-~~~
-
-![Updating a Variable](img/python-sticky-note-variables-03.svg)
-
-Since `weight_lb` doesn't "remember" where its value came from,
-it isn't automatically updated when `weight_kg` changes.
-This is different from the way spreadsheets work.
-
-> ## What's inside the box? {.challenge}
->
-> Draw diagrams showing what variables refer to what values after each statement in the following program:
->
-> ~~~ {.python}
-> weight = 70.5
-> age = 35
-> # Take a trip to the planet Neptune
-> weight = weight * 1.14
-> age = age + 20
-> ~~~
-
-> ## Sorting out references {.challenge}
->
-> What does the following program print out?
->
-> ~~~ {.python}
-> first, second = 'Grace', 'Hopper'
-> third, fourth = second, first
-> print third, fourth
-> ~~~
 
 Just as we can assign a single value to a variable, we can also assign an array of values
 to a variable using the same syntax.  Let's re-run `numpy.loadtxt` and save its result:
@@ -328,39 +227,6 @@ small is:
  [ 1.  1.  0.  1.]
  [ 2.  2.  1.  1.]]
 ~~~
-
-> ## Slicing strings {.challenge}
->
-> A section of an array is called a **slice**.
-> We can take slices of character strings as well:
->
-> ~~~ {.python}
-> element = 'oxygen'
-> print 'first three characters:', element[0:3]
-> print 'last three characters:', element[3:6]
-> ~~~
->
-> ~~~ {.output}
-> first three characters: oxy
-> last three characters: gen
-> ~~~
->
-> What is the value of `element[:4]`?
-> What about `element[4:]`?
-> Or `element[:]`?
->
-> What is `element[-1]`?
-> What is `element[-2]`?
-> Given those answers,
-> explain what `element[1:-1]` does.
-
-> ## Thin slices {.challenge}
->
-> The expression `element[3:3]` produces an **empty string**,
-> i.e., a string that contains no characters.
-> If `data` holds our array of patient data,
-> what does `data[3:3, 4:4]` produce?
-> What about `data[3:3, :]`?
 
 Arrays also know how to perform common mathematical operations on their values.
 The simplest operations with data are arithmetic:
@@ -537,157 +403,6 @@ print data.mean(axis=1)
 
 which is the average inflammation per patient across all days.
 
-The mathematician Richard Hamming once said,
-"The purpose of computing is insight, not numbers,"
-and the best way to develop insight is often to visualize data.
-Visualization deserves an entire lecture (or course) of its own,
-but we can explore a few features of Python's `matplotlib` here.
-While there is no "official" plotting library,
-this package is the de facto standard.
-First,
-we will import the `pyplot` module from `matplotlib`
-and use two of its functions to create and display a heat map of our data:
-
-~~~ {.python}
-from matplotlib import pyplot
-image  = pyplot.imshow(data)
-pyplot.show(image)
-~~~
-
-![Heatmap of the Data](01-numpy_files/novice/python/01-numpy_74_0.png)
-
-Blue regions in this heat map are low values, while red shows high values.
-As we can see,
-inflammation rises and falls over a 40-day period.
-Let's take a look at the average inflammation over time:
-
-~~~ {.python}
-ave_inflammation = data.mean(axis=0)
-ave_plot = pyplot.plot(ave_inflammation)
-pyplot.show(ave_plot)
-~~~
-
-![Average Inflammation Over Time](01-numpy_files/novice/python/01-numpy_76_0.png)
-
-Here,
-we have put the average per day across all patients in the variable `ave_inflammation`,
-then asked `pyplot` to create and display a line graph of those values.
-The result is roughly a linear rise and fall,
-which is suspicious:
-based on other studies,
-we expect a sharper rise and slower fall.
-Let's have a look at two other statistics:
-
-~~~ {.python}
-max_plot = pyplot.plot(data.max(axis=0))
-pyplot.show(max_plot)
-~~~
-
-![Maximum Value Along The First Axis](01-numpy_files/novice/python/01-numpy_78_1.png)
-
-~~~ {.python}
-min_plot = pyplot.plot(data.min(axis=0))
-pyplot.show(min_plot)
-~~~
-
-![Minimum Value Along The First Axis](01-numpy_files/novice/python/01-numpy_78_3.png)
-
-The maximum value rises and falls perfectly smoothly,
-while the minimum seems to be a step function.
-Neither result seems particularly likely,
-so either there's a mistake in our calculations
-or something is wrong with our data.
-
-It's very common to create an [alias](../../reference.html#alias) for a library when importing it
-in order to reduce the amount of typing we have to do.
-Here are our three plots side by side using aliases for `numpy` and `pyplot`:
-
-~~~ {.python}
-import numpy as np
-from matplotlib import pyplot as plt
-
-data = np.loadtxt(fname='data/inflammation-01.csv', delimiter=',')
-
-fig = plt.figure(figsize=(10.0, 3.0))
-
-axes1 = fig.add_subplot(1, 3, 1)
-axes2 = fig.add_subplot(1, 3, 2)
-axes3 = fig.add_subplot(1, 3, 3)
-
-axes1.set_ylabel('average')
-axes1.plot(data.mean(axis=0))
-
-axes2.set_ylabel('max')
-axes2.plot(data.max(axis=0))
-
-axes3.set_ylabel('min')
-axes3.plot(data.min(axis=0))
-
-fig.tight_layout()
-
-plt.show(fig)
-~~~
-
-![The Previous Plots as Subplots](01-numpy_files/novice/python/01-numpy_83_0.png)
-
-The call to `loadtxt` reads our data,
-and the rest of the program tells the plotting library
-how large we want the figure to be,
-that we're creating three sub-plots,
-what to draw for each one,
-and that we want a tight layout.
-(Perversely,
-if we leave out that call to `fig.tight_layout()`,
-the graphs will actually be squeezed together more closely.)
-
-> ## Check your understanding {.challenge}
->
-> Plot scaling: why do all of our plots stop just short of the upper end of our graph?
->
-> Draw diagrams showing what variables refer to what values after each statement in the following program:
->
-> ~~~ {.python}
-> mass = 47.5
-> age = 122
-> mass = mass * 2.0
-> age = age - 20
-> ~~~
-
-> ## Sorting out references {.challenge}
->
-> What does the following program print out?
->
-> ~~~ {.python}
-> first, second = 'Grace', 'Hopper'
-> third, fourth = second, first
-> print third, fourth
-> ~~~
-
-> ## Slicing strings {.challenge}
->
-> A section of an array is called a [slice](../../reference.html#slice).
-> We can take slices of character strings as well:
->
-> ~~~ {.python}
-> element = 'oxygen'
-> print 'first three characters:', element[0:3]
-> print 'last three characters:', element[3:6]
-> ~~~
->
-> ~~~ {.output}
-> first three characters: oxy
-> last three characters: gen
-> ~~~
->
-> What is the value of `element[:4]`?
-> What about `element[4:]`?
-> Or `element[:]`?
->
-> What is `element[-1]`?
-> What is `element[-2]`?
-> Given those answers,
-> explain what `element[1:-1]` does.
-
 > ## Thin slices {.challenge}
 >
 > The expression `element[3:3]` produces an [empty string](../../reference.html#empty-string),
@@ -695,19 +410,3 @@ the graphs will actually be squeezed together more closely.)
 > If `data` holds our array of patient data,
 > what does `data[3:3, 4:4]` produce?
 > What about `data[3:3, :]`?
-
-> ## Check your understanding: plot scaling {.challenge}
->
-> Why do all of our plots stop just short of the upper end of our graph?
-
-> ## Check your understanding: drawing straight lines {.challenge}
->
-> Why are the vertical lines in our plot of the minimum inflammation per day not perfectly vertical?
-
-> ## Make your own plot {.challenge}
->
-> Create a plot showing the standard deviation of the inflammation data for each day across all patients.
-
-> ## Moving plots around {.challenge}
->
-> Modify the program to display the three plots on top of one another instead of side by side.

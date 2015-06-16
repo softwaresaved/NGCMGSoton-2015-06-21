@@ -254,3 +254,50 @@ and there is a better way.
 
 After examining such problems working with lists as arrays, we will proceed to discover the power of the NumPy arrays in next lesson.
 
+> ## Check your understanding {.challenge}
+>
+> Draw diagrams showing what variables refer to what values after each statement in the following program:
+>
+> ~~~ {.python}
+> mass = 47.5
+> age = 122
+> mass = mass * 2.0
+> age = age - 20
+> ~~~
+
+> ## Sorting out references {.challenge}
+>
+> What does the following program print out?
+>
+> ~~~ {.python}
+> first, second = 'Grace', 'Hopper'
+> third, fourth = second, first
+> print third, fourth
+> ~~~
+
+> ## Slicing strings {.challenge}
+>
+> A section of an array is called a [slice](../../reference.html#slice).
+> We can take slices of character strings as well:
+>
+> ~~~ {.python}
+> element = 'oxygen'
+> print 'first three characters:', element[0:3]
+> print 'last three characters:', element[3:6]
+> ~~~
+>
+> ~~~ {.output}
+> first three characters: oxy
+> last three characters: gen
+> ~~~
+>
+> What is the value of `element[:4]`?
+> What about `element[4:]`?
+> Or `element[:]`?
+>
+> What is `element[-1]`?
+> What is `element[-2]`?
+> Given those answers,
+> explain what `element[1:-1]` does.
+
+
