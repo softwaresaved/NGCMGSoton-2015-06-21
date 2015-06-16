@@ -1,17 +1,22 @@
 ---
 layout: slides
-title: Version Control with Git
+title: A suitable motivation title
 subtitle: Motivation
 ---
-## Why Use Version Control?
 
-Let some software handle the versions of your project let you focus on your
-project.
+## A title thing
 
-## Why Git?
+- a thing
+- another thing
+- ...
 
-Because many people are using GitHub to collaborating.
+## Another title thing
 
-## Next Steps
+Something else that is interesting. Plus an image:
 
-[Here we go!](01-setup.html)
+![](img/IPython-notebook.png)
+
+## Learn More
+
+- [The Software Sustainability Institute](http://www.software.ac.uk/)
+- ...
