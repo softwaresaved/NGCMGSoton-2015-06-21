@@ -19,6 +19,9 @@ Similarly,
 while a lot of powerful tools are built into languages like Python,
 even more live in the [libraries](../../reference.html#software-library) they are used to build.
 
+Hence, this lesson represents an end-to-end scientific Python example, from analysing data (using a library) 
+, to visualisation (using a library).
+
 In order to load our inflammation data,
 we need to [import](../../reference.html#import) a library called NumPy.
 In general you should use this library if you want to do fancy things with numbers,
