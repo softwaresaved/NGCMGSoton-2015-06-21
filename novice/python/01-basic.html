@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <title>Software Carpentry: Building programs with Python</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc.css" />
+    <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
+    <meta charset="UTF-8" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body class="lesson">
+    <div class="container card">
+      <div class="banner">
+        <!-- change to SSI logo
+        <a href="http://software-carpentry.org" title="Software Carpentry">
+          <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
+        </a>
+        -->
+      </div>
+      <article>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+                    <a href="index.html"><h1 class="title">Building programs with Python</h1></a>
+          <h2 class="subtitle">Python Basics- Variables, Arrays, Lists etc</h2>
+          <section class="objectives panel panel-warning">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+</div>
+<div class="panel-body">
+<ul>
+<li>Introduction to Python variables</li>
+<li>Creating and Assigning values to variables.</li>
+<li>Lists and Arrays in Python</li>
+<li>Indexing and slicing</li>
+</ul>
+</div>
+</section>
+<p>A variable is just a name for a value, such as <code>x</code>, <code>current_temperature</code>, or <code>subject_id</code>. Python’s variables must begin with a letter. A variable in Python is defined through assignment i.e. we can create a new variable simply by assigning a value to it using <code>=</code>. As an illustration, consider the simplest “collection” of data, a single value. The line below assigns a value to a variable:</p>
+<pre class="sourceCode python"><code class="sourceCode python">weight_kg = <span class="dv">55</span></code></pre>
+<p>Once a variable has a value, we can print it:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> weight_kg</code></pre>
+<pre class="output"><code>55</code></pre>
+<p>and do arithmetic with it:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="st">&#39;weight in pounds:&#39;</span>, <span class="fl">2.2</span> * weight_kg</code></pre>
+<pre class="output"><code>weight in pounds: 121.0</code></pre>
+<p>We can also change a variable’s value by assigning it a new one:</p>
+<pre class="sourceCode python"><code class="sourceCode python">weight_kg = <span class="fl">57.5</span>
+<span class="dt">print</span> <span class="st">&#39;weight in kilograms is now:&#39;</span>, weight_kg</code></pre>
+<pre class="output"><code>weight in kilograms is now: 57.5</code></pre>
+<p>As the example above shows, we can print several things at once by separating them with commas.</p>
+<p>If we imagine the variable as a sticky note with a name written on it, assignment is like putting the sticky note on a particular value:</p>
+<div class="figure">
+<img src="img/python-sticky-note-variables-01.svg" alt="Variables as Sticky Notes" /><p class="caption">Variables as Sticky Notes</p>
+</div>
+<p>This means that assigning a value to one variable does <em>not</em> change the values of other variables. For example, let’s store the subject’s weight in pounds in a variable:</p>
+<pre class="sourceCode python"><code class="sourceCode python">weight_lb = <span class="fl">2.2</span> * weight_kg
+<span class="dt">print</span> <span class="st">&#39;weight in kilograms:&#39;</span>, weight_kg, <span class="st">&#39;and in pounds:&#39;</span>, weight_lb</code></pre>
+<pre class="output"><code>weight in kilograms: 57.5 and in pounds: 126.5</code></pre>
+<div class="figure">
+<img src="img/python-sticky-note-variables-02.svg" alt="Creating Another Variable" /><p class="caption">Creating Another Variable</p>
+</div>
+<p>and then change <code>weight_kg</code>:</p>
+<pre class="sourceCode python"><code class="sourceCode python">weight_kg = <span class="fl">100.0</span>
+<span class="dt">print</span> <span class="st">&#39;weight in kilograms is now:&#39;</span>, weight_kg, <span class="st">&#39;and weight in pounds is still:&#39;</span>, weight_lb</code></pre>
+<pre class="output"><code>weight in kilograms is now: 100.0 and weight in pounds is still: 126.5</code></pre>
+<div class="figure">
+<img src="img/python-sticky-note-variables-03.svg" alt="Updating a Variable" /><p class="caption">Updating a Variable</p>
+</div>
+<p>Since <code>weight_lb</code> doesn’t “remember” where its value came from, it isn’t automatically updated when <code>weight_kg</code> changes. This is different from the way spreadsheets work.</p>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>What’s inside the box?</h2>
+</div>
+<div class="panel-body">
+<p>Draw diagrams showing what variables refer to what values after each statement in the following program:</p>
+<pre class="sourceCode python"><code class="sourceCode python">weight = <span class="fl">70.5</span>
+age = <span class="dv">35</span>
+<span class="co"># Take a trip to the planet Neptune</span>
+weight = weight * <span class="fl">1.14</span>
+age = age + <span class="dv">20</span></code></pre>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Sorting out references</h2>
+</div>
+<div class="panel-body">
+<p>What does the following program print out?</p>
+<pre class="sourceCode python"><code class="sourceCode python">first, second = <span class="st">&#39;Grace&#39;</span>, <span class="st">&#39;Hopper&#39;</span>
+third, fourth = second, first
+<span class="dt">print</span> third, fourth</code></pre>
+</div>
+</section>
+<blockquote>
+<h3>Arrays in Python</h3>
+</blockquote>
+<p>One of the most fundamental data structures in any language is the array. Python doesn’t have a native array data structure, but it has the list which is much more general and can be used as a multidimensional array quite easily.</p>
+<blockquote>
+<h4>List basics</h4>
+</blockquote>
+<p>A list in python is just an ordered collection of items which can be of any type. By comparison an array is an ordered collection of items of a single type - so a list is more flexible than an array.</p>
+<p>A list is also a dynamic mutable type and this means we can add and delete elements from the list at any time.</p>
+<p>To define a list we simply write a comma separated list of items in square brackets:</p>
+<blockquote>
+<pre class="sourceCode python"><code class="sourceCode python">myList = [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>]</code></pre>
+</blockquote>
+<p>This looks like an array because we can use <em>slicing</em> notation to pick out an individual element - indexes start from 0.</p>
+<blockquote>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> myList[<span class="dv">2</span>]</code></pre>
+</blockquote>
+<p>will display the third element, i.e. the value 3 in this case. Similarly to change the third element we can assign directly to it:</p>
+<blockquote>
+<pre class="sourceCode python"><code class="sourceCode python">myList[<span class="dv">2</span>] = <span class="dv">100</span></code></pre>
+</blockquote>
+<p>The <em>Slicing</em> notation looks like array indexing but it is a lot more flexible. For example:</p>
+<blockquote>
+<pre class="sourceCode python"><code class="sourceCode python">myList[<span class="dv">2</span>:<span class="dv">5</span>]</code></pre>
+</blockquote>
+<p>is a sublist from the third element to the fifth i.e. from <code>myList[2]</code> to <code>myList[4]</code>. Notice that the final element specified i.e. <code>[5]</code> is not included in the slice.</p>
+<p>Also notice that you can leave out either of the start and end indexes and they will be assumed to have their maximum possible value. For example:</p>
+<blockquote>
+<pre class="sourceCode python"><code class="sourceCode python">myList[<span class="dv">5</span>:]</code></pre>
+</blockquote>
+<p>is the list from <code>myList[5]</code> to the end of the list and</p>
+<blockquote>
+<pre class="sourceCode python"><code class="sourceCode python">myList[:<span class="dv">5</span>]</code></pre>
+</blockquote>
+<p>is the list up to and not including myList[5] and</p>
+<blockquote>
+<pre class="sourceCode python"><code class="sourceCode python">myList[:]</code></pre>
+</blockquote>
+<p>is the entire list.</p>
+<p>List slicing is more or less the same as string slicing except that we can modify a slice. For example:</p>
+<blockquote>
+<pre class="sourceCode python"><code class="sourceCode python">myList[<span class="dv">0</span>:<span class="dv">2</span>]=[<span class="dv">0</span>,<span class="dv">1</span>]</code></pre>
+</blockquote>
+<p>has the same effect as</p>
+<blockquote>
+<pre class="sourceCode python"><code class="sourceCode python">myList[<span class="dv">0</span>]=<span class="dv">0</span>
+myList[<span class="dv">1</span>]=<span class="dv">1</span></code></pre>
+</blockquote>
+<p>Finally is it worth knowing that the list we assign to a slice doesn’t have to be the same size as the slice - it simply replaces it even if it is a different size.</p>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Slicing strings</h2>
+</div>
+<div class="panel-body">
+<p>A section of an array is called a <a href="../../reference.html#slice">slice</a>. We can take slices of character strings as well:</p>
+<pre class="sourceCode python"><code class="sourceCode python">element = <span class="st">&#39;oxygen&#39;</span>
+<span class="dt">print</span> <span class="st">&#39;first three characters:&#39;</span>, element[<span class="dv">0</span>:<span class="dv">3</span>]
+<span class="dt">print</span> <span class="st">&#39;last three characters:&#39;</span>, element[<span class="dv">3</span>:<span class="dv">6</span>]</code></pre>
+<pre class="output"><code>first three characters: oxy
+last three characters: gen</code></pre>
+<p>What is the value of <code>element[:4]</code>? What about <code>element[4:]</code>? Or <code>element[:]</code>?</p>
+<p>What is <code>element[-1]</code>? What is <code>element[-2]</code>? Given those answers, explain what <code>element[1:-1]</code> does.</p>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Thin slices</h2>
+</div>
+<div class="panel-body">
+<p>The expression <code>element[3:3]</code> produces an <a href="../../reference.html#empty-string">empty string</a>, i.e., a string that contains no characters.</p>
+</div>
+</section>
+<blockquote>
+<h3>Basic array operations</h3>
+</blockquote>
+<p>So far so good, and it looks as if using a list is as easy as using an array.</p>
+<p>Where things start to go wrong just a little is when we attempt to push the similarities between lists and arrays one step too far. For example, suppose we want to create an array initialised to a particular value. Following the general array idiom in most languages we might write:</p>
+<blockquote>
+<pre class="sourceCode python"><code class="sourceCode python">myList=[]
+<span class="kw">for</span> i in <span class="dt">range</span>(<span class="dv">10</span>):
+myList[i]=<span class="dv">1</span></code></pre>
+</blockquote>
+<p>only to discover that this doesn’t work because we can’t assign to a list element that doesn’t already exist. One solution is to use the append method to add elements one by one:</p>
+<blockquote>
+<pre class="sourceCode python"><code class="sourceCode python">myList=[]
+<span class="kw">for</span> i in <span class="dt">range</span>(<span class="dv">10</span>):
+myList.append(<span class="dv">1</span>)</code></pre>
+</blockquote>
+<p>This works but it only works if we need to build up the list in this particular order - which most of the time you do. When the same situation arises in two- and multi-dimensioned arrays the problem often isn’t as easy to solve with append, and there is a better way.</p>
+<p>After examining such problems working with lists as arrays, we will proceed to discover the power of the NumPy arrays in next lesson.</p>
+        </div>
+      </div>
+      </article>
+      <div class="footer">
+        This work is derived from prior works that are Copyright © <a href="http://software-carpentry.org">Software Carpentry</a>
+        <a class="label swc-blue-bg" href="LICENSE.html">License</a>
+        <a class="label swc-blue-bg" href="https://github.com/softwaresaved/NGCMGSoton-2015-06-21">Source</a>
+      </div>
+    </div>
+    <!-- Javascript placed at the end of the document so the pages load faster -->
+    <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
+    <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
+  </body>
+</html>

@@ -16,7 +16,7 @@ But the two most important things are to use whatever language your colleagues a
 
 ## Topics
 
-*  [Python basics: Variables, Lists etc](01-basics.html)
+*  [Python basics: Variables, Arrays,  Lists etc](01-basic.html)
 *  [Reading and analysing Patient data using libraries](02-numpy.html)
 *  [Visualising data using libraries](03-visualisation.html)
 *  [Repeating actions with loops](04-loop.html)
