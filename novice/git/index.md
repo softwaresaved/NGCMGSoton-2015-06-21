@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Version Control with Git
-subtitle: Introduction to Version Control
 ---
 > ## Learning Objectives {.objectives}
 >
