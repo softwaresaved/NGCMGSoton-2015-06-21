@@ -36,7 +36,7 @@ If there aren't conflicts, you can even try to play two sets of changes onto the
 
 A version control system is a tool that keeps track of these changes for us and helps us version and merge our files. A system like Git is designed to keep multiple sets of versions and changes in sync across different computers or servers. This is called a _distributed_ system.
 
-A [repository](reference.html#repository) is the set of files that we want to keep under version control.
+A [repository](../../reference.html#repository) is the set of files that we want to keep under version control.
 
 With Git, every user who wants to make changes to a repository has their own copy of the files in the repository, along with their own copy of the changes (the _commits_) that have been made to those files. Git keeps the commits in a hidden directory along with the copies of the files.
 
