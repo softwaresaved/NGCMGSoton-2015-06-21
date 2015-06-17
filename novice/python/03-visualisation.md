@@ -17,7 +17,8 @@ While there is no "official" plotting library,
 this package is the de facto standard.
 First,
 we will import the `pyplot` module from `matplotlib`
-and use two of its functions to create and display a heat map of our data:
+and use two of its functions to create and display a heat map of our data
+from the previous topic:
 
 ~~~ {.python}
 from matplotlib import pyplot
@@ -73,6 +74,15 @@ It's very common to create an [alias](../../reference.html#alias) for a library 
 in order to reduce the amount of typing we have to do.
 Here are our three plots side by side using aliases for `numpy` and `pyplot`:
 
+<!-- I'd put this code in a python file e.g. three-plots.py, in the code directory and reference it here (save them having to type it all in!) -->
+
+<!-- I also got the following warning when it got to 'fig.tight_layout()':
+
+/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/matplotlib/tight_layout.py:225: UserWarning: tight_layout : falling back to Agg renderer
+  warnings.warn("tight_layout : falling back to Agg renderer")
+
+Perhaps mention this isn't a problem? (It still seemed to work) -->
+
 ~~~ {.python}
 import numpy as np
 from matplotlib import pyplot as plt
@@ -115,6 +125,8 @@ the graphs will actually be squeezed together more closely.)
 > ## Make your own plot {.challenge}
 >
 > Create a plot showing the standard deviation of the inflammation data for each day across all patients.
+
+<!-- Might want to mention for the above challenge that e.g. data.std(axis=0) gives you standard deviation? -->
 
 > ## Moving plots around {.challenge}
 >

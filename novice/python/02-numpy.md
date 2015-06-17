@@ -19,8 +19,8 @@ Similarly,
 while a lot of powerful tools are built into languages like Python,
 even more live in the [libraries](../../reference.html#software-library) they are used to build.
 
-Hence, this lesson represents an end-to-end scientific Python example, from analysing data (using a library) 
-, to visualisation (using a library).
+Hence, this lesson represents an end-to-end scientific Python example, from analysing data (using a library),
+to visualisation (using a library).
 
 In order to load our inflammation data,
 we need to [import](../../reference.html#import) a library called NumPy.
@@ -408,7 +408,7 @@ which is the average inflammation per patient across all days.
 
 > ## Thin slices {.challenge}
 >
-> The expression `element[3:3]` produces an [empty string](../../reference.html#empty-string),
+> From our previous topic, the expression `element[3:3]` produces an [empty string](../../reference.html#empty-string),
 > i.e., a string that contains no characters.
 > If `data` holds our array of patient data,
 > what does `data[3:3, 4:4]` produce?
