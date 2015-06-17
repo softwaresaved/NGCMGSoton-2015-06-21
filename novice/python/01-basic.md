@@ -252,7 +252,7 @@ This works but it only works if we need to build up the list in this particular 
 When the same situation arises in two- and multi-dimensioned arrays the problem often isn't as easy to solve with append, 
 and there is a better way.
 
-After examining such problems working with lists as arrays, we will proceed to discover the power of the NumPy arrays in next lesson.
+After examining such problems working with lists as arrays, we will proceed to discover the power of the NumPy arrays in the next lesson.
 
 > ## Check your understanding {.challenge}
 >
@@ -264,40 +264,3 @@ After examining such problems working with lists as arrays, we will proceed to d
 > mass = mass * 2.0
 > age = age - 20
 > ~~~
-
-> ## Sorting out references {.challenge}
->
-> What does the following program print out?
->
-> ~~~ {.python}
-> first, second = 'Grace', 'Hopper'
-> third, fourth = second, first
-> print third, fourth
-> ~~~
-
-> ## Slicing strings {.challenge}
->
-> A section of an array is called a [slice](../../reference.html#slice).
-> We can take slices of character strings as well:
->
-> ~~~ {.python}
-> element = 'oxygen'
-> print 'first three characters:', element[0:3]
-> print 'last three characters:', element[3:6]
-> ~~~
->
-> ~~~ {.output}
-> first three characters: oxy
-> last three characters: gen
-> ~~~
->
-> What is the value of `element[:4]`?
-> What about `element[4:]`?
-> Or `element[:]`?
->
-> What is `element[-1]`?
-> What is `element[-2]`?
-> Given those answers,
-> explain what `element[1:-1]` does.
-
-
