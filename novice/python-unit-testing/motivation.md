@@ -66,8 +66,8 @@ Letters – Retraction, Science 22 December 2006
 - “if it’s not tested, it’s broken”
     + bittermanandy, 10/09/2010
 
-> ## Learning Objectives {.objectives}
->
+## Learning Objectives
+
 > * how to write code defensively to guard against making errors;
 > * how to use a unit testing framework;
 > * when it's useful to write tests *before* writing code.
