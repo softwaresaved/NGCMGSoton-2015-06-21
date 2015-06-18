@@ -36,22 +36,55 @@ subtitle: Why Python?
      + float(val): Corresponding to floats
      + str(val): Corresponding to strings (classes allow this automatically)
      + type(x) returns the type of a variable (also classes)   
-- Multiple assignment is possible
 
 ## Data Structures in Python
 
 -  Python has built-in support for data structures such as lists, dictionaries, tuples and sets.
       + Lists: can be used as lists, arrays, stacks and queues.
       + Dictionaries: associative memories (i.e. hash tables)
-      + Tuples:     
+      + Tuples: e.g. coordinate-pairs 
+      + Sets: unordered collection of unique items
+-  Lists as arrays
+-  Indexing and Slicing      
+      
+## Reading, Analysing and Visualising data using Python libraries
 
-## Another title thing
+-  What is a library (module) and its usage
+-  Reading data from a file into a program
+-  Numpy Arrays and operations on arrays of data
+-  Selecting individual values and subsections of data
+-  Plotting data using matplotlib library
 
-Something else that is interesting. Plus an image:
+## Control Flow: Repeating actions with loops
 
-![](img/IPython-notebook.png)
+-  What a loop does?
+-  Writing loops accurately to repeat simple calculations
+-  Trace changes to a loop variable as the loop runs
+-  Trace changes to other variables as they are updated by a `for` loop
 
-## Learn More
+## Control Flow: Making choices
+
+-  Write conditional statements including `if`, `elif` and `else` 
+-  Correctly evaluate expressions containing `and` and `or`
+
+## Creating Functions
+
+-  Defining a function, the parameters that it takes, return value
+-  Test and debug a function
+-  Scope of variables
+-  Set default values for function parameters
+-  Divide programs into small, single-purpose functions
+
+## Command-line Programs
+
+-  Using values of command-line arguments in a program
+-  Handling flags and files separately in a command-line program
+-  Reading data from standard input in a program 
+
+##  Thank You!
+
+
+## Learn more
 
 - [The Software Sustainability Institute](http://www.software.ac.uk/)
 - ...

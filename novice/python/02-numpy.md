@@ -11,7 +11,6 @@ minutes: 20
 > *   Read tabular data from a file into a program.
 > *   Select individual values and subsections from data.
 > *   Perform operations on arrays of data.
-> *   Display simple graphs.
 
 Words are useful,
 but what's more useful are the sentences and stories we build with them.
