@@ -4,6 +4,16 @@ title: Testing
 subtitle: Why do it?
 ---
 
+## So far...
+
+- Have introduced the basic tools of programming
+- But how do we know a program gives the right answer?
+
+- We need to
+    + write programs that check their own operation
+    + write tests to catch the mistakes those self-checks miss
+
+
 ## Confess!
 
 Why don't you write tests?
@@ -56,8 +66,9 @@ Letters – Retraction, Science 22 December 2006
 - “if it’s not tested, it’s broken”
     + bittermanandy, 10/09/2010
 
-
-## Learn More
-
-- [The Software Sustainability Institute](http://www.software.ac.uk/)
-- ...
+> ## Learning Objectives {.objectives}
+>
+> * how to write code defensively to guard against making errors;
+> * how to use a unit testing framework;
+> * when it's useful to write tests *before* writing code.
+> * how Python reports and handles errors;
