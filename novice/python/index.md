@@ -30,4 +30,4 @@ But the two most important things are to use whatever language your colleagues a
 *   [Motivation](motivation.html)
 *   [Reference](reference.html)
 *   [Discussion](discussion.html)
-*   [Instructor's Guide](instructors.html)
+
