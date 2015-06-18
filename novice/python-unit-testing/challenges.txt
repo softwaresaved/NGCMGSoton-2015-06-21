@@ -19,3 +19,7 @@ unit tests
  - treat thing to test as a black box; higher-level monitoring
  - separate from code, forces you to revisit tests to ensure they are still valid
  - monitors behaviour outside of run-time
+
+04-tdd:
+
+1. See something.py
