@@ -36,7 +36,7 @@ IOError: [Errno 2] No such file or directory: 'nonexistent-file.txt'
 
 ~~~ {.python}
 values = [0, 1, 2]
-print values[999]
+print(values[999])
 ~~~
 
 ~~~ {.output}
@@ -52,7 +52,7 @@ We can use `try` and `except` to deal with these errors ourselves if we don't wa
 try:
     reader = open('nonexistent-file.txt', 'r')
 except IOError:
-    print 'Whoops!'
+    print('Whoops!')
 ~~~
 
 ~~~ {.output}
@@ -166,7 +166,7 @@ The `raise` statement creates a new exception with a meaningful error message. S
 >     ```
 >     try:
 >         for number in [-1, 0, 1]:
->             print 1.0/number
+>             print(1.0/number)
 >     except ZeroDivisionError:
->         print 'whoops'
+>         print('whoops')
 >     ```

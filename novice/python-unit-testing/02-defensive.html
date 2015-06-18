@@ -80,23 +80,23 @@ AssertionError: Data should only contain positive values</code></pre>
     <span class="kw">return</span> (<span class="dv">0</span>, <span class="dv">0</span>, upper_x, upper_y)</code></pre>
 <p>The preconditions on lines 2, 4, and 5 catch invalid inputs. Before you try the next bit, make sure you <code>cd</code> to the code subdirectory first!</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> rectangle1 <span class="ch">import</span> normalize_rectangle
-<span class="dt">print</span> normalize_rectangle( (<span class="fl">0.0</span>, <span class="fl">1.0</span>, <span class="fl">2.0</span>) ) <span class="co"># missing the fourth coordinate</span></code></pre>
+<span class="dt">print</span>(normalize_rectangle( (<span class="fl">0.0</span>, <span class="fl">1.0</span>, <span class="fl">2.0</span>) )) <span class="co"># missing the fourth coordinate</span></code></pre>
 <pre class="output"><code>Traceback (most recent call last):
   File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
   File &quot;rectangle1.py&quot;, line 2, in normalize_rectangle
     assert len(rect) == 4, &#39;Rectangles must contain 4 coordinates&#39;
 AssertionError: Rectangles must contain 4 coordinates</code></pre>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> normalize_rectangle( (<span class="fl">4.0</span>, <span class="fl">2.0</span>, <span class="fl">1.0</span>, <span class="fl">5.0</span>) ) <span class="co"># X axis inverted</span></code></pre>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(normalize_rectangle( (<span class="fl">4.0</span>, <span class="fl">2.0</span>, <span class="fl">1.0</span>, <span class="fl">5.0</span>) )) <span class="co"># X axis inverted</span></code></pre>
 <pre class="output"><code>Traceback (most recent call last):
   File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
   File &quot;rectangle1.py&quot;, line 4, in normalize_rectangle
     assert x0 &lt; x1, &#39;Invalid X coordinates&#39;
 AssertionError: Invalid X coordinates</code></pre>
 <p>The post-conditions help us catch bugs by telling us when our calculations cannot have been correct. For example, if we normalize a rectangle that is taller than it is wide everything seems OK:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> normalize_rectangle( (<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">1.0</span>, <span class="fl">5.0</span>) )</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(normalize_rectangle( (<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">1.0</span>, <span class="fl">5.0</span>) ))</code></pre>
 <pre class="output"><code>(0, 0, 0.2, 1.0)</code></pre>
 <p>but if we normalize one that’s wider than it is tall, the assertion is triggered:</p>
-<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> normalize_rectangle( (<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">5.0</span>, <span class="fl">1.0</span>) )</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span>(normalize_rectangle( (<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">5.0</span>, <span class="fl">1.0</span>) ))</code></pre>
 <pre class="output"><code>Traceback (most recent call last):
   File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
   File &quot;rectangle1.py&quot;, line 17, in normalize_rectangle
@@ -115,7 +115,6 @@ AssertionError: Calculated upper Y coordinate invalid</code></pre>
 </div>
 <div class="panel-body">
 <ol style="list-style-type: decimal">
-<li><p>Suppose you are writing a function called <code>average</code> that calculates the average of the numbers in a list. What pre-conditions and post-conditions would you write for it? Compare your answer to your neighbor’s: can you think of a function that will pass your tests but not hers or vice versa?</p></li>
 <li><p>Explain in words what the assertions in this code check, and for each one, give an example of input that will make that assertion fail.</p>
 <pre><code>def running(values):
     assert len(values) &gt; 0

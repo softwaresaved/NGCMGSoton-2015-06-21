@@ -14,7 +14,6 @@ variables and lists, file I/O, loops, conditionals, and most importantly, functi
 > ## Learning Objectives {.objectives}
 >
 > * how to write code defensively to guard against making errors;
-> * how Python reports and handles errors;
 > * how to use a unit testing framework;
 > * when it's useful to write tests *before* writing code.
-
+> * how Python reports and handles errors;

@@ -45,7 +45,7 @@
   File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
 IOError: [Errno 2] No such file or directory: &#39;nonexistent-file.txt&#39;</code></pre>
 <pre class="sourceCode python"><code class="sourceCode python">values = [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>]
-<span class="dt">print</span> values[<span class="dv">999</span>]</code></pre>
+<span class="dt">print</span>(values[<span class="dv">999</span>])</code></pre>
 <pre class="output"><code>---------------------------------------------------------------------------
 Traceback (most recent call last):
   File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
@@ -54,7 +54,7 @@ IndexError: list index out of range</code></pre>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">try</span>:
     reader = <span class="dt">open</span>(<span class="st">&#39;nonexistent-file.txt&#39;</span>, <span class="st">&#39;r&#39;</span>)
 <span class="kw">except</span> <span class="ot">IOError</span>:
-    <span class="dt">print</span> <span class="st">&#39;Whoops!&#39;</span></code></pre>
+    <span class="dt">print</span>(<span class="st">&#39;Whoops!&#39;</span>)</code></pre>
 <pre class="output"><code>Whoops!</code></pre>
 <p>When Python executes this code, it runs the statement inside the <code>try</code>. If that works, it skips over the <code>except</code> block without running it. If an exception occurs inside the <code>try</code> block, though, Python compares the type of the exception to the type specified by the <code>except</code>. If they match, it executes the code in the <code>except</code> block.</p>
 <p><code>IOError</code> is the particular kind of exception Python raises when there is a problem related to input and output, such as files not existing or the program not having the permissions it needs to read them. We can put as many lines of code in a <code>try</code> block as we want, just as we can put many statements under an <code>if</code>. We can also handle several different kinds of errors afterward. For example, here’s some code to calculate the entropy at each point in a grid (no need to type this in):</p>
@@ -128,9 +128,9 @@ IndexError: list index out of range</code></pre>
 <li><p>Modify the program below so that it prints three lines of output.</p>
 <pre><code>try:
     for number in [-1, 0, 1]:
-        print 1.0/number
+        print(1.0/number)
 except ZeroDivisionError:
-    print &#39;whoops&#39;</code></pre></li>
+    print(&#39;whoops&#39;)</code></pre></li>
 </ol>
 </div>
 </section>

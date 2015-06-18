@@ -71,7 +71,7 @@ The preconditions on lines 2, 4, and 5 catch invalid inputs. Before you try the 
 
 ~~~ {.python}
 from rectangle1 import normalize_rectangle
-print normalize_rectangle( (0.0, 1.0, 2.0) ) # missing the fourth coordinate
+print(normalize_rectangle( (0.0, 1.0, 2.0) )) # missing the fourth coordinate
 ~~~
 
 ~~~ {.output}
@@ -83,7 +83,7 @@ AssertionError: Rectangles must contain 4 coordinates
 ~~~
 
 ~~~ {.python}
-print normalize_rectangle( (4.0, 2.0, 1.0, 5.0) ) # X axis inverted
+print(normalize_rectangle( (4.0, 2.0, 1.0, 5.0) )) # X axis inverted
 ~~~
 
 ~~~ {.output}
@@ -97,7 +97,7 @@ AssertionError: Invalid X coordinates
 The post-conditions help us catch bugs by telling us when our calculations cannot have been correct. For example, if we normalize a rectangle that is taller than it is wide everything seems OK:
 
 ~~~ {.python}
-print normalize_rectangle( (0.0, 0.0, 1.0, 5.0) )
+print(normalize_rectangle( (0.0, 0.0, 1.0, 5.0) ))
 ~~~
 
 ~~~ {.output}
@@ -107,7 +107,7 @@ print normalize_rectangle( (0.0, 0.0, 1.0, 5.0) )
 but if we normalize one that's wider than it is tall, the assertion is triggered:
 
 ~~~ {.python}
-print normalize_rectangle( (0.0, 0.0, 5.0, 1.0) )
+print(normalize_rectangle( (0.0, 0.0, 5.0, 1.0) ))
 ~~~
 
 ~~~ {.output}
@@ -132,12 +132,7 @@ that this bit is tricky.
 
 > ## Challenges {.challenge}
 > 
-> 1.  Suppose you are writing a function called `average` that calculates the average of the numbers in a list.
->     What pre-conditions and post-conditions would you write for it?
->     Compare your answer to your neighbor's:
->     can you think of a function that will pass your tests but not hers or vice versa?
-> 
-> 2.  Explain in words what the assertions in this code check,
+> 1.  Explain in words what the assertions in this code check,
 >     and for each one,
 >     give an example of input that will make that assertion fail.
 >     
