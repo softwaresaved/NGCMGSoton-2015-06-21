@@ -13,6 +13,9 @@ we can start using it.
 Let's create a directory for our work:
 
 ~~~ {.bash}
+$ mkdir desktop laptop
+$ cd laptop
+
 $ mkdir planets
 $ cd planets
 ~~~
