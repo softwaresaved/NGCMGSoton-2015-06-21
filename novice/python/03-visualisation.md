@@ -6,7 +6,8 @@ minutes: 5
 ---
 > ## Learning Objectives {.objectives}
 >
-> *   Plotting data using matplotlib library
+> *  Displaying simple graphs
+> *  Plotting data using matplotlib library
 
 The mathematician Richard Hamming once said,
 "The purpose of computing is insight, not numbers,"
