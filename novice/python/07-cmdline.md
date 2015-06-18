@@ -11,7 +11,7 @@ minutes: 10
 > *   Read data from standard input in a program so that it can be used in a pipeline.
 
 The IPython Notebook and other interactive tools are great for prototyping code and exploring data,
-but sooner or later we will want to use our program in a pipeline
+but at some point we will want to use our program in a pipeline
 or run it in a shell script to process thousands of data files.
 In order to do that,
 we need to make our programs work like other Unix command-line tools.
@@ -67,29 +67,11 @@ The first line imports a library called `sys`,
 which is short for "system".
 It defines values such as `sys.version`,
 which describes which version of Python we are running.
-We can run this script from within the IPython Notebook like this:
-
-<pre class="in"><code>%run sys-version.py</code></pre>
 
 ~~~ {.output}
-version is 2.7.5 |Anaconda 1.8.0 (x86_64)| (default, Oct 24 2013, 07:02:20)
-[GCC 4.0.1 (Apple Inc. build 5493)]
+2.7.5 (default, Sep  2 2013, 05:24:04) 
+[GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)]
 ~~~
-
-or like this:
-
-<pre class="in"><code>!ipython sys-version.py</code></pre>
-
-~~~ {.output}
-version is 2.7.5 |Anaconda 1.8.0 (x86_64)| (default, Oct 24 2013, 07:02:20)
-[GCC 4.0.1 (Apple Inc. build 5493)]
-~~~
-
-The first method, `%run`,
-uses a special command in the IPython Notebook to run a program in a `.py` file.
-The second method is more general:
-the exclamation mark `!` tells the Notebook to run a shell command,
-and it just so happens that the command we run is `ipython` with the name of the script.
 
 Here's another script called `argv-list.py` that does something more interesting:
 
@@ -105,7 +87,9 @@ and puts them in the list `sys.argv`
 so that the program can determine what they were.
 If we run this program with no arguments:
 
-<pre class="in"><code>!ipython argv-list.py</code></pre>
+~~~ {.python}
+
+~~~
 
 ~~~ {.output}
 sys.argv is ['/Users/gwilson/s/bc/python/novice/argv-list.py']

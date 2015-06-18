@@ -65,22 +65,13 @@ d</code></pre>
 <span class="dt">print</span> word[<span class="dv">1</span>]
 <span class="dt">print</span> word[<span class="dv">2</span>]
 <span class="dt">print</span> word[<span class="dv">3</span>]</code></pre>
-<pre class="error"><code>--------------------------------------------------------------------------
-IndexError                                Traceback (most recent call last)
-&lt;ipython-input-13-5bc7311e0bf3&gt; in &lt;module&gt;()
-----&gt; 1 print_characters(&#39;tin&#39;)
-
-&lt;ipython-input-12-11460561ea56&gt; in print_characters(element)
-      3     print element[1]
-      4     print element[2]
-----&gt; 5     print element[3]
-      6
-      7 print_characters(&#39;lead&#39;)
-
-IndexError: string index out of range</code></pre>
 <pre class="output"><code>t
 i
 n</code></pre>
+<pre class="error"><code>Traceback (most recent call last):
+  File &quot;loop_test.py&quot;, line 7, in &lt;module&gt;
+    print word[3]
+IndexError: string index out of range</code></pre>
 <p>Here’s a better approach:</p>
 <pre class="sourceCode python"><code class="sourceCode python">word = <span class="st">&#39;lead&#39;</span>
 <span class="kw">for</span> char in word:
@@ -127,14 +118,6 @@ n</code></pre>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="dt">print</span> <span class="dv">5</span>**<span class="dv">3</span>
 <span class="dv">125</span></code></pre>
 <p>It also has a function called <code>pow</code> that calculates the same value. Write a loop to calculate the same result.</p>
-</div>
-</section>
-<section class="challenge panel panel-success">
-<div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Reverse a string</h2>
-</div>
-<div class="panel-body">
-<p>Write a loop that takes a string, and produces a new string with the characters in reverse order, so <code>'Newton'</code> becomes <code>'notweN'</code>.</p>
 </div>
 </section>
         </div>

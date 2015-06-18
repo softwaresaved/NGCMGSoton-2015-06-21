@@ -60,26 +60,18 @@ print word[2]
 print word[3]
 
 ~~~
-~~~ {.error}
---------------------------------------------------------------------------
-IndexError                                Traceback (most recent call last)
-<ipython-input-13-5bc7311e0bf3> in <module>()
-----> 1 print_characters('tin')
-
-<ipython-input-12-11460561ea56> in print_characters(element)
-      3     print element[1]
-      4     print element[2]
-----> 5     print element[3]
-      6
-      7 print_characters('lead')
-
-IndexError: string index out of range
-~~~
 ~~~ {.output}
 t
 i
 n
 ~~~
+~~~ {.error}
+Traceback (most recent call last):
+  File "loop_test.py", line 7, in <module>
+    print word[3]
+IndexError: string index out of range
+~~~
+
 
 Here's a better approach:
 
@@ -189,8 +181,3 @@ so we should always use it when we can.
 > It also has a function called `pow` that calculates the same value.
 > Write a loop to calculate the same result.
 
-> ## Reverse a string {.challenge}
->
-> Write a loop that takes a string,
-> and produces a new string with the characters in reverse order,
-> so `'Newton'` becomes `'notweN'`.

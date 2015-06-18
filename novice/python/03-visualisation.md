@@ -75,9 +75,36 @@ It's very common to create an [alias](../../reference.html#alias) for a library 
 in order to reduce the amount of typing we have to do.
 Here are our three plots side by side using aliases for `numpy` and `pyplot`:
 
-Code is present in the file `three-plots.py` under the `code` directory.
 
-Just to clarify, in the above code (`three-plots.py`), `tight_layout` still works by falling back to the Agg renderer, without error (only warning as below) which shouldn't be necessary.
+~~~ {.python}
+#!/usr/bin/python
+
+import numpy as np
+from matplotlib import pyplot as plt
+
+data = np.loadtxt(fname='../data/inflammation-01.csv', delimiter=',')
+
+fig = plt.figure(figsize=(10.0, 3.0))
+
+axes1 = fig.add_subplot(1, 3, 1)
+axes2 = fig.add_subplot(1, 3, 2)
+axes3 = fig.add_subplot(1, 3, 3)
+
+axes1.set_ylabel('average')
+axes1.plot(data.mean(axis=0))
+
+axes2.set_ylabel('max')
+axes2.plot(data.max(axis=0))
+
+axes3.set_ylabel('min')
+axes3.plot(data.min(axis=0))
+
+fig.tight_layout()
+
+plt.show(fig)
+~~~
+
+In the above code (also present under `code` directory in the file `three-plots.py`), `tight_layout` still works by falling back to the Agg renderer, only warning as below.
 
 `/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/matplotlib/tight_layout.py:225: UserWarning: tight_layout : falling back to Agg renderer warnings.warn("tight_layout : falling back to Agg renderer")`
 

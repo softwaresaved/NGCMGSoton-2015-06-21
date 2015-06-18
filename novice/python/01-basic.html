@@ -138,16 +138,6 @@ third, fourth = second, first
 <pre class="sourceCode python"><code class="sourceCode python">myList[:]</code></pre>
 </blockquote>
 <p>is the entire list.</p>
-<p>List slicing is more or less the same as string slicing except that we can modify a slice. For example:</p>
-<blockquote>
-<pre class="sourceCode python"><code class="sourceCode python">myList[<span class="dv">0</span>:<span class="dv">2</span>]=[<span class="dv">0</span>,<span class="dv">1</span>]</code></pre>
-</blockquote>
-<p>has the same effect as</p>
-<blockquote>
-<pre class="sourceCode python"><code class="sourceCode python">myList[<span class="dv">0</span>]=<span class="dv">0</span>
-myList[<span class="dv">1</span>]=<span class="dv">1</span></code></pre>
-</blockquote>
-<p>Finally is it worth knowing that the list we assign to a slice doesn’t have to be the same size as the slice - it simply replaces it even if it is a different size.</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
 <h2><span class="glyphicon glyphicon-pencil"></span>Slicing strings</h2>
@@ -163,6 +153,16 @@ last three characters: gen</code></pre>
 <p>What is <code>element[-1]</code>? What is <code>element[-2]</code>? Given those answers, explain what <code>element[1:-1]</code> does.</p>
 </div>
 </section>
+<p>List slicing is more or less the same as string slicing except that we can modify a slice. For example:</p>
+<blockquote>
+<pre class="sourceCode python"><code class="sourceCode python">myList[<span class="dv">0</span>:<span class="dv">2</span>]=[<span class="dv">0</span>,<span class="dv">1</span>]</code></pre>
+</blockquote>
+<p>has the same effect as</p>
+<blockquote>
+<pre class="sourceCode python"><code class="sourceCode python">myList[<span class="dv">0</span>]=<span class="dv">0</span>
+myList[<span class="dv">1</span>]=<span class="dv">1</span></code></pre>
+</blockquote>
+<p>Finally is it worth knowing that the list we assign to a slice doesn’t have to be the same size as the slice - it simply replaces it even if it is a different size.</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
 <h2><span class="glyphicon glyphicon-pencil"></span>Thin slices</h2>
@@ -179,28 +179,16 @@ last three characters: gen</code></pre>
 <blockquote>
 <pre class="sourceCode python"><code class="sourceCode python">myList=[]
 <span class="kw">for</span> i in <span class="dt">range</span>(<span class="dv">10</span>):
-myList[i]=<span class="dv">1</span></code></pre>
+   myList[i]=<span class="dv">1</span></code></pre>
 </blockquote>
 <p>only to discover that this doesn’t work because we can’t assign to a list element that doesn’t already exist. One solution is to use the append method to add elements one by one:</p>
 <blockquote>
 <pre class="sourceCode python"><code class="sourceCode python">myList=[]
 <span class="kw">for</span> i in <span class="dt">range</span>(<span class="dv">10</span>):
-myList.append(<span class="dv">1</span>)</code></pre>
+   myList.append(<span class="dv">1</span>)</code></pre>
 </blockquote>
 <p>This works but it only works if we need to build up the list in this particular order - which most of the time you do. When the same situation arises in two- and multi-dimensioned arrays the problem often isn’t as easy to solve with append, and there is a better way.</p>
 <p>After examining such problems working with lists as arrays, we will proceed to discover the power of the NumPy arrays in the next lesson.</p>
-<section class="challenge panel panel-success">
-<div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Check your understanding</h2>
-</div>
-<div class="panel-body">
-<p>Draw diagrams showing what variables refer to what values after each statement in the following program:</p>
-<pre class="sourceCode python"><code class="sourceCode python">mass = <span class="fl">47.5</span>
-age = <span class="dv">122</span>
-mass = mass * <span class="fl">2.0</span>
-age = age - <span class="dv">20</span></code></pre>
-</div>
-</section>
         </div>
       </div>
       </article>

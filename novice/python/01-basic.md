@@ -178,22 +178,6 @@ is the list up to and not including myList[5] and
 
 is the entire list.
 
-List slicing is more or less the same as string slicing except that we can modify a slice. For example:
-
->~~~{.python}
->myList[0:2]=[0,1]
->~~~
-
-has the same effect as
-
->~~~{.python}
->myList[0]=0
->myList[1]=1
->~~~
-
-Finally is it worth knowing that the list we assign to a slice doesn't have to be the same size as the slice - 
-it simply replaces it even if it is a different size.
-
 > ## Slicing strings {.challenge}
 >
 > A section of an array is called a [slice](../../reference.html#slice).
@@ -219,6 +203,22 @@ it simply replaces it even if it is a different size.
 > Given those answers,
 > explain what `element[1:-1]` does.
 
+List slicing is more or less the same as string slicing except that we can modify a slice. For example:
+
+>~~~{.python}
+>myList[0:2]=[0,1]
+>~~~
+
+has the same effect as
+
+>~~~{.python}
+>myList[0]=0
+>myList[1]=1
+>~~~
+
+Finally is it worth knowing that the list we assign to a slice doesn't have to be the same size as the slice - 
+it simply replaces it even if it is a different size.
+
 > ## Thin slices {.challenge}
 >
 > The expression `element[3:3]` produces an [empty string](../../reference.html#empty-string),
@@ -236,7 +236,7 @@ might write:
 > ~~~ {.python}
 >myList=[]
 >for i in range(10):
-> myList[i]=1
+>    myList[i]=1
 >~~~
 
 only to discover that this doesn't work because we can't assign to a list element that doesn't already exist.
@@ -245,7 +245,7 @@ One solution is to use the append method to add elements one by one:
 > ~~~ {.python}
 >myList=[]
 >for i in range(10):
-> myList.append(1)
+>    myList.append(1)
 >~~~
 
 This works but it only works if we need to build up the list in this particular order - which most of the time you do. 
@@ -254,13 +254,4 @@ and there is a better way.
 
 After examining such problems working with lists as arrays, we will proceed to discover the power of the NumPy arrays in the next lesson.
 
-> ## Check your understanding {.challenge}
->
-> Draw diagrams showing what variables refer to what values after each statement in the following program:
->
-> ~~~ {.python}
-> mass = 47.5
-> age = 122
-> mass = mass * 2.0
-> age = age - 20
-> ~~~
+

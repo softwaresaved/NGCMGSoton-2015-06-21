@@ -42,7 +42,7 @@
 </ul>
 </div>
 </section>
-<p>The IPython Notebook and other interactive tools are great for prototyping code and exploring data, but sooner or later we will want to use our program in a pipeline or run it in a shell script to process thousands of data files. In order to do that, we need to make our programs work like other Unix command-line tools. For example, we may want a program that reads a data set and prints the average inflammation per patient:</p>
+<p>The IPython Notebook and other interactive tools are great for prototyping code and exploring data, but at some point we will want to use our program in a pipeline or run it in a shell script to process thousands of data files. In order to do that, we need to make our programs work like other Unix command-line tools. For example, we may want a program that reads a data set and prints the average inflammation per patient:</p>
 <pre><code>$ python readings.py --mean data/inflammation-01.csv
 5.45
 5.425
@@ -66,23 +66,14 @@
 <p>Using the text editor of your choice, save the following in a text file called <code>sys-version.py</code>:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
 <span class="dt">print</span> <span class="st">&#39;version is&#39;</span>, sys.version</code></pre>
-<p>The first line imports a library called <code>sys</code>, which is short for “system”. It defines values such as <code>sys.version</code>, which describes which version of Python we are running. We can run this script from within the IPython Notebook like this:</p>
-<pre class="in"><code>%run sys-version.py</code></pre>
-
-<pre class="output"><code>version is 2.7.5 |Anaconda 1.8.0 (x86_64)| (default, Oct 24 2013, 07:02:20)
-[GCC 4.0.1 (Apple Inc. build 5493)]</code></pre>
-<p>or like this:</p>
-<pre class="in"><code>!ipython sys-version.py</code></pre>
-
-<pre class="output"><code>version is 2.7.5 |Anaconda 1.8.0 (x86_64)| (default, Oct 24 2013, 07:02:20)
-[GCC 4.0.1 (Apple Inc. build 5493)]</code></pre>
-<p>The first method, <code>%run</code>, uses a special command in the IPython Notebook to run a program in a <code>.py</code> file. The second method is more general: the exclamation mark <code>!</code> tells the Notebook to run a shell command, and it just so happens that the command we run is <code>ipython</code> with the name of the script.</p>
+<p>The first line imports a library called <code>sys</code>, which is short for “system”. It defines values such as <code>sys.version</code>, which describes which version of Python we are running.</p>
+<pre class="output"><code>2.7.5 (default, Sep  2 2013, 05:24:04) 
+[GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)]</code></pre>
 <p>Here’s another script called <code>argv-list.py</code> that does something more interesting:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> sys
 <span class="dt">print</span> <span class="st">&#39;sys.argv is&#39;</span>, sys.argv</code></pre>
 <p>The strange name <code>argv</code> stands for “argument values”. Whenever Python runs a program, it takes all of the values given on the command line and puts them in the list <code>sys.argv</code> so that the program can determine what they were. If we run this program with no arguments:</p>
-<pre class="in"><code>!ipython argv-list.py</code></pre>
-
+<pre class="sourceCode python"><code class="sourceCode python"></code></pre>
 <pre class="output"><code>sys.argv is [&#39;/Users/gwilson/s/bc/python/novice/argv-list.py&#39;]</code></pre>
 <p>the only thing in the list is the full path to our script, which is always <code>sys.argv[0]</code>. If we run it with a few arguments, however:</p>
 <pre class="input"><code>$ python argv-list.py first second third</code></pre>

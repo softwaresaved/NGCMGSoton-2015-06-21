@@ -60,12 +60,6 @@ and the [delimiter](../../reference.html#delimiter) that separates values on a l
 These both need to be character strings (or [strings](../../reference.html#string) for short),
 so we put them in quotes.
 
-When we are finished typing and press Shift+Enter,
-the notebook runs our command.
-Since we haven't told it to do anything else with the function's output,
-the notebook displays it.
-In this case,
-that output is the data we just loaded.
 By default,
 only a few rows and columns are shown
 (with `...` to omit elements when displaying big arrays).

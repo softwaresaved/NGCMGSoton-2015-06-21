@@ -32,12 +32,12 @@ subtitle: Why Python?
 - Creating and assigning values to variables
 - Types: Built-in types and type handling
      + Built-in: String, integers, boolean and floating point
+     + type(val) returns the type of a variable (also classes)  
      + int(val[,base]) converts to an integer (of base base)
      + float(val): Corresponding to floats
      + str(val): Corresponding to strings (classes allow this automatically)
-     + type(x) returns the type of a variable (also classes)   
-
-## Data Structures in Python
+      
+## Lists in Python
 
 -  Python has built-in support for data structures such as lists, dictionaries, tuples and sets.
       + Lists: can be used as lists, arrays, stacks and queues.
@@ -50,8 +50,8 @@ subtitle: Why Python?
 ## Reading, Analysing and Visualising data using Python libraries
 
 -  What is a library (module) and its usage
--  Reading data from a file into a program
--  Numpy Arrays and operations on arrays of data
+-  Reading data from a file
+-  Numpy arrays and operations on arrays of data
 -  Selecting individual values and subsections of data
 -  Plotting data using matplotlib library
 

@@ -68,8 +68,32 @@ pyplot.show(min_plot)</code></pre>
 </div>
 <p>The maximum value rises and falls perfectly smoothly, while the minimum seems to be a step function. Neither result seems particularly likely, so either there’s a mistake in our calculations or something is wrong with our data.</p>
 <p>It’s very common to create an <a href="../../reference.html#alias">alias</a> for a library when importing it in order to reduce the amount of typing we have to do. Here are our three plots side by side using aliases for <code>numpy</code> and <code>pyplot</code>:</p>
-<p>Code is present in the file <code>three-plots.py</code> under the <code>code</code> directory.</p>
-<p>Just to clarify, in the above code (<code>three-plots.py</code>), <code>tight_layout</code> still works by falling back to the Agg renderer, without error (only warning as below) which shouldn’t be necessary.</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co">#!/usr/bin/python</span>
+
+<span class="ch">import</span> numpy <span class="ch">as</span> np
+<span class="ch">from</span> matplotlib <span class="ch">import</span> pyplot <span class="ch">as</span> plt
+
+data = np.loadtxt(fname=<span class="st">&#39;../data/inflammation-01.csv&#39;</span>, delimiter=<span class="st">&#39;,&#39;</span>)
+
+fig = plt.figure(figsize=(<span class="fl">10.0</span>, <span class="fl">3.0</span>))
+
+axes1 = fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)
+axes2 = fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>)
+axes3 = fig.add_subplot(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)
+
+axes1.set_ylabel(<span class="st">&#39;average&#39;</span>)
+axes1.plot(data.mean(axis=<span class="dv">0</span>))
+
+axes2.set_ylabel(<span class="st">&#39;max&#39;</span>)
+axes2.plot(data.<span class="dt">max</span>(axis=<span class="dv">0</span>))
+
+axes3.set_ylabel(<span class="st">&#39;min&#39;</span>)
+axes3.plot(data.<span class="dt">min</span>(axis=<span class="dv">0</span>))
+
+fig.tight_layout()
+
+plt.show(fig)</code></pre>
+<p>In the above code (also present under <code>code</code> directory in the file <code>three-plots.py</code>), <code>tight_layout</code> still works by falling back to the Agg renderer, only warning as below.</p>
 <p><code>/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/matplotlib/tight_layout.py:225: UserWarning: tight_layout : falling back to Agg renderer warnings.warn(&quot;tight_layout : falling back to Agg renderer&quot;)</code></p>
 <div class="figure">
 <img src="01-numpy_files/novice/python/01-numpy_83_0.png" alt="The Previous Plots as Subplots" /><p class="caption">The Previous Plots as Subplots</p>
