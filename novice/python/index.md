@@ -27,4 +27,4 @@ But the two most important things are to use whatever language your colleagues a
 ## Other resources
 
 *  [Motivation](motivation.html)
-*  [Exercises] (Challenges.html)
+*  [Exercises](Challenges.html)
