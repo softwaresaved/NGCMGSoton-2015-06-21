@@ -4,10 +4,9 @@ title: Building programs with Python
 subtitle: Why Python?
 ---
 
-## Setup
+## Getting ready
 
-- Download necessary materials by following instructions present at the Etherpad present here:
-  `http://mzl.la/1Svh6Qx` 
+-  You need to download workshop repository files and necessary materials to follow this course. Download instructions are present at the Etherpad here: `http://mzl.la/1Svh6Qx` 
 
 ## Why Python?
 

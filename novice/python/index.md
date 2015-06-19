@@ -24,4 +24,7 @@ But the two most important things are to use whatever language your colleagues a
 *  [Creating functions](06-func.html)
 *  [Command-Line Programs](07-cmdline.html)
 
+## Other resources
 
+*  [Motivation](motivation.html)
+*  [Exercises] (Challenges.html)
