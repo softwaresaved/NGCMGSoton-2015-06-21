@@ -47,7 +47,7 @@ subtitle: Why Python?
 -  Lists as arrays
 -  Indexing and Slicing      
       
-## Reading, Analysing and Visualising data using Python libraries
+## Using Python libraries
 
 -  What is a library (module) and its usage
 -  Reading data from a file
