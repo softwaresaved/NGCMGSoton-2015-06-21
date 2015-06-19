@@ -4,17 +4,16 @@ title: Building programs with Python
 subtitle: Why Python?
 ---
 
-## Building programs with Python
+## Why Python?
 
-- a thing
-- another thing
-- ...
+- This introduction to Python is built around an end to end scientific example: data analysis
+- Goal is to teach basic programming concepts that all programming depends on
 
 ## Motivation
 
-- a thing
-- another thing
-- ...
+- It's free, well-documented, and runs almost everywhere
+- Large (and growing) user base among researchers and scientists
+- Easier for beginners to grasp 
 
 ## Python Introduction	
 
@@ -39,11 +38,6 @@ subtitle: Why Python?
       
 ## Lists in Python
 
--  Python has built-in support for data structures such as lists, dictionaries, tuples and sets.
-      + Lists: can be used as lists, arrays, stacks and queues.
-      + Dictionaries: associative memories (i.e. hash tables)
-      + Tuples: e.g. coordinate-pairs 
-      + Sets: unordered collection of unique items
 -  Lists as arrays
 -  Indexing and Slicing      
       
