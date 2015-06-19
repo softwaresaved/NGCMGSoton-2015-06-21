@@ -10,7 +10,7 @@ minutes: 10
 
 Once Git is configured,
 we can start using it.
-Let's create a directory for our work:
+Let's create a couple of directories for our work.  One will represent our desktop computer, the other our laptop.
 
 ~~~ {.bash}
 $ mkdir desktop laptop

@@ -275,6 +275,9 @@ but not yet committed.
 `git add` puts things in this area,
 and `git commit` then copies them to long-term storage (as a commit):
 
+
+
+
 ![The Git Staging Area](img/git-staging-area.svg)
 
 Let's watch as our changes to a file move from our editor

@@ -9,42 +9,39 @@ minutes: 10
 > *   Explain which initialization and configuration steps are required once per machine,
 >     and which are required once per repository.
 
-We'll start by exploring how version control can be used
-to keep track of what **one** person did and when.
-Even if you aren't collaborating with other people,
-version control is much better for this than this:
+> ## Prerequisites {.prereq}
+>
+> In this lesson we use Git from the Bash Shell.
+> Some previous experience with the shell is expected,
+> *but isn't mandatory*.
 
-[![Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com](img/phd101212s.gif)](http://www.phdcomics.com)
+## Get Started - The Scenario - Comedy Monsters
 
-"Piled Higher and Deeper" by Jorge Cham, http://www.phdcomics.com
+Lets walk through a little scenario to get some hands on experience using Git.
 
-We've all been in this situation before: it seems ridiculous to have multiple nearly-identical versions of the same document. Some word processors let us deal with this a little better, like Microsoft Word ("Track Changes") or Google Docs version history.
+**Linux and Mac users should open a terminal, windows users to should go to the Start Menu open GitBash from the Git group.**
 
-Version control systems start with a base version of the document and then save just the changes you made at each step on the way. You can think of it as a tape: if you rewind the tape and start at the base document, then you can play back each change and end up with your latest version.
+**Post-Its**
 
-![Changes are saved sequentially](img/play-changes.svg)
+Wolfman and Dracula have been hired by Universal Missions
+to investigate if it is possible to send their next planetary lander to Mars.
 
-Once you think of changes as separate from the document itself, you can then think about "playing back" different sets of changes onto the base document and getting different versions of the document. For example, two users can make independent sets of changes based on the same document.
+**(FULL SCREEN SLIDE 8 /9 - Monsters to Mars)**
 
-![Different versions can be saved](img/versions.svg)
+**Switch out of fullscreen**
 
-If there aren't conflicts, you can even try to play two sets of changes onto the same base document.
-
-![Multiple versions can be merged](img/merge.svg)
-
-## How Git works
-
-A version control system is a tool that keeps track of these changes for us and helps us version and merge our files. A system like Git is designed to keep multiple sets of versions and changes in sync across different computers or servers. This is called a _distributed_ system.
-
-A [repository](reference.html#repository) is the set of files that we want to keep under version control.
-
-With Git, every user who wants to make changes to a repository has their own copy of the files in the repository, along with their own copy of the changes (the _commits_) that have been made to those files. Git keeps the commits in a hidden directory along with the copies of the files.
+We’ll start by exploring how version control can be used to keep track of what *one person* did and when.
 
 ## Setting Up
 
 The first time we use Git on a new machine,
 we need to configure a few things.
-Here's how Dracula sets up his new laptop:
+
+Make sure you're in your home directory (not another repository).
+
+~~~ {.bash}
+$ cd
+~~~
 
 ~~~ {.bash}
 $ git config --global user.name "Vlad Dracula"
@@ -58,13 +55,9 @@ He also has to set his favorite text editor, following this table:
 | Editor             | Configuration command                            |
 |:-------------------|:-------------------------------------------------|
 | nano               | `$ git config --global core.editor "nano -w"`    |
-| Text Wrangler      | `$ git config --global core.editor "edit -w"`    |
-| Sublime Text (Mac) | `$ git config --global core.editor "subl -n -w"` |
-| Sublime Text (Win) | `$ git config --global core.editor "'c:/program files/sublime text 2/sublime_text.exe' -w"` |
 | Notepad++ (Win)    | `$ git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
-| Kate (Linux)       | `$ git config --global core.editor "kate"`       |
-| Gedit (Linux)      | `$ git config --global core.editor "gedit -s"`   |
 
+(See the Etherpad)
 
 Git commands are written `git verb`,
 where `verb` is what we actually want it to do.
@@ -72,11 +65,10 @@ In this case,
 we're telling Git:
 
 *   our name and email address,
-*   to colorize output,
 *   what our favorite text editor is, and
 *   that we want to use these settings globally (i.e., for every project),
 
-The four commands above only need to be run once:
+The three commands above only need to be run once:
 the flag `--global` tells Git to use the settings for every project on this machine.
 
 You can check your settings at any time:

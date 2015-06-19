@@ -35,27 +35,52 @@
 </div>
 <div class="panel-body">
 <ul>
-<li>Explain how version control is useful / essential</li>
+<li>Understand when version control is useful and how it works</li>
 </ul>
 </div>
 </section>
-<p>Wolfman and Dracula have been hired by Universal Missions to investigate if it is possible to send their next planetary lander to Mars. They want to be able to work on the plans at the same time, but they have run into problems doing this in the past.</p>
-<p>If they take turns, each one will spend a lot of time waiting for the other to finish, but if they work on their own copies and email changes back and forth things will be lost, overwritten, or duplicated.</p>
-<p>A colleague suggests using version control to manage their work. Version control is better than mailing files back and forth because:</p>
-<ul>
-<li>Nothing that is committed to version control is ever lost. This means it can be used like the “undo” feature in an editor, and since all old versions of files are saved it’s always possible to go back in time to see exactly who wrote what on a particular day, or what version of a program was used to generate a particular set of results.</li>
-<li>It keeps a record of who made what changes when, so that if people have questions later on, they know who to ask.</li>
-<li>It’s hard (but not impossible) to accidentally overlook or overwrite someone’s changes: the version control system automatically notifies users whenever there’s a conflict between one person’s work and another’s.</li>
-</ul>
-<p>Version control is the lab notebook of the digital world: it’s what professionals use to keep track of what they’ve done and to collaborate with other people. Every large software development project relies on it, and most programmers use it for their small jobs as well. And it isn’t just for software: books (like this one), papers, small data sets, and anything that changes over time or needs to be shared can and should be stored in a version control system.</p>
-<section class="prereq panel panel-warning">
-<div class="panel-heading">
-<h2><span class="glyphicon glyphicon-education"></span>Prerequisites</h2>
+<p><strong>(FULL SCREEN SLIDE 1 - Version Control with Git)</strong></p>
+<p>Intro</p>
+<p><strong>(FULL SCREEN SLIDE 2 - What is Version Control?)</strong></p>
+<h2 id="what-is-version-control">What is Version Control</h2>
+<p>Version control tools, also known as <strong>revision control</strong> or <strong>source control</strong> tools, track <strong>changes</strong> to files.<br />At the simplest level, you get a better backup tool. Avoiding this all to common scenario:</p>
+<h3 id="a-better-backup">1. A Better Backup</h3>
+<p><strong>(FULL SCREEN SLIDE 3 - A Better Backup)</strong></p>
+<p>We’ve all been in this situation before - it seems ridiculous to have multiple nearly-identical versions of the same document. Some word processors let us deal with this a little better, like Microsoft Word (“Track Changes”) or Google Docs version history.</p>
+<p>BUT research isn’t just Words docs. With <strong>Version Control</strong>, at any point in the future, you can retrieve the correct versions of your documents, scripts or code. So, for example, a year after publication, you can get hold of the precise combination of scripts and data that you used to assemble a paper.</p>
+<p>Version control makes <strong>reproducibility</strong> simpler. If you’re not using version control can you honestly say that your research is reproducible?</p>
+<p><strong>(FULL SCREEN SLIDE 2 - What is Version Control?)</strong></p>
+<h3 id="a-collaboration-tool">2. A collaboration tool</h3>
+<p>As well as maintaining a revison history, Version Control tools also help multiple authors collaborate on the same file. VC is what professional software developers use to work in large teams and to keep track of what they’ve done. They know who has changed what and when. And who to blame when things break!</p>
+<p>Every large software development project relies on VC, and most programmers use it for their small jobs as well.</p>
+<p>VC isn’t just for software: papers, small data sets, and anything that changes over time, or needs to be shared can, and probably should be stored in a version control system.</p>
+<p>It’s worth noting that although most version control system can deal with any file type, because they tracks incremental change, many features, like diffs and merges work only with human readable text, not binary files lke images, or Word docs.</p>
+<p>We’ll look at both the backup and collaboration scenarios, but first it’s useful to understand what going on under the hood.</p>
+<h3 id="how-do-version-control-tools-work">3. How do Version Control Tools Work?</h3>
+<p><strong>(FULL SCREEN SLIDE 4 - Changes are tracked sequentially)</strong></p>
+<p>Version control systems start with the base version of the file that you save and then record just the changes you made at each step on the way. You can think of it as a tape: if you rewind the tape and start at the base document, then you can play back each change and end up with your latest version.</p>
+<div class="figure">
+<img src="img/play-changes.svg" alt="Changes are saved sequentially" /><p class="caption">Changes are saved sequentially</p>
 </div>
-<div class="panel-body">
-<p>In this lesson we use Git from the Bash Shell. Some previous experience with the shell is expected, <em>but isn’t mandatory</em>.</p>
+<p>Once you think of changes as separate from the document itself, you can then think about “playing back” different sets of changes onto the base document and getting different versions of the document. For example, two users can make independent sets of changes based on the same document.</p>
+<p><strong>(FULL SCREEN SLIDE 5 - Different versions can be saved)</strong></p>
+<div class="figure">
+<img src="img/versions.svg" alt="Different versions can be saved" /><p class="caption">Different versions can be saved</p>
 </div>
-</section>
+<p><strong>(FULL SCREEN SLIDE 6 - Multiple versions can be merged)</strong></p>
+<p>If there aren’t conflicts, you can even try to play two sets of changes onto the same base document.</p>
+<div class="figure">
+<img src="img/merge.svg" alt="Multiple versions can be merged" /><p class="caption">Multiple versions can be merged</p>
+</div>
+<h2 id="version-control-alternatives">3. Version Control Alternatives</h2>
+<p><strong>(FULL SCREEN SLIDE 7 - Version Control Alternatives)</strong></p>
+<p>These are the most popular currently used Version Control systems.</p>
+<p><strong>Subversion</strong> has been around since about 2000, it was developed to replace the venerable <strong>Concurrent Versioning System (CVS)</strong> It introduced such revolutionary concepts as the ability to move and rename files whilst retaining their version history.</p>
+<p>Both <strong>Mercurial</strong> and <strong>Git</strong> arose from the need to find a new Version Control System for the Linux Kernel, after BitKeeper became non-free in 2005.</p>
+<p>Whereas with Subversion a single master copy of the repository (the files under version control) exists - the only place where all revision history is kept, <strong>Mercurial</strong> and <strong>Git</strong> are newer and work a little differently - they are <strong>Distributed</strong> Version control systems - each developers copy of the codebase is a complete repository. You can use Git without a network connection and there’s no single point of failuire.</p>
+<p><strong>Git</strong> was written by Linux Torvalds himself, to scratch his own itch, so if you think it’s idiosyncractic in places, you know who to blame.</p>
+<p>Git has found wider prominence partly through the rise of GitHub - a web based Git repsoitory hosting service. GitHub also provide bells and whistles like bug tracking, task management and other tools for managing software projects.</p>
+<p>You don’t need to use GitHub to employ Git, but we will use today to demonstrate the use of remote repositories.</p>
 <h2 id="topics">Topics</h2>
 <ol start="0" style="list-style-type: decimal">
 <li><a href="index.html">Introduction</a></li>
@@ -67,11 +92,7 @@
 <li><a href="06-collab.html">Collaborating</a></li>
 <li><a href="07-conflict.html">Conflicts</a></li>
 </ol>
-<h2 id="other-resources">Other Resources</h2>
-<ul>
-<li><a href="motivation.html">Motivation</a></li>
-</ul>
-<p><a href="01-setup.html">Next - Setting Up Git</a></p>
+<p><a href="01-setup.html">Next - A Better Backup / Setting Up Git</a></p>
         </div>
       </div>
       </article>
