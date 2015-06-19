@@ -8,7 +8,7 @@ minutes: 20
 >
 > *   Explain what a library is, and what libraries are used for.
 > *   Load a Python library and use the things it contains.
-> *   Read tabular data from a file into a program.
+> *   Read tabular data from a file.
 > *   Select individual values and subsections from data.
 > *   Perform operations on arrays of data.
 

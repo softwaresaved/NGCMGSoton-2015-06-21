@@ -169,15 +169,4 @@ so we should always use it when we can.
 > 3
 > ~~~
 
-> ## Computing powers with loops {.challenge}
->
-> Exponentiation is built into Python:
->
->~~~ {.python}
-> print 5**3
-> 125
-> ~~~
->
-> It also has a function called `pow` that calculates the same value.
-> Write a loop to calculate the same result.
 
