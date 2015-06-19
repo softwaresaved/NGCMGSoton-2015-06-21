@@ -87,8 +87,8 @@ and puts them in the list `sys.argv`
 so that the program can determine what they were.
 If we run this program with no arguments:
 
-~~~ {.input}
-python argv-list.py
+~~~ 
+$ python argv-list.py
 ~~~
 
 ~~~ {.output}
@@ -99,7 +99,7 @@ the only thing in the list is the full path to our script,
 which is always `sys.argv[0]`.
 If we run it with a few arguments, however:
 
-~~~ {.input}
+~~~ 
 $ python argv-list.py first second third
 ~~~
 ~~~ {.output}
@@ -115,8 +115,8 @@ and a placeholder for the function that does the actual work.
 By convention this function is usually called `main`,
 though we can call it whatever we want:
 
-~~~{.input}
-cat readings-01.py
+~~~
+$ cat readings-01.py
 ~~~
 
 ~~~ {.python}
@@ -136,16 +136,16 @@ because that's where it's always put,
 and the name of the file to process from `sys.argv[1]`.
 Here's a simple test:
 
-~~~{.input}
-python readings-01.py ../data/inflammation-01.csv
+~~~
+$ python readings-01.py ../data/inflammation-01.csv
 ~~~
 
 There is no output because we have defined a function,
 but haven't actually called it.
 Let's add a call to `main`:
 
-~~~{.input}
-cat readings-02.py
+~~~
+$ cat readings-02.py
 ~~~
 
 ~~~ {.python}
@@ -164,8 +164,8 @@ main()
 
 and run that:
 
-~~~{.input}
-python readings-02.py ../data/inflammation-01.csv
+~~~
+$ python readings-02.py ../data/inflammation-01.csv
 ~~~
 
 ~~~ {.output}
