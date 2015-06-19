@@ -147,7 +147,7 @@ Now lets look at collaboration.  In this case it's with ourselves - on laptop an
 but the principal, and much of the practice, is the same.
 
 ~~~ {.bash}
-$ cd ../../desktop
+$ cd ../../dtop
 $ git clone https://github.com/vlad/planets.git
 ~~~
 

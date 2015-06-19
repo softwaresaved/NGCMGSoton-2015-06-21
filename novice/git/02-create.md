@@ -12,16 +12,17 @@ Once Git is configured,
 we can start using it.
 Let's create a couple of directories for our work.  One will represent our desktop computer, the other our laptop.
 
+**NOT DESKTOP**
+
 ~~~ {.bash}
-$ mkdir desktop laptop
-$ cd laptop
+$ mkdir dtop ltop
+$ cd ltop
 
 $ mkdir planets
 $ cd planets
 ~~~
 
-and tell Git to make it a [repository](reference.html#repository)&mdash;a place where
-Git can store old versions of our files:
+and tell Git to make it a [repository](reference.html#repository)&mdash; A storage area where a version control system stores the full history of commits of a project and information about who changed what, when.
 
 ~~~ {.bash}
 $ git init
@@ -61,5 +62,7 @@ $ git status
 #
 nothing to commit (create/copy files and use "git add" to track)
 ~~~
+A branch is an independent line of development.  We have only one, and the default name is **master**.
+
 
 [Next - Tracking Changes](03-changes.html)

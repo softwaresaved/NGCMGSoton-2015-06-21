@@ -29,6 +29,10 @@ to investigate if it is possible to send their next planetary lander to Mars.
 **(FULL SCREEN SLIDE 8 /9 - Monsters to Mars)**
 
 **Switch out of fullscreen**
+**Open Terminal**
+
+
+**( SLIDE 10 - Creating a Repository)**
 
 We’ll start by exploring how version control can be used to keep track of what *one person* did and when.
 
@@ -43,6 +47,7 @@ Make sure you're in your home directory (not another repository).
 $ cd
 ~~~
 
+Set some global options:
 ~~~ {.bash}
 $ git config --global user.name "Vlad Dracula"
 $ git config --global user.email "vlad@tran.sylvan.ia"

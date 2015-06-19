@@ -41,12 +41,13 @@
 </div>
 </section>
 <p>Once Git is configured, we can start using it. Let’s create a couple of directories for our work. One will represent our desktop computer, the other our laptop.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> desktop laptop
-$ <span class="kw">cd</span> laptop
+<p><strong>NOT DESKTOP</strong></p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> dtop ltop
+$ <span class="kw">cd</span> ltop
 
 $ <span class="kw">mkdir</span> planets
 $ <span class="kw">cd</span> planets</code></pre>
-<p>and tell Git to make it a <a href="reference.html#repository">repository</a>—a place where Git can store old versions of our files:</p>
+<p>and tell Git to make it a <a href="reference.html#repository">repository</a>— A storage area where a version control system stores the full history of commits of a project and information about who changed what, when.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> init</code></pre>
 <p>If we use <code>ls</code> to show the directory’s contents, it appears that nothing has changed:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span></code></pre>
@@ -61,6 +62,7 @@ $ <span class="kw">cd</span> planets</code></pre>
 # Initial commit
 #
 nothing to commit (create/copy files and use &quot;git add&quot; to track)</code></pre>
+<p>A branch is an independent line of development. We have only one, and the default name is <strong>master</strong>.</p>
 <p><a href="03-changes.html">Next - Tracking Changes</a></p>
         </div>
       </div>

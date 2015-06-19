@@ -12,18 +12,22 @@ minutes: 20
 Let's create a file called `mars.txt` that contains some notes
 about the Red Planet's suitability as a base.
 (We'll use `nano` to edit the file;
-you can use whatever editor you like.
-In particular, this does not have to be the `core.editor` you set globally earlier.)
+you can use whatever editor you like.)
 
 ~~~ {.bash}
 $ nano mars.txt
 ~~~
+
+Under Windows, you'll need to choose to save it to under your home directory "C\:\\Users\\Me\\ltop\\planets"
+
 
 Type the text below into the `mars.txt` file:
 
 ~~~ {.output}
 Cold and dry, but everything is my favorite color
 ~~~
+
+
 
 `mars.txt` now contains a single line:
 
