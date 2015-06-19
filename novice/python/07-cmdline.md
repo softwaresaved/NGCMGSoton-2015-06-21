@@ -20,7 +20,7 @@ we may want a program that reads a data set
 and prints the average inflammation per patient:
 
 ~~~
-$ python readings.py --mean data/inflammation-01.csv
+$ python readings.py --mean ../data/inflammation-01.csv
 5.45
 5.425
 6.1
@@ -33,13 +33,13 @@ $ python readings.py --mean data/inflammation-01.csv
 but we might also want to look at the minimum of the first four lines
 
 ~~~
-$ head -4 data/inflammation-01.csv | python readings.py --min
+$ head -4 ../data/inflammation-01.csv | python readings.py --min
 ~~~
 
 or the maximum inflammations in several files one after another:
 
 ~~~
-$ python readings.py --max data/inflammation-*.csv
+$ python readings.py --max ../data/inflammation-*.csv
 ~~~
 
 Our overall requirements are:
@@ -87,12 +87,12 @@ and puts them in the list `sys.argv`
 so that the program can determine what they were.
 If we run this program with no arguments:
 
-~~~ {.python}
-
+~~~ {.input}
+python argv-list.py
 ~~~
 
 ~~~ {.output}
-sys.argv is ['/Users/gwilson/s/bc/python/novice/argv-list.py']
+sys.argv is ['argv-list.py']
 ~~~
 
 the only thing in the list is the full path to our script,
@@ -103,7 +103,7 @@ If we run it with a few arguments, however:
 $ python argv-list.py first second third
 ~~~
 ~~~ {.output}
-sys.argv is ['/Users/gwilson/s/bc/python/novice/argv-list.py', 'first', 'second', 'third']
+sys.argv is ['argv-list.py', 'first', 'second', 'third']
 ~~~
 
 then Python adds each of those arguments to that magic list.
@@ -115,7 +115,9 @@ and a placeholder for the function that does the actual work.
 By convention this function is usually called `main`,
 though we can call it whatever we want:
 
-<pre class="in"><code>!cat readings-01.py</code></pre>
+~~~{.input}
+cat readings-01.py
+~~~
 
 ~~~ {.python}
 import sys
@@ -134,13 +136,17 @@ because that's where it's always put,
 and the name of the file to process from `sys.argv[1]`.
 Here's a simple test:
 
-<pre class="in"><code>%run readings-01.py data/inflammation-01.csv</code></pre>
+~~~{.input}
+python readings-01.py ../data/inflammation-01.csv
+~~~
 
 There is no output because we have defined a function,
 but haven't actually called it.
 Let's add a call to `main`:
 
-<pre class="in"><code>!cat readings-02.py</code></pre>
+~~~{.input}
+cat readings-02.py
+~~~
 
 ~~~ {.python}
 import sys
@@ -158,7 +164,9 @@ main()
 
 and run that:
 
-<pre class="in"><code>%run readings-02.py data/inflammation-01.csv</code></pre>
+~~~{.input}
+python readings-02.py ../data/inflammation-01.csv
+~~~
 
 ~~~ {.output}
 5.45

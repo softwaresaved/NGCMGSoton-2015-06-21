@@ -4,16 +4,17 @@ title: Building programs with Python
 subtitle: Why Python?
 ---
 
+## Setup
+
+- Download necessary materials by following instructions present at the Etherpad present here:
+  `http://mzl.la/1Svh6Qx` 
+
 ## Why Python?
-
-- This introduction to Python is built around an end to end scientific example: data analysis
-- Goal is to teach basic programming concepts that all programming depends on
-
-## Motivation
 
 - It's free, well-documented, and runs almost everywhere
 - Large (and growing) user base among researchers and scientists
 - Easier for beginners to grasp 
+- Goal is to teach basic programming concepts that can be applied to other programming languages
 
 ## Python Introduction	
 
@@ -43,6 +44,7 @@ subtitle: Why Python?
       
 ## Using Python libraries
 
+-  This introduction to Python is built around an end to end scientific example: data analysis
 -  What is a library (module) and its usage
 -  Reading data from a file
 -  Numpy arrays and operations on arrays of data
@@ -52,14 +54,14 @@ subtitle: Why Python?
 ## Control Flow: Repeating actions with loops
 
 -  What a loop does?
--  Writing loops accurately to repeat simple calculations
--  Trace changes to a loop variable as the loop runs
--  Trace changes to other variables as they are updated by a `for` loop
+-  Writing loops to repeat simple calculations
+-  Track changes to a loop variable as the loop runs
+-  Track changes to other variables as they are updated by a `for` loop
 
 ## Control Flow: Making choices
 
 -  Write conditional statements including `if`, `elif` and `else` 
--  Correctly evaluate expressions containing `and` and `or`
+-  Evaluate expressions containing `and` and `or`
 
 ## Creating Functions
 
