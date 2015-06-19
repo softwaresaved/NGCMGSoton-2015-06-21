@@ -53,7 +53,7 @@ subtitle: Why Python?
 -  Reading data from a file
 -  Numpy arrays and operations on arrays of data
 -  Selecting individual values and subsections of data
--  Plotting data using matplotlib library
+-  Plotting data using `matplotlib` library
 
 ## Control Flow: Repeating actions with loops
 
@@ -82,9 +82,3 @@ subtitle: Why Python?
 -  Reading data from standard input in a program 
 
 ##  Thank You!
-
-
-## Learn more
-
-- [The Software Sustainability Institute](http://www.software.ac.uk/)
-- ...
