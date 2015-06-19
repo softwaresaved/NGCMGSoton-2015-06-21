@@ -25,9 +25,3 @@ But the two most important things are to use whatever language your colleagues a
 *  [Command-Line Programs](07-cmdline.html)
 
 
-## Other Resources
-
-*   [Motivation](motivation.html)
-*   [Reference](reference.html)
-*   [Discussion](discussion.html)
-
