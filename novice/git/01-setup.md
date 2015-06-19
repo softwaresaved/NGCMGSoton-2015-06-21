@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Version Control with Git
-subtitle: Setting Up Git
+subtitle: A Better Backup / Setting Up Git
 minutes: 10
 ---
 > ## Learning Objectives {.objectives}
@@ -10,7 +10,7 @@ minutes: 10
 >     and which are required once per repository.
 
 We'll start by exploring how version control can be used
-to keep track of what one person did and when.
+to keep track of what **one** person did and when.
 Even if you aren't collaborating with other people,
 version control is much better for this than this:
 
@@ -102,3 +102,4 @@ $ git config --list
 > $ git config --global --unset https.proxy
 > ~~~
 
+[Next - Creating a Repository](02-create.html)

@@ -430,3 +430,5 @@ repository (`git commit`):
 > between its updated state and its original state.
 
 [commit-messages]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+
+[Next - Exploring History](04-history.html)

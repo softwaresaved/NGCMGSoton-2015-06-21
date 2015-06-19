@@ -62,3 +62,4 @@ $ git status
 nothing to commit (create/copy files and use "git add" to track)
 ~~~
 
+[Next - Tracking Changes](03-changes.html)

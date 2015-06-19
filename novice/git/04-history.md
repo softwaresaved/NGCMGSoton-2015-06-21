@@ -57,7 +57,7 @@ that `git log` displays.
 These are unique IDs for the changes,
 and "unique" really does mean unique:
 every change to any set of files on any machine
-has a unique 40-character identifier.
+has a unique 40-character identifier. (A SHA-1 hash of the new, post-commit state of the repository).
 Our first commit was given the ID
 f22b25e3233b4645dabd0d81e651fe074bd8e73b,
 so let's try this:
@@ -225,3 +225,5 @@ moving backward and forward in time becomes much easier.
 >     $ git checkout <unique ID of last revision> data_cruncher.py
 >     ~~~
 > 5. Both 2 & 4
+
+[Next - Ignoring Things](05-ignore.html)

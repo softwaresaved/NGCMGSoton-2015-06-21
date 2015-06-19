@@ -51,7 +51,8 @@ can and should be stored in a version control system.
 
 ## Topics
 
-1.  [Setting Up Git](01-setup.html)
+0.  [Introduction](index.html)
+1.  [A Better Backup / Setting Up Git](01-setup.html)
 2.  [Creating a Repository](02-create.html)
 3.  [Tracking Changes](03-changes.html)
 4.  [Exploring History](04-history.html)
@@ -62,3 +63,5 @@ can and should be stored in a version control system.
 ## Other Resources
 
 *   [Motivation](motivation.html)
+
+[Next - Setting Up Git](01-setup.html)

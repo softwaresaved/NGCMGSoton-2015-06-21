@@ -62,7 +62,7 @@ index df0654a..b36abfd 100644
 +The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity</code></pre>
 <p>In this way, we build up a chain of revisions. The most recent end of the chain is referred to as <code>HEAD</code>; we can refer to previous revisions using the <code>~</code> notation, so <code>HEAD~1</code> (pronounced “head minus one”) means “the previous revision”, while <code>HEAD~123</code> goes back 123 revisions from where we are now.</p>
-<p>We can also refer to revisions using those long strings of digits and letters that <code>git log</code> displays. These are unique IDs for the changes, and “unique” really does mean unique: every change to any set of files on any machine has a unique 40-character identifier. Our first commit was given the ID f22b25e3233b4645dabd0d81e651fe074bd8e73b, so let’s try this:</p>
+<p>We can also refer to revisions using those long strings of digits and letters that <code>git log</code> displays. These are unique IDs for the changes, and “unique” really does mean unique: every change to any set of files on any machine has a unique 40-character identifier. (A SHA-1 hash of the new, post-commit state of the repository). Our first commit was given the ID f22b25e3233b4645dabd0d81e651fe074bd8e73b, so let’s try this:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> diff f22b25e3233b4645dabd0d81e651fe074bd8e73b mars.txt</code></pre>
 <pre class="output"><code>diff --git a/mars.txt b/mars.txt
 index df0654a..b36abfd 100644
@@ -149,6 +149,7 @@ But the Mummy will appreciate the lack of humidity</code></pre>
 </ol>
 </div>
 </section>
+<p><a href="05-ignore.html">Next - Ignoring Things</a></p>
         </div>
       </div>
       </article>
