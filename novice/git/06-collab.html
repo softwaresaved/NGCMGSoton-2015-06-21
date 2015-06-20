@@ -42,8 +42,20 @@
 </ul>
 </div>
 </section>
-<p>Version control really comes into its own when we begin to collaborate with other people. We already have most of the machinery we need to do this; the only thing missing is to copy changes from one repository to another.</p>
-<p>Systems like Git allow us to move work between any two repositories. In practice, though, it’s easiest to use one copy as a central hub, and to keep it on the web rather than on someone’s laptop. Most programmers use hosting services like <a href="http://github.com">GitHub</a> or <a href="http://bitbucket.org">BitBucket</a> to hold those master copies; we’ll explore the pros and cons of this in the final section of this lesson.</p>
+<p>We’ve seen how Version control can help us track the changes we make to our files, and to revisit any point in their history.</p>
+<p><strong>(SLIDE 17 - Git Workflow - Local Repo)</strong></p>
+<p>Version control really comes into its own when we begin to collaborate with other people.</p>
+<p><strong>(SLIDE 18 - Collaboration)</strong></p>
+<h3 id="the-missing-link">The missing link</h3>
+<p>We already have most of the machinery we need to do this; the only thing missing is to copy changes from one repository to another.</p>
+<p>Systems like Git allow us to move work between any two repositories.</p>
+<p>In practice, though, it’s easiest to use one copy as a central hub, and to keep it on the web rather than on someone’s laptop.</p>
+<p>Many programmers use hosting services like GitHub or BitBucket to hold those master copies; we’ll explore the pros and cons of these a bit later.</p>
+<h3 id="exploring-the-collaborative-process">Exploring the collaborative process</h3>
+<p>But first let’s explore the collaborative process, with a contrived example - Collaborating with ourselves.</p>
+<p><strong>(SLIDE 19 - Remote Repositories)</strong></p>
+<p>Earlier on we created two directories - laptop and desktop. So far we have been working in laptop. Let’s use GitHub to set up a remote repository and start <strong>“collaborating”</strong> with our desktop - this could of course be another dev</p>
+<h3 id="to-github">To GitHub</h3>
 <p>Let’s start by sharing the changes we’ve made to our current project with the world. Log in to GitHub, then click on the icon in the top right corner to create a new repository called <code>planets</code>:</p>
 <div class="figure">
 <img src="img/github-create-repo-01.png" alt="Creating a Repository on GitHub (Step 1)" /><p class="caption">Creating a Repository on GitHub (Step 1)</p>
@@ -60,20 +72,15 @@
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> planets
 $ <span class="kw">cd</span> planets
 $ <span class="kw">git</span> init</code></pre>
+<p><strong>(SLIDE 19 - Remote Repositories)</strong> <strong>(SLIDE 20 - Remote Repositories)</strong></p>
+<h3 id="connecting-the-remote-repository">Connecting the remote repository</h3>
 <p>Our local repository still contains our earlier work on <code>mars.txt</code>, but the remote repository on GitHub doesn’t contain any files yet:</p>
-<p>The next step is to connect the two repositories. We do this by making the GitHub repository a <a href="reference.html#remote">remote</a> for the local repository. The home page of the repository on GitHub includes the string we need to identify it:</p>
+<p>The next step is to connect the two repositories.</p>
+<p>We do this by making the GitHub repository a <a href="reference.html#remote">remote</a> for the local repository. A <strong>remote</strong> is a repository conected to another in such way that both can be kept in sync exchanging commits.</p>
+<p>The home page of the repository on GitHub includes the string we need to identify it:</p>
 <div class="figure">
 <img src="img/github-find-repo-string.png" alt="Where to Find Repository URL on GitHub" /><p class="caption">Where to Find Repository URL on GitHub</p>
 </div>
-<p>Click on the ‘HTTPS’ link to change the <a href="reference.html#protocol">protocol</a> from SSH to HTTPS.</p>
-<aside class="callout panel panel-info">
-<div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pushpin"></span>HTTPS vs SSH</h2>
-</div>
-<div class="panel-body">
-<p>We use HTTPS here because it does not require additional configuration. After the workshop you may want to set up SSH access, which is a bit more secure, by following one of the great tutorials from <a href="https://help.github.com/articles/generating-ssh-keys">GitHub</a>, <a href="https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Git">Atlassian/BitBucket</a> and <a href="https://about.gitlab.com/2014/03/04/add-ssh-key-screencast/">GitLab</a> (this one has a screencast).</p>
-</div>
-</aside>
 <p>Copy that URL from the browser, go into the local <code>planets</code> repository, and run this command:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> remote add origin https://github.com/vlad/planets.git</code></pre>
 <p>The name <code>origin</code> is a local nickname for your remote repository: we could use something else if we wanted to, but <code>origin</code> is conventional.</p>
@@ -82,8 +89,8 @@ $ <span class="kw">git</span> init</code></pre>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> remote -v</code></pre>
 <pre class="output"><code>origin   https://github.com/vlad/planets.git (push)
 origin   https://github.com/vlad/planets.git (fetch)</code></pre>
-<p>Once the nickname <code>origin</code> is set up, this command will push the changes from our local repository to the repository on GitHub:</p>
-<p>The push command takes two arguments, the remote name (‘origin’) and a branch name (‘master’).</p>
+<h3 id="push-commits-from-local-to-remote">Push commits from local to remote</h3>
+<p>Once the remote is set up, we can <strong>push</strong> the changes from our local repository to the repository on GitHub:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin master</code></pre>
 <pre class="output"><code>Counting objects: 9, done.
 Delta compression using up to 4 threads.
@@ -93,19 +100,20 @@ Total 9 (delta 2), reused 0 (delta 0)
 To https://github.com/vlad/planets
  * [new branch]      master -&gt; master
 Branch master set up to track remote branch master from origin.</code></pre>
-<p>We haven’t yet discussed branching (or forking), and we won’t have time to do so today, but this is a feature common to almost all version control systems and gives you the ability to diverge from the main line of development and to continue to do work without messing with that main line. The main (default) branch is the master.</p>
+<p>The push command takes two arguments, the remote name (‘origin’) and a branch name (‘master’).</p>
+<p>We haven’t yet discussed <strong>branching</strong> yet, and we won’t have time to do so today.</p>
+<p>But this is a feature common to almost all version control systems and gives you the ability to diverge from the main line of development and to continue to do work without messing with that main line. The main (default) branch is the master.</p>
 <p>At a later time you can re-integrate branches to the master.</p>
-<p>Our local and remote repositories are now in this state:</p>
-<div class="figure">
-<img src="img/github-repo-after-first-push.svg" alt="GitHub Repository After First Push" /><p class="caption">GitHub Repository After First Push</p>
-</div>
+<p>Our local and remote repositories are now in sync.</p>
+<h3 id="testing-pull">Testing Pull</h3>
 <p>We can pull changes from the remote repository to the local one as well:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> pull origin master</code></pre>
 <pre class="output"><code>From https://github.com/vlad/planets
  * branch            master     -&gt; FETCH_HEAD
 Already up-to-date.</code></pre>
 <p>Pulling has no effect in this case because the two repositories are already synchronized. If someone else had pushed some changes to the repository on GitHub, though, this command would download them to our local repository.</p>
-<p>Now lets look at collaboration. In this case it’s with ourselves - on laptop and desktop, but the principal, and much of the practice, is the same.</p>
+<h3 id="cloning-the-desktop">Cloning the desktop</h3>
+<p>Now lets look at collaboration. In this case it’s with ourselves - on laptop and desktop, but the principal, is the same.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> ../../dtop
 $ <span class="kw">git</span> clone https://github.com/vlad/planets.git</code></pre>
 <p><code>git clone</code> creates a fresh local copy of a remote repository.</p>
@@ -132,7 +140,8 @@ To https://github.com/vlad/planets.git
    9272da5..29aba7c  master -&gt; master</code></pre>
 <p>Note that we didn’t have to create a remote called <code>origin</code>: Git does this automatically, using that name, when we clone a repository. (This is why <code>origin</code> was a sensible choice earlier when we were setting up remotes by hand.)</p>
 <p>We can now download changes into the original repository on our machine:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> pull origin master</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">cd</span> ../../ltop
+$ <span class="kw">git</span> pull origin master</code></pre>
 <pre class="output"><code>remote: Counting objects: 4, done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 0), reused 3 (delta 0)
@@ -144,15 +153,12 @@ Fast-forward
  pluto.txt | 1 +
  1 file changed, 1 insertion(+)
  create mode 100644 pluto.txt</code></pre>
-<section class="challenge panel panel-success">
-<div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>GitHub Timestamp</h2>
-</div>
-<div class="panel-body">
-<p>Create a repository on GitHub, clone it, add a file, push those changes to GitHub, and then look at the <a href="reference.html#timestamp">timestamp</a> of the change on GitHub. How does GitHub record times, and why?</p>
-</div>
-</section>
-<p><a href="06-collab.html">Next - Collaborating</a></p>
+<p><strong>(SLIDE 21 - Git Workflow Remote Repositories)</strong></p>
+<h3 id="wrap-up">Wrap up</h3>
+<p>So, we’ve seen how we can use remote git repos to collaborate (with ourselves).</p>
+<p>For more for info see the Software Carpentry site: <strong>(SLIDE 22 - What next)</strong></p>
+<p>That about wraps up what we can fit into this session, but you’ll probably want to explore what happens when your commits conflict - <strong>merging</strong> and how to use development <strong>branches</strong>.</p>
+<p>We’ll leave questions until the Q&amp;A session</p>
         </div>
       </div>
       </article>

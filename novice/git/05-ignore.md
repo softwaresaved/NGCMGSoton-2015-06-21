@@ -119,6 +119,7 @@ $ git status --ignored
 #        results/
 
 nothing to commit, working directory clean
-
-[Collaborating](06-collab.html)
 ~~~
+
+[Next - Collaborating](06-collab.html)
+

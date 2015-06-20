@@ -8,6 +8,8 @@ minutes: 10
 > 
 > *   Explain how to create a Git repository locally.
 
+**( SLIDE 12 - Creating a Repository)**
+
 Once Git is configured,
 we can start using it.
 Let's create a couple of directories for our work.  One will represent our desktop computer, the other our laptop.
