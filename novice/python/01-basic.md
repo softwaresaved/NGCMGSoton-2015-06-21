@@ -2,7 +2,7 @@
 layout: page
 title: Building programs with Python
 subtitle: Python Basics- Variables, Arrays, Lists etc
-minutes: 20
+minutes: 10
 ---
 > ## Learning Objectives {.objectives}
 >

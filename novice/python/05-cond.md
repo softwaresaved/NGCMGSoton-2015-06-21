@@ -7,7 +7,7 @@ minutes: 10
 > ## Learning Objectives {.objectives}
 >
 > *   Write conditional statements including `if`, `elif`, and `else` branches.
-> *   Correctly evaluate expressions containing `and` and `or`.
+> *   Evaluate expressions containing `and` and `or`.
 
 In our last lesson, we discovered something suspicious was going on
 in our inflammation data by drawing some plots.

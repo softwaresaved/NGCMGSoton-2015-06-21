@@ -7,9 +7,9 @@ minutes: 10
 > ## Learning Objectives {.objectives}
 >
 > *   Explain what a for loop does.
-> *   Correctly write for loops to repeat simple calculations.
-> *   Trace changes to a loop variable as the loop runs.
-> *   Trace changes to other variables as they are updated by a for loop.
+> *   Write for loops to repeat simple calculations.
+> *   Track changes to a loop variable as the loop runs.
+> *   Track changes to other variables as they are updated by a for loop.
 
 In the last lesson,
 we wrote some code that plots some values of interest from our first inflammation dataset,
