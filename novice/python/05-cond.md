@@ -9,7 +9,7 @@ minutes: 10
 > *   Write conditional statements including `if`, `elif`, and `else` branches.
 > *   Evaluate expressions containing `and` and `or`.
 
-In our last lesson, we discovered something suspicious was going on
+In our numpy and visualisation lessons, we discovered something suspicious was going on
 in our inflammation data by drawing some plots.
 How can we use Python to automatically recognize the different features we saw,
 and take a different action for each? In this lesson, we'll learn how to write code that
@@ -43,7 +43,7 @@ Only one or the other is ever executed:
 
 ![Executing a Conditional](img/python-flowchart-conditional.svg)
 
-Conditional statements don't have to include an `else`.
+Conditional statements don't have to necessarily include an `else`.
 If there isn't one,
 Python simply does nothing if the test is false:
 
@@ -75,6 +75,10 @@ num = -3
 ~~~ {.output}
 sign of a number -3 is: -1
 ~~~
+
+The keyword ‘elif‘ is short for ‘else if’, and is useful to avoid excessive indentation. An 
+`if ... elif ... elif ...` sequence is a substitute for the `switch` or `case` statements 
+found in other languages.
 
 One important thing to notice in the code above is that we use a double equals sign `==` to test for equality
 rather than a single equals sign
@@ -150,15 +154,15 @@ or doing all manner of other things to respond to changing conditions in our dat
 > 
 > Which of the following would be printed if you were to run this code? Why did you pick this answer?
 >
-> A
-> B
-> C
-> B and C
+> * A
+> * B
+> * C
+> * B and C
 > 
 > ~~~ {.python}
 > if 4 > 5:
 >     print 'A'
-> elif 4 =< 5:
+> elif 4 <= 5:
 >     print 'B'
 > elif 4 < 5:
 >     print 'C'
