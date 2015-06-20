@@ -76,7 +76,7 @@ num = -3
 sign of a number -3 is: -1
 ~~~
 
-The keyword ‘elif‘ is short for ‘else if’, and is useful to avoid excessive indentation. An 
+The keyword `elif` is short for `else if`, and is useful to avoid excessive indentation. An 
 `if ... elif ... elif ...` sequence is a substitute for the `switch` or `case` statements 
 found in other languages.
 
