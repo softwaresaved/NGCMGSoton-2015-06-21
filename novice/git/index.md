@@ -97,4 +97,9 @@ You don't need to use GitHub to employ Git, but we will use today to demonstrate
 6.  [Collaborating](06-collab.html)
 7.  [Conflicts](07-conflict.html)
 
+## Other Resources
+
+* [Overview](version-control-with-git-slides.odp)
+* [Glossary Reference](reference.html)
+
 [Next - A Better Backup / Setting Up Git](01-setup.html)
