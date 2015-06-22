@@ -429,7 +429,7 @@ a:hover, a:focus {
   font-weight: normal;
 }
 .deck-container:not(.no-status) > .slide {
-  background: url(../img/software-carpentry-banner.png) bottom 10px left 10px no-repeat;
+  background: url(../img/ssi-banner.png) bottom 10px left 10px no-repeat;
   background-size: 150px;
 }
 .deck-container .slide :not(h1):not(h2) {
