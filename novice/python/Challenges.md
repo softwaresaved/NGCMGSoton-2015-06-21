@@ -86,15 +86,15 @@ subtitle: Challenges
 > 
 > Which of the following would be printed if you were to run this code? Why did you pick this answer?
 >
-> A
-> B
-> C
-> B and C
+> * A
+> * B
+> * C
+> * B and C
 > 
 > ~~~ {.python}
 > if 4 > 5:
 >     print 'A'
-> elif 4 =< 5:
+> elif 4 <= 5:
 >     print 'B'
 > elif 4 < 5:
 >     print 'C'

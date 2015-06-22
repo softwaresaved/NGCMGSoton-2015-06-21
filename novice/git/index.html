@@ -49,7 +49,7 @@
 <p>We’ve all been in this situation before - it seems ridiculous to have multiple nearly-identical versions of the same document. Some word processors let us deal with this a little better, like Microsoft Word (“Track Changes”) or Google Docs version history.</p>
 <p>BUT research isn’t just Words docs. With <strong>Version Control</strong>, at any point in the future, you can retrieve the correct versions of your documents, scripts or code. So, for example, a year after publication, you can get hold of the precise combination of scripts and data that you used to assemble a paper.</p>
 <p>Version control makes <strong>reproducibility</strong> simpler. If you’re not using version control can you honestly say that your research is reproducible?</p>
-<p><strong>(FULL SCREEN SLIDE 2 - What is Version Control?)</strong></p>
+<p><strong>(FULL SCREEN SLIDE 4 - Teamwork)</strong></p>
 <h3 id="a-collaboration-tool">2. A collaboration tool</h3>
 <p>As well as maintaining a revison history, Version Control tools also help multiple authors collaborate on the same file. VC is what professional software developers use to work in large teams and to keep track of what they’ve done. They know who has changed what and when. And who to blame when things break!</p>
 <p>Every large software development project relies on VC, and most programmers use it for their small jobs as well.</p>
@@ -57,24 +57,24 @@
 <p>It’s worth noting that although most version control system can deal with any file type, because they tracks incremental change, many features, like diffs and merges work only with human readable text, not binary files lke images, or Word docs.</p>
 <p>We’ll look at both the backup and collaboration scenarios, but first it’s useful to understand what going on under the hood.</p>
 <h3 id="how-do-version-control-tools-work">3. How do Version Control Tools Work?</h3>
-<p><strong>(FULL SCREEN SLIDE 4 - Changes are tracked sequentially)</strong></p>
+<p><strong>(FULL SCREEN SLIDE 5 - Changes are tracked sequentially)</strong></p>
 <p>Version control systems start with the base version of the file that you save and then record just the changes you made at each step on the way. You can think of it as a tape: if you rewind the tape and start at the base document, then you can play back each change and end up with your latest version.</p>
 <div class="figure">
 <img src="img/play-changes.svg" alt="Changes are saved sequentially" /><p class="caption">Changes are saved sequentially</p>
 </div>
 <p>Once you think of changes as separate from the document itself, you can then think about “playing back” different sets of changes onto the base document and getting different versions of the document. For example, two users can make independent sets of changes based on the same document.</p>
-<p><strong>(FULL SCREEN SLIDE 5 - Different versions can be saved)</strong></p>
+<p><strong>(FULL SCREEN SLIDE 6 - Different versions can be saved)</strong></p>
 <div class="figure">
 <img src="img/versions.svg" alt="Different versions can be saved" /><p class="caption">Different versions can be saved</p>
 </div>
-<p><strong>(FULL SCREEN SLIDE 6 - Multiple versions can be merged)</strong></p>
-<p>If there aren’t conflicts, you can even try to play two sets of changes onto the same base document.</p>
+<p><strong>(FULL SCREEN SLIDE 7 - Multiple versions can be merged)</strong></p>
+<p>If there aren’t conflicts, you can even try to play two sets of changes onto the same base document. A process call <strong>merging</strong>.</p>
 <div class="figure">
 <img src="img/merge.svg" alt="Multiple versions can be merged" /><p class="caption">Multiple versions can be merged</p>
 </div>
 <h2 id="version-control-alternatives">3. Version Control Alternatives</h2>
-<p><strong>(FULL SCREEN SLIDE 7 - Version Control Alternatives)</strong></p>
-<p>These are the most popular currently used Version Control systems.</p>
+<p><strong>(FULL SCREEN SLIDE 8 - Version Control Alternatives)</strong></p>
+<p>These are the most popular current Version Control systems.</p>
 <p><strong>Subversion</strong> has been around since about 2000, it was developed to replace the venerable <strong>Concurrent Versioning System (CVS)</strong> It introduced such revolutionary concepts as the ability to move and rename files whilst retaining their version history.</p>
 <p>Both <strong>Mercurial</strong> and <strong>Git</strong> arose from the need to find a new Version Control System for the Linux Kernel, after BitKeeper became non-free in 2005.</p>
 <p>Whereas with Subversion a single master copy of the repository (the files under version control) exists - the only place where all revision history is kept, <strong>Mercurial</strong> and <strong>Git</strong> are newer and work a little differently - they are <strong>Distributed</strong> Version control systems - each developers copy of the codebase is a complete repository. You can use Git without a network connection and there’s no single point of failuire.</p>

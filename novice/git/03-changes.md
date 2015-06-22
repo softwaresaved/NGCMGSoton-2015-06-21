@@ -9,6 +9,10 @@ minutes: 20
 > *   Go through the modify-add-commit cycle for single and multiple files.
 > *   Explain where information is stored at each stage.
 
+**( SLIDE 13 - Tracking changes to files)**
+
+###Create a file###
+
 Let's create a file called `mars.txt` that contains some notes
 about the Red Planet's suitability as a base.
 (We'll use `nano` to edit the file;
@@ -44,6 +48,7 @@ $ cat mars.txt
 Cold and dry, but everything is my favorite color
 ~~~
 
+###Check Status###
 If we check the status of our project again,
 Git tells us that it's noticed the new file:
 
@@ -64,6 +69,9 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 The "untracked files" message means that there's a file in the directory
 that Git isn't keeping track of.
+
+###Add to Version Control###
+
 We can tell Git to track a file using `git add`:
 
 ~~~ {.bash}
@@ -89,12 +97,25 @@ $ git status
 
 Git now knows that it's supposed to keep track of `mars.txt`,
 but it hasn't recorded these changes as a commit yet.
+
+###Commit the Changes###
 To get it to do that,
 we need to run one more command:
 
 ~~~ {.bash}
 $ git commit -m "Start notes on Mars as a base"
 ~~~
+
+We use the `-m` flag (for "message")
+to record a short, descriptive, and specific comment that will help us remember later on what we did and why.
+If we just run `git commit` without the `-m` option,
+Git will launch `nano` (or whatever other editor we configured at the start)
+so that we can write a longer message.
+
+[Good commit messages][commit-messages] start with a brief (<50 characters) summary of
+changes made in the commit.  If you want to go into more detail, add
+a blank line between the summary line and your additional notes.
+
 ~~~ {.output}
 [master (root-commit) f22b25e] Start notes on Mars as a base
  1 file changed, 1 insertion(+)
@@ -108,16 +129,6 @@ This permanent copy is called a [revision](reference.html#revision)
 and its short identifier is `f22b25e`.
 (Your revision may have another identifier.)
 
-We use the `-m` flag (for "message")
-to record a short, descriptive, and specific comment that will help us remember later on what we did and why.
-If we just run `git commit` without the `-m` option,
-Git will launch `nano` (or whatever other editor we configured at the start)
-so that we can write a longer message.
-
-[Good commit messages][commit-messages] start with a brief (<50 characters) summary of
-changes made in the commit.  If you want to go into more detail, add
-a blank line between the summary line and your additional notes.
-
 
 If we run `git status` now:
 
@@ -128,8 +139,9 @@ $ git status
 # On branch master
 nothing to commit, working directory clean
 ~~~
-
 it tells us everything is up to date.
+
+###Review the Log###
 If we want to know what we've done recently,
 we can ask Git to show us the project's history using `git log`:
 
@@ -145,6 +157,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 ~~~
 
 `git log` lists all revisions  made to a repository in reverse chronological order.
+
 The listing for each revision includes
 the revision's full identifier
 (which starts with the same characters as
@@ -161,9 +174,8 @@ and the log message Git was given when the revision was created.
 > so that our filesystem doesn't become cluttered
 > (and so that we can't accidentally edit or delete an old version).
 
+###Modify the file###
 Now suppose Dracula adds more information to the file.
-(Again, we'll edit with `nano` and then `cat` the file to show its contents;
-you may use a different editor, and don't need to `cat`.)
 
 ~~~ {.bash}
 $ nano mars.txt
@@ -192,12 +204,17 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
 
 The last line is the key phrase:
-"no changes added to commit".
+"no changes added to **commit**".
+
+
 We have changed this file,
 but we haven't told Git we will want to save those changes
 (which we do with `git add`)
 much less actually saved them (which we do with `git commit`).
-So let's do that now. It is good practice to always review
+So let's do that now. 
+
+###Review Changes and Commit###
+It is good practice to always review
 our changes before saving them. We do this using `git diff`.
 This shows us the differences between the current state
 of the file and the most recently saved version:
@@ -218,18 +235,14 @@ index df0654a..315bf3a 100644
 The output is cryptic because
 it is actually a series of commands for tools like editors and `patch`
 telling them how to reconstruct one file given the other.
-If we break it down into pieces:
 
-1.  The first line tells us that Git is producing output similar to the Unix `diff` command
-    comparing the old and new versions of the file.
-2.  The second line tells exactly which revisions of the file
-    Git is comparing;
-    `df0654a` and `315bf3a` are unique computer-generated labels for those revisions.
-3.  The third and fourth lines once again show the name of the file being changed.
-4.  The remaining lines are the most interesting, they show us the actual differences
-    and the lines on which they occur.
-    In particular,
-    the `+` markers in the first column show where we are adding lines.
+The key things to note are:
+
+ 1. Line 1: The files that are being compared
+ 2. Line 2: The two hex strings on the second line which are the revisions being compared
+ 3. Line 5: The lines that have changed
+ 4. Below that, the changes - note the '**+**' marker which shows an addtion
+
 
 After reviewing our change, it's time to commit it:
 
@@ -260,9 +273,11 @@ $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
  1 file changed, 1 insertion(+)
 ~~~
 
-Git insists that we add files to the set we want to commit
+Git insists that we **add** files to the set we want to commit
 before actually committing anything
 because we may not want to commit everything at once.
+
+
 For example,
 suppose we're adding a few citations to our supervisor's work
 to our thesis.
@@ -272,23 +287,21 @@ but *not* commit the work we're doing on the conclusion
 (which we haven't finished yet).
 
 To allow for this,
-Git has a special staging area
-where it keeps track of things that have been added to
+Git has a special **staging** area
+where it keeps track of things that have been **added** to
 the current [change set](reference.html#change-set)
-but not yet committed.
+but **not yet committed**.
 `git add` puts things in this area,
 and `git commit` then copies them to long-term storage (as a commit):
 
 
+**( SLIDE 14 - Git Add / Commit)**
 
+![The Git Staging Area](img/git-committing.svg)
 
-![The Git Staging Area](img/git-staging-area.svg)
+###One more addition###
 
-Let's watch as our changes to a file move from our editor
-to the staging area
-and into long-term storage.
-First,
-we'll add another line to the file:
+Let's add another line to the file:
 
 ~~~ {.bash}
 $ nano mars.txt
@@ -299,6 +312,8 @@ Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
 ~~~
+Check what's changed with **diff**:
+
 ~~~ {.bash}
 $ git diff
 ~~~
@@ -398,44 +413,5 @@ we first need to add the changed files to the staging area
 (`git add`) and then commit the staged changes to the
 repository (`git commit`):
 
-![The Git Commit Workflow](img/git-committing.svg)
-
-
-> ## Committing Changes to Git {.challenge}
->
-> Which command(s) below would save changes of `myfile.txt` to my local Git repository?
->
-> 1. 
->
->     ~~~
->     $ git commit -m "my recent changes"
->     ~~~
-> 2. 
->
->     ~~~
->     $ git init myfile.txt
->     $ git commit -m "my recent changes"
->     ~~~
-> 3. 
->
->     ~~~
->     $ git add myfile.txt
->     $ git commit -m "my recent changes"
->     ~~~
-> 4. 
->
->     ~~~
->     $ git commit -m myfile.txt "my recent changes"
->     ~~~
-
-> ## `bio` Repository {.challenge}
->
-> Create a new Git repository on your computer called `bio`.
-> Write a three-line biography for yourself in a file called `me.txt`,
-> commit your changes,
-> then modify one line and add a fourth and display the differences
-> between its updated state and its original state.
-
-[commit-messages]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
 
 [Next - Exploring History](04-history.html)

@@ -37,11 +37,11 @@
 <div class="panel-body">
 <ul>
 <li>Write conditional statements including <code>if</code>, <code>elif</code>, and <code>else</code> branches.</li>
-<li>Correctly evaluate expressions containing <code>and</code> and <code>or</code>.</li>
+<li>Evaluate expressions containing <code>and</code> and <code>or</code>.</li>
 </ul>
 </div>
 </section>
-<p>In our last lesson, we discovered something suspicious was going on in our inflammation data by drawing some plots. How can we use Python to automatically recognize the different features we saw, and take a different action for each? In this lesson, we’ll learn how to write code that runs only when certain conditions are true.</p>
+<p>In our numpy and visualisation lessons, we discovered something suspicious was going on in our inflammation data by drawing some plots. How can we use Python to automatically recognize the different features we saw, and take a different action for each? In this lesson, we’ll learn how to write code that runs only when certain conditions are true.</p>
 <h2 id="conditionals">Conditionals</h2>
 <p>We can ask Python to take different actions, depending on a condition, with an if statement:</p>
 <pre class="sourceCode python"><code class="sourceCode python">num = <span class="dv">37</span>
@@ -57,7 +57,7 @@ done
 <div class="figure">
 <img src="img/python-flowchart-conditional.svg" alt="Executing a Conditional" /><p class="caption">Executing a Conditional</p>
 </div>
-<p>Conditional statements don’t have to include an <code>else</code>. If there isn’t one, Python simply does nothing if the test is false:</p>
+<p>Conditional statements don’t have to necessarily include an <code>else</code>. If there isn’t one, Python simply does nothing if the test is false:</p>
 <pre class="sourceCode python"><code class="sourceCode python">num = <span class="dv">53</span>
 <span class="dt">print</span> <span class="st">&#39;before conditional...&#39;</span>
 <span class="kw">if</span> num &gt; <span class="dv">100</span>:
@@ -74,6 +74,7 @@ done
     <span class="kw">else</span>:
         <span class="dt">print</span> <span class="st">&#39;Sign of a number&#39;</span>,num, <span class="st">&#39;is:&#39;</span>,-<span class="dv">1</span></code></pre>
 <pre class="output"><code>sign of a number -3 is: -1</code></pre>
+<p>The keyword <code>elif</code> is short for <code>else if</code>, and is useful to avoid excessive indentation. An <code>if ... elif ... elif ...</code> sequence is a substitute for the <code>switch</code> or <code>case</code> statements found in other languages.</p>
 <p>One important thing to notice in the code above is that we use a double equals sign <code>==</code> to test for equality rather than a single equals sign because the latter is used to mean assignment. This convention was inherited from C, and while many other programming languages work the same way, it does take a bit of getting used to…</p>
 <p>We can also combine tests using <code>and</code> and <code>or</code>. <code>and</code> is only true if both parts are true:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">if</span> (<span class="dv">1</span> &gt; <span class="dv">0</span>) and (-<span class="dv">1</span> &gt; <span class="dv">0</span>):
@@ -103,10 +104,15 @@ done
 </div>
 <div class="panel-body">
 <p>Which of the following would be printed if you were to run this code? Why did you pick this answer?</p>
-<p>A B C B and C</p>
+<ul>
+<li>A</li>
+<li>B</li>
+<li>C</li>
+<li>B and C</li>
+</ul>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">if</span> <span class="dv">4</span> &gt; <span class="dv">5</span>:
     <span class="dt">print</span> <span class="st">&#39;A&#39;</span>
-<span class="kw">elif</span> <span class="dv">4</span> =&lt; <span class="dv">5</span>:
+<span class="kw">elif</span> <span class="dv">4</span> &lt;= <span class="dv">5</span>:
     <span class="dt">print</span> <span class="st">&#39;B&#39;</span>
 <span class="kw">elif</span> <span class="dv">4</span> &lt; <span class="dv">5</span>:
     <span class="dt">print</span> <span class="st">&#39;C&#39;</span></code></pre>

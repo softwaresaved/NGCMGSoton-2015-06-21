@@ -26,17 +26,17 @@ Lets walk through a little scenario to get some hands on experience using Git.
 Wolfman and Dracula have been hired by Universal Missions
 to investigate if it is possible to send their next planetary lander to Mars.
 
-**(FULL SCREEN SLIDE 8 /9 - Monsters to Mars)**
+**(FULL SCREEN SLIDE 9 /10 - Monsters to Mars)**
 
 **Switch out of fullscreen**
 **Open Terminal**
 
 
-**( SLIDE 10 - Creating a Repository)**
+**( SLIDE 11 - local configuration)**
 
 We’ll start by exploring how version control can be used to keep track of what *one person* did and when.
 
-## Setting Up
+## Setting Up ##
 
 The first time we use Git on a new machine,
 we need to configure a few things.
@@ -47,7 +47,8 @@ Make sure you're in your home directory (not another repository).
 $ cd
 ~~~
 
-Set some global options:
+Set some global options
+
 ~~~ {.bash}
 $ git config --global user.name "Vlad Dracula"
 $ git config --global user.email "vlad@tran.sylvan.ia"

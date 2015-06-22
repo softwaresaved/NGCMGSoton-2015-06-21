@@ -10,20 +10,37 @@ minutes: 55
 > *   Explain what happens when a remote repository is cloned.
 > *   Explain what happens when changes are pushed to or pulled from a remote repository.
 
+We've seen how Version control can help us track the changes we make to our files, and to revisit any point in their history.
+
+**(SLIDE 17 - Git Workflow - Local Repo)**
+
 Version control really comes into its own
 when we begin to collaborate with other people.
+
+**(SLIDE 18 - Collaboration)**
+
+###The missing link###
 We already have most of the machinery we need to do this;
 the only thing missing is to copy changes from one repository to another.
 
 Systems like Git allow us to move work between any two repositories.
-In practice,
-though,
-it's easiest to use one copy as a central hub,
-and to keep it on the web rather than on someone's laptop.
-Most programmers use hosting services like [GitHub](http://github.com) or [BitBucket](http://bitbucket.org)
-to hold those master copies;
-we'll explore the pros and cons of this in the final section of this lesson.
 
+In practice,
+though, it's easiest to use one copy as a central hub,
+and to keep it on the web rather than on someone's laptop.
+
+Many programmers use hosting services like GitHub or BitBucket
+to hold those master copies;  we'll explore the pros and cons of these a bit later.  
+
+###Exploring the collaborative process###
+
+But first let's explore the collaborative process, with a contrived example - Collaborating with ourselves.
+
+**(SLIDE 19 - Remote Repositories)**
+
+Earlier on we created two directories - laptop and desktop.  So far we have been working in laptop.  Let's use GitHub to set up a remote repository and start **"collaborating"** with our desktop - this could of course be another dev 
+
+###To GitHub###
 Let's start by sharing the changes we've made to our current project with the world.
 Log in to GitHub,
 then click on the icon in the top right corner to create a new repository called `planets`:
@@ -47,28 +64,23 @@ $ cd planets
 $ git init
 ~~~
 
+**(SLIDE 19 - Remote Repositories)**
+**(SLIDE 20 - Remote Repositories)**
+
+###Connecting the remote repository###
+
 Our local repository still contains our earlier work on `mars.txt`,
 but the remote repository on GitHub doesn't contain any files yet:
 
 The next step is to connect the two repositories.
+
 We do this by making the GitHub repository a [remote](reference.html#remote)
-for the local repository.
+for the local repository.  A **remote** is a repository conected to another in such way that both can be kept in sync exchanging commits.
+
 The home page of the repository on GitHub includes
 the string we need to identify it:
 
 ![Where to Find Repository URL on GitHub](img/github-find-repo-string.png)
-
-Click on the 'HTTPS' link to change the [protocol](reference.html#protocol) from SSH to HTTPS.
-
-> ## HTTPS vs SSH {.callout}
->
-> We use HTTPS here because it does not require additional configuration.
-> After the workshop you may want to set up SSH access, which is a bit more
-> secure, by following one of the great tutorials from
-> [GitHub](https://help.github.com/articles/generating-ssh-keys),
-> [Atlassian/BitBucket](https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Git)
-> and [GitLab](https://about.gitlab.com/2014/03/04/add-ssh-key-screencast/)
-> (this one has a screencast).
 
 Copy that URL from the browser,
 go into the local `planets` repository,
@@ -95,12 +107,10 @@ origin   https://github.com/vlad/planets.git (push)
 origin   https://github.com/vlad/planets.git (fetch)
 ~~~
 
-Once the nickname `origin` is set up,
-this command will push the changes from our local repository
+###Push commits from local to remote###
+
+Once the remote is set up, we can **push** the changes from our local repository
 to the repository on GitHub:
-
-The push command takes two arguments, the remote name ('origin') and a branch name ('master').
-
 
 ~~~ {.bash}
 $ git push origin master
@@ -115,17 +125,19 @@ To https://github.com/vlad/planets
  * [new branch]      master -> master
 Branch master set up to track remote branch master from origin.
 ~~~
+The push command takes two arguments, the remote name ('origin') and a branch name ('master').
 
-We haven't yet discussed branching (or forking), and we won't have time to do so today, but this is a feature common
+We haven't yet discussed **branching** yet, and we won't have time to do so today.
+
+But this is a feature common
 to almost all version control systems and gives you the ability to diverge from the main line of development
 and to continue to do work without messing with that main line.  The main (default) branch is the master.
 
 At a later time you can re-integrate branches to the master.
 
-Our local and remote repositories are now in this state:
+Our local and remote repositories are now in sync.
 
-![GitHub Repository After First Push](img/github-repo-after-first-push.svg)
-
+###Testing Pull###
 
 We can pull changes from the remote repository to the local one as well:
 
@@ -143,8 +155,10 @@ because the two repositories are already synchronized.
 If someone else had pushed some changes to the repository on GitHub,
 though, this command would download them to our local repository.
 
+###Cloning the desktop###
+
 Now lets look at collaboration.  In this case it's with ourselves - on laptop and desktop, 
-but the principal, and much of the practice, is the same.
+but the principal, is the same.
 
 ~~~ {.bash}
 $ cd ../../dtop
@@ -199,6 +213,7 @@ when we were setting up remotes by hand.)
 We can now download changes into the original repository on our machine:
 
 ~~~ {.bash}
+cd ../../ltop
 $ git pull origin master
 ~~~
 ~~~ {.output}
@@ -215,13 +230,19 @@ Fast-forward
  create mode 100644 pluto.txt
 ~~~
 
-> ## GitHub Timestamp {.challenge}
->
-> Create a repository on GitHub,
-> clone it,
-> add a file,
-> push those changes to GitHub,
-> and then look at the [timestamp](reference.html#timestamp) of the change on GitHub.
-> How does GitHub record times, and why?
+**(SLIDE 21 - Git Workflow Remote Repositories)**
 
-[Next - Collaborating](06-collab.html)
+###Wrap up###
+
+So, we've seen how we can use remote git repos to collaborate (with ourselves).
+
+
+For more for info see the Software Carpentry site:
+**(SLIDE 22 - What next)**
+
+That about wraps up what we can fit into this session, but you'll probably want to explore what happens when your commits conflict - **merging** and how to use development **branches**.
+
+
+
+We'll leave questions until the Q&A session
+
