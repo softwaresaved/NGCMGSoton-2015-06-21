@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Programming with Python
+title: Building Programs with Python
 subtitle: Instructor's Guide
 ---
 ## Legend
@@ -65,18 +65,20 @@ The discussion of command-line scripts
 assumes that students understand standard I/O and building filters,
 which are covered in the lesson on the shell.
 
-## [Analyzing Patient Data](01-numpy.html)
+## [Introduction](01-basic.html)
 
-## [Repeating Actions with Loops](02-loop.html)
+## [Reading and Analysing Data using Libraries](02-numpy.html)
 
-## [Storing Multiple Values in Lists](03-lists.html)
+## [Visualising Data using Libraries](03-visualisation.html)
 
-## [Analyzing Data from Multiple Files](04-files.html)
+## [Repeating Actions with Loops](04-loop.html)
 
 ## [Making Choices](05-cond.html)
 
 ## [Creating Functions](06-func.html)
 
-## [Command-Line Programs](08-cmdline.html)
+## [Creating Functions - Extra Material](06-func-cont.html)
 
+## [Command-Line Programs](07-cmdline.html)
 
+## [Command-Line Programs - Extra Material](07-cmdline-cont.html)

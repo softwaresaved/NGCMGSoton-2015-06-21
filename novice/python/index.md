@@ -28,3 +28,4 @@ But the two most important things are to use whatever language your colleagues a
 
 *  [Motivation](motivation.html)
 *  [Exercises](Challenges.html)
+*  [References](references.html)
