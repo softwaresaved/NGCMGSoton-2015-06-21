@@ -23,4 +23,3 @@ Does the code developed by you work the way it should do? Can you (or others) ve
 
 * [Motivation](motivation.html)
 * [code/](https://github.com/softwaresaved/NGCMGSoton-2015-06-21/tree/gh-pages/novice/python-unit-testing/code) - Python code for the material
-* [answers/](https://github.com/softwaresaved/NGCMGSoton-2015-06-21/tree/gh-pages/novice/python-unit-testing/answers) - answers for the challenges
